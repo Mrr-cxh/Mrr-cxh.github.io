@@ -6,7 +6,7 @@
   <link href="https://mrr-cxh.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrr-cxh.github.io/"/>
-  <updated>2021-05-17T05:29:53.298Z</updated>
+  <updated>2021-05-17T06:50:30.151Z</updated>
   <id>https://mrr-cxh.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>浏览器</title>
+    <link href="https://mrr-cxh.github.io/2021/05/17/liu-lan-qi/"/>
+    <id>https://mrr-cxh.github.io/2021/05/17/liu-lan-qi/</id>
+    <published>2021-05-17T05:38:04.000Z</published>
+    <updated>2021-05-17T06:50:30.151Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概览&quot;&gt;#&lt;/a&gt; 概览&lt;/h2&gt;
+&lt;p&gt;浏览器是用来检索、展示以及传递 Web 信息资源的应用程序。Web 信息资源由统一资源标识符 (URI)</summary>
+        
+      
+    
+    
+    
+    <category term="前端基础" scheme="https://mrr-cxh.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="基础" scheme="https://mrr-cxh.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="浏览器" scheme="https://mrr-cxh.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML</title>
     <link href="https://mrr-cxh.github.io/2021/05/16/html/"/>
     <id>https://mrr-cxh.github.io/2021/05/16/html/</id>
     <published>2021-05-16T10:47:20.000Z</published>
-    <updated>2021-05-17T05:29:53.298Z</updated>
+    <updated>2021-05-17T05:42:32.994Z</updated>
     
     
       
