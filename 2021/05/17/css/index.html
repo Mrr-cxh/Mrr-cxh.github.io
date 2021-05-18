@@ -465,7 +465,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概览"><a class="markdownIt-Anchor" href="#概览">#</a> 概览</h2>
+                <h3 id="概览"><a class="markdownIt-Anchor" href="#概览">#</a> 概览</h3>
 <p>层叠样式表 (英文全称：Cascading Style Sheets) 是一种用来表现 HTML（标准通用标记语言的一个应用）或 XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS 不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
 <p>CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。</p>
 <h3 id="css-基础用法"><a class="markdownIt-Anchor" href="#css-基础用法">#</a> Css 基础用法</h3>
@@ -616,6 +616,66 @@ text-indent<span class="token punctuation">,</span>text-align是块级元素，�
 <span class="token property">渐变：background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span>#xxx<span class="token punctuation">,</span>#xxx<span class="token punctuation">)</span><span class="token punctuation">;</span>其中right是灵活的
 <span class="token property">图片的响应式：width</span><span class="token punctuation">:</span>100% <span class="token property">height</span><span class="token punctuation">:</span>auto <span class="token property">max-width</span><span class="token punctuation">:</span>自己量的图片大小
 <span class="token property">height</span><span class="token punctuation">:</span><span class="token function">inhert</span><span class="token punctuation">(</span>继承<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="盒模型"><a class="markdownIt-Anchor" href="#盒模型">#</a> 盒模型</h3>
+<h4 id="一-基本概念标准模型ie-模型"><a class="markdownIt-Anchor" href="#一-基本概念标准模型ie-模型">#</a> 一、基本概念：标准模型 + IE 模型</h4>
+<p>什么是盒模型：盒模型又称框模型（Box Model）, 包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素。</p>
+<p>由于 IE 盒模型的怪异模式，IE 模型和标准模型的内容计算方式不同。</p>
+<h4 id="二-标准模型和-ie-模型的区别"><a class="markdownIt-Anchor" href="#二-标准模型和-ie-模型的区别">#</a> 二、标准模型和 IE 模型的区别</h4>
+<p>IE 模型和标准模型唯一的区别是内容计算方式的不同</p>
+<p>IE 模型元素宽度 width=content+padding+border，高度计算相同<br>
+标准模型元素宽度 width=content，高度计算相同</p>
+<h4 id="三-css-如何设置获取这两种模型的宽和高"><a class="markdownIt-Anchor" href="#三-css-如何设置获取这两种模型的宽和高">#</a> 三、css 如何设置获取这两种模型的宽和高</h4>
+<p>通过 css3 新增的属性  <code>box-sizing: content-box | border-box</code>  分别设置盒模型为标准模型（ <code>content-box</code> ）和 IE 模型（ <code>border-box</code> ）。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.content-box</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 5px solid red<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>.content-box 设置为标准模型，它的元素宽度 width=100px。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.border-box</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 5px solid red<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>.border-box 设置为 IE 模型，它的元素宽度 width=content + 2 padding + 2 border = 70px + 2 10px + 2 5px = 100px。</p>
+<h4 id="四-javascript-如何设置获取盒模型对应的宽和高"><a class="markdownIt-Anchor" href="#四-javascript-如何设置获取盒模型对应的宽和高">#</a> 四、javascript 如何设置获取盒模型对应的宽和高</h4>
+<ul>
+<li><code>dom.style.width/height</code>  只能取到行内样式的宽和高，style 标签中和 link 外链的样式取不到。</li>
+<li><code>dom.currentStyle.width/height</code>  取到的是最终渲染后的宽和高，只有 IE 支持此属性。</li>
+<li><code>window.getComputedStyle(dom).width/height</code>  同（2）但是多浏览器支持，IE9 以上支持。</li>
+<li><code>dom.getBoundingClientRect().width/height</code>  也是得到渲染后的宽和高，大多浏览器支持。IE9 以上支持，除此外还可以取到相对于视窗的上下左右的距离</li>
+</ul>
+<h4 id="五-外边距重叠"><a class="markdownIt-Anchor" href="#五-外边距重叠">#</a> 五、外边距重叠</h4>
+<p>当两个垂直外边距相遇时，他们将形成一个外边距，合并后的外边距高度等于两个发生合并的外边距的高度中的较大者。<b>注意：</b>只有普通文档流中块框的垂直外边距才会发生外边距合并，行内框、浮动框或绝对定位之间的外边距不会合并。</p>
+<h3 id="class-优先级"><a class="markdownIt-Anchor" href="#class-优先级">#</a> Class 优先级</h3>
+<ul>
+<li>常用选择器权重优先级：!important &gt; id &gt; class &gt; tag</li>
+<li>!important 可以提升样式优先级，但不建议使用。如果！important 被用于一个简写的样式属性，那么这条简写的样式属性所代表的子属性都会被应用上！important。 例如：background: blue !important;</li>
+<li>如果两条样式都使用！important，则权重值高的优先级更高</li>
+<li>在 css 样式表中，同一个 CSS 样式你写了两次，后面的会覆盖前面的</li>
+<li>样式指向同一元素，权重规则生效，权重大的被应用</li>
+<li>样式指向同一元素，权重规则生效，权重相同时，就近原则生效，后面定义的被应用</li>
+</ul>
+<h3 id="css-性能优化"><a class="markdownIt-Anchor" href="#css-性能优化">#</a> Css 性能优化</h3>
+<ul>
+<li>合并 css 文件，如果页面加载 10 个 css 文件，每个文件 1k，那么也要比只加载一个 100k 的 css 文件慢。</li>
+<li>减少 css 嵌套，最好不要嵌套三层以上。</li>
+<li>不要在 ID 选择器前面进行嵌套，ID 本来就是唯一的而且权限值大，嵌套完全是浪费性能。</li>
+<li>建立公共样式类，把相同样式提取出来作为公共类使用。</li>
+<li>减少通配符 * 的使用，挨个查找所有… 这性能能好吗？</li>
+<li>巧妙运用 css 的继承机制，如果父节点定义了，子节点就无需定义。</li>
+<li>拆分出公共 css 文件，对于比较大的项目可以将大部分页面的公共结构样式提取出来放到单独 css 文件里，这样一次下载 后就放到缓存里，当然这种做法会增加请求，具体做法应以实际情况而定。</li>
+<li>不用 css 表达式，表达式只是让你的代码显得更加酷炫，但是对性能的浪费可能是超乎你想象的。</li>
+<li>少用 css rest，可能会觉得重置样式是规范，但是其实其中有很多操作是不必要不友好的，有需求有兴趣，可以选择 normolize.css。</li>
+<li>cssSprite，合成所有 icon 图片，用宽高加上 background-position 的背景图方式显现 icon 图，这样很实用，减少了 http 请求。</li>
+<li>构建工具 webpack，(在线压缩工具 YUI Compressor)，压缩之后能够明显减少，可以大大降低浏览器的加载时间。</li>
+</ul>
 <h3 id="css2d-转换"><a class="markdownIt-Anchor" href="#css2d-转换">#</a> CSS2D 转换</h3>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> ➡沿着x轴和y轴移动元素 px <span class="token function">translateX</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">scale</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> ➡.8<span class="token punctuation">,</span>.<span class="token function">8</span><span class="token punctuation">(</span>缩小<span class="token punctuation">)</span> <span class="token function">scaleX</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> 改变元素的高度和宽度<span class="token punctuation">(</span>缩放或扩大<span class="token punctuation">)</span>
@@ -890,6 +950,97 @@ BFC 决定了元素如何对其内容进行定位，以及与其他元素的关�
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>写过前端页面的我们肯定遇到过这种情况，这里其实是浮动元素叠在 .right 元素的上面，如果我们想让.right 元素不会延伸到 float 元素怎么办，其实我们在.right 元素上加 overflow:hidden（用其他的方式创建 BFC 也可以）创建 BFC 就可以解决。因为 BFC 不会与浮动元素发生重叠。</p>
 <p>还有一种情况很常见，就是由于子元素浮动，导致父元素的高度不会把浮动元素算在内，那么我们在父元素创建 BFC 就可以让可以让浮动元素也参与高度计算。</p>
+<h3 id="div-水平居中几种方法"><a class="markdownIt-Anchor" href="#div-水平居中几种方法">#</a> Div 水平居中几种方法</h3>
+<h4 id="1-flex-布局实现-元素已知宽度"><a class="markdownIt-Anchor" href="#1-flex-布局实现-元素已知宽度">#</a> 1. flex 布局实现 （元素已知宽度）</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- html代码 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>a<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- css代码  --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> -webkit-flex<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box .a</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-position-元素已知宽度"><a class="markdownIt-Anchor" href="#2-position-元素已知宽度">#</a> 2. position （元素已知宽度）</h4>
+<p>父元素设置为：position: relative; 子元素设置为：position: absolute; 距上 50%，据左 50%，然后减去元素自身宽度的一半距离就可以实现</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- HTML 代码： --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>a<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>love<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- CSS代码： --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box .a</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> -50px 0 0 -50px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-position-transform-元素未知宽度"><a class="markdownIt-Anchor" href="#3-position-transform-元素未知宽度">#</a> 3. position transform （元素未知宽度）</h4>
+<p>如果元素未知宽度，只需将上面例子中的  <code>margin: -50px 0 0 -50px;</code>  替换为： <code>transform: translate(-50%,-50%);</code></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- CSS 代码： --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box .a</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-position元素已知宽度"><a class="markdownIt-Anchor" href="#4-position元素已知宽度">#</a> 4. position（元素已知宽度）</h4>
+<p>（left，right，top，bottom 为 0，maigin：auto ）</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- HTML 代码： --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>a<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>love<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- CSS 代码： --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box .a</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1131,52 +1282,50 @@ BFC 决定了元素如何对其内容进行定位，以及与其他元素的关�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/17/css/">
+                <a href="/2021/05/18/java-script-shang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="css">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java Script 上">
                         
-                        <span class="card-title">css</span>
+                        <span class="card-title">Java Script 上</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。
+                            JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    前端基础
+                            <a href="/categories/Java-Script/" class="post-category">
+                                    Java Script
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
+                    <a href="/tags/Java-Script/">
+                        <span class="chip bg-color">Java Script</span>
                     </a>
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/js%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">js基础</span>
                     </a>
                     
                 </div>

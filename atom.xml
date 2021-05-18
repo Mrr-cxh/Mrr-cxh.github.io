@@ -6,7 +6,7 @@
   <link href="https://mrr-cxh.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrr-cxh.github.io/"/>
-  <updated>2021-05-17T10:21:26.920Z</updated>
+  <updated>2021-05-18T05:50:52.039Z</updated>
   <id>https://mrr-cxh.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>css</title>
-    <link href="https://mrr-cxh.github.io/2021/05/17/css/"/>
-    <id>https://mrr-cxh.github.io/2021/05/17/css/</id>
-    <published>2021-05-17T07:34:56.000Z</published>
-    <updated>2021-05-17T10:21:26.920Z</updated>
+    <title>Java Script 上</title>
+    <link href="https://mrr-cxh.github.io/2021/05/18/java-script-shang/"/>
+    <id>https://mrr-cxh.github.io/2021/05/18/java-script-shang/</id>
+    <published>2021-05-18T04:32:08.000Z</published>
+    <updated>2021-05-18T05:50:52.039Z</updated>
     
     
       
@@ -29,6 +29,34 @@
         
         
     <summary type="html">&lt;h2 id=&quot;概览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概览&quot;&gt;#&lt;/a&gt; 概览&lt;/h2&gt;
+&lt;p&gt;JavaScript（简称 “JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发 Web</summary>
+        
+      
+    
+    
+    
+    <category term="Java Script" scheme="https://mrr-cxh.github.io/categories/Java-Script/"/>
+    
+    
+    <category term="Java Script" scheme="https://mrr-cxh.github.io/tags/Java-Script/"/>
+    
+    <category term="js基础" scheme="https://mrr-cxh.github.io/tags/js%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css</title>
+    <link href="https://mrr-cxh.github.io/2021/05/17/css/"/>
+    <id>https://mrr-cxh.github.io/2021/05/17/css/</id>
+    <published>2021-05-17T07:34:56.000Z</published>
+    <updated>2021-05-18T04:20:51.365Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;概览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概览&quot;&gt;#&lt;/a&gt; 概览&lt;/h3&gt;
 &lt;p&gt;层叠样式表 (英文全称：Cascading Style Sheets) 是一种用来表现 HTML（标准通用标记语言的一个应用）或</summary>
         
       
