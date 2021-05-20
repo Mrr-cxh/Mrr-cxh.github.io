@@ -6,7 +6,7 @@
   <link href="https://mrr-cxh.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrr-cxh.github.io/"/>
-  <updated>2021-05-20T03:21:05.727Z</updated>
+  <updated>2021-05-20T13:19:37.248Z</updated>
   <id>https://mrr-cxh.github.io/</id>
   
   <author>
@@ -17,15 +17,226 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>操作系统</title>
+    <link href="https://mrr-cxh.github.io/2021/05/20/cao-zuo-xi-tong/"/>
+    <id>https://mrr-cxh.github.io/2021/05/20/cao-zuo-xi-tong/</id>
+    <published>2021-05-20T11:58:51.000Z</published>
+    <updated>2021-05-20T13:19:37.248Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;操作系统（operation system，简称</summary>
+        
+      
+    
+    
+    
+    <category term="基础" scheme="https://mrr-cxh.github.io/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="操作系统" scheme="https://mrr-cxh.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Js深入-变量对象</title>
+    <link href="https://mrr-cxh.github.io/2021/05/20/js-shen-ru-bian-liang-dui-xiang/"/>
+    <id>https://mrr-cxh.github.io/2021/05/20/js-shen-ru-bian-liang-dui-xiang/</id>
+    <published>2021-05-20T11:37:22.000Z</published>
+    <updated>2021-05-20T11:49:10.542Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;变量对象&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#变量对象&quot;&gt;#&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Java Script 深入" scheme="https://mrr-cxh.github.io/categories/Java-Script-%E6%B7%B1%E5%85%A5/"/>
+    
+    
+    <category term="Java Script" scheme="https://mrr-cxh.github.io/tags/Java-Script/"/>
+    
+    <category term="变量对象" scheme="https://mrr-cxh.github.io/tags/%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Js深入-继承</title>
+    <link href="https://mrr-cxh.github.io/2021/05/20/js-shen-ru-ji-cheng/"/>
+    <id>https://mrr-cxh.github.io/2021/05/20/js-shen-ru-ji-cheng/</id>
+    <published>2021-05-20T11:22:48.000Z</published>
+    <updated>2021-05-20T11:33:39.648Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;本文讲解 JavaScript 各种继承方式和优缺点。&lt;/p&gt;
+&lt;h2 id=&quot;1原型链继承&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java Script 深入" scheme="https://mrr-cxh.github.io/categories/Java-Script-%E6%B7%B1%E5%85%A5/"/>
+    
+    
+    <category term="Java Script" scheme="https://mrr-cxh.github.io/tags/Java-Script/"/>
+    
+    <category term="继承" scheme="https://mrr-cxh.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Js深入-原型链</title>
+    <link href="https://mrr-cxh.github.io/2021/05/20/js-shen-ru-yuan-xing-lian/"/>
+    <id>https://mrr-cxh.github.io/2021/05/20/js-shen-ru-yuan-xing-lian/</id>
+    <published>2021-05-20T11:01:08.000Z</published>
+    <updated>2021-05-20T11:31:00.132Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;构造函数创建对象&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#构造函数创建对象&quot;&gt;#&lt;/a&gt; 构造函数创建对象&lt;/h2&gt;
+&lt;p&gt;我们先使用构造函数创建一个对象：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="Java Script 深入" scheme="https://mrr-cxh.github.io/categories/Java-Script-%E6%B7%B1%E5%85%A5/"/>
+    
+    
+    <category term="Java Script" scheme="https://mrr-cxh.github.io/tags/Java-Script/"/>
+    
+    <category term="原型链" scheme="https://mrr-cxh.github.io/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MintUI</title>
+    <link href="https://mrr-cxh.github.io/2021/05/20/mintui/"/>
+    <id>https://mrr-cxh.github.io/2021/05/20/mintui/</id>
+    <published>2021-05-20T09:15:52.000Z</published>
+    <updated>2021-05-20T10:57:52.843Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;mintui&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#mintui&quot;&gt;#&lt;/a&gt; MintUi&lt;/h2&gt;
+&lt;p&gt;还有个移动端的 ui 库 (&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="MintUI" scheme="https://mrr-cxh.github.io/tags/MintUI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ElementUI</title>
+    <link href="https://mrr-cxh.github.io/2021/05/20/elementui/"/>
+    <id>https://mrr-cxh.github.io/2021/05/20/elementui/</id>
+    <published>2021-05-20T08:57:28.000Z</published>
+    <updated>2021-05-20T10:58:03.230Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;elementui-的使用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#elementui-的使用&quot;&gt;#&lt;/a&gt; ElementUI 的使用&lt;/h2&gt;
+&lt;p&gt;dj vue-element-demo&lt;br&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="ElementUI" scheme="https://mrr-cxh.github.io/tags/ElementUI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6</title>
+    <link href="https://mrr-cxh.github.io/2021/05/20/es6/"/>
+    <id>https://mrr-cxh.github.io/2021/05/20/es6/</id>
+    <published>2021-05-20T07:11:30.000Z</published>
+    <updated>2021-05-20T09:02:36.554Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;var-与-let-的区别&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#var-与-let-的区别&quot;&gt;#&lt;/a&gt; var 与 let 的区别&lt;/h2&gt;
+&lt;h3 id=&quot;let-自带块级作用域-代表块&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端基础" scheme="https://mrr-cxh.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="HTML" scheme="https://mrr-cxh.github.io/tags/HTML/"/>
+    
+    <category term="基础" scheme="https://mrr-cxh.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JQuery</title>
     <link href="https://mrr-cxh.github.io/2021/05/20/jquery/"/>
     <id>https://mrr-cxh.github.io/2021/05/20/jquery/</id>
     <published>2021-05-20T03:21:05.000Z</published>
-    <updated>2021-05-20T03:21:05.727Z</updated>
+    <updated>2021-05-20T07:06:03.226Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概览&quot;&gt;#&lt;/a&gt; 概览&lt;/h2&gt;
+&lt;p&gt;jQuery 是一个快速、简洁的 JavaScript 框架，是继 Prototype 之后又一个优秀的 JavaScript</summary>
+        
+      
     
     
     
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
     
+    
+    <category term="jQuery" scheme="https://mrr-cxh.github.io/tags/jQuery/"/>
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -34,7 +245,7 @@
     <link href="https://mrr-cxh.github.io/2021/05/20/node/"/>
     <id>https://mrr-cxh.github.io/2021/05/20/node/</id>
     <published>2021-05-20T03:20:50.000Z</published>
-    <updated>2021-05-20T03:29:45.644Z</updated>
+    <updated>2021-05-20T05:51:15.084Z</updated>
     
     
       
@@ -62,11 +273,30 @@
     <link href="https://mrr-cxh.github.io/2021/05/20/promise/"/>
     <id>https://mrr-cxh.github.io/2021/05/20/promise/</id>
     <published>2021-05-20T03:20:39.000Z</published>
-    <updated>2021-05-20T03:20:39.373Z</updated>
+    <updated>2021-05-20T05:54:09.421Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简单使用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#简单使用&quot;&gt;#&lt;/a&gt; 简单使用&lt;/h2&gt;
+&lt;pre class=&quot;line-numbers language-js&quot; data-language=&quot;js&quot;&gt;&lt;code</summary>
+        
+      
     
     
     
+    <category term="前端基础" scheme="https://mrr-cxh.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
     
+    <category term="数据请求" scheme="https://mrr-cxh.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/"/>
+    
+    
+    <category term="数据请求" scheme="https://mrr-cxh.github.io/tags/%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/"/>
+    
+    <category term="服务器" scheme="https://mrr-cxh.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Promise" scheme="https://mrr-cxh.github.io/tags/Promise/"/>
     
   </entry>
   
@@ -93,9 +323,9 @@
     <category term="项目搭建" scheme="https://mrr-cxh.github.io/categories/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
     
     
-    <category term="服务器" scheme="https://mrr-cxh.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
     <category term="Git" scheme="https://mrr-cxh.github.io/tags/Git/"/>
+    
+    <category term="服务器" scheme="https://mrr-cxh.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
@@ -326,29 +556,6 @@ Ajax 用来描述一种使用现有技术集合的‘新’方法，包括: HTML
     
     
     <category term="HTML" scheme="https://mrr-cxh.github.io/tags/HTML/"/>
-    
-    <category term="基础" scheme="https://mrr-cxh.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://mrr-cxh.github.io/2021/05/14/hello-world/"/>
-    <id>https://mrr-cxh.github.io/2021/05/14/hello-world/</id>
-    <published>2021-05-14T13:43:43.307Z</published>
-    <updated>2021-05-17T07:48:13.880Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
     <category term="基础" scheme="https://mrr-cxh.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
