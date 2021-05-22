@@ -6,7 +6,7 @@
   <link href="https://mrr-cxh.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrr-cxh.github.io/"/>
-  <updated>2021-05-20T13:20:22.602Z</updated>
+  <updated>2021-05-22T07:15:56.382Z</updated>
   <id>https://mrr-cxh.github.io/</id>
   
   <author>
@@ -17,11 +17,64 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>操作系统下</title>
+    <link href="https://mrr-cxh.github.io/2021/05/22/cao-zuo-xi-tong-xia/"/>
+    <id>https://mrr-cxh.github.io/2021/05/22/cao-zuo-xi-tong-xia/</id>
+    <published>2021-05-22T07:12:22.000Z</published>
+    <updated>2021-05-22T07:15:56.382Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;进程调度策略&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#进程调度策略&quot;&gt;#&lt;/a&gt; 进程调度策略&lt;/h2&gt;
+&lt;h3 id=&quot;一先来先服务调度算法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="基础" scheme="https://mrr-cxh.github.io/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="操作系统" scheme="https://mrr-cxh.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络</title>
+    <link href="https://mrr-cxh.github.io/2021/05/22/wang-luo/"/>
+    <id>https://mrr-cxh.github.io/2021/05/22/wang-luo/</id>
+    <published>2021-05-22T07:01:35.000Z</published>
+    <updated>2021-05-22T08:29:16.509Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;网络模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#网络模型&quot;&gt;#&lt;/a&gt; 网络模型&lt;/h2&gt;
+&lt;p&gt;OSI: open system interconnection 开放式系统互联参考模型&lt;br&gt;
+ OSI 和 TCP/IP</summary>
+        
+      
+    
+    
+    
+    <category term="基础" scheme="https://mrr-cxh.github.io/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="网络" scheme="https://mrr-cxh.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>操作系统</title>
     <link href="https://mrr-cxh.github.io/2021/05/20/cao-zuo-xi-tong/"/>
     <id>https://mrr-cxh.github.io/2021/05/20/cao-zuo-xi-tong/</id>
     <published>2021-05-20T11:58:51.000Z</published>
-    <updated>2021-05-20T13:20:22.602Z</updated>
+    <updated>2021-05-22T07:12:32.586Z</updated>
     
     
       
@@ -530,34 +583,6 @@ Ajax 用来描述一种使用现有技术集合的‘新’方法，包括: HTML
     <category term="基础" scheme="https://mrr-cxh.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
     <category term="浏览器" scheme="https://mrr-cxh.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML</title>
-    <link href="https://mrr-cxh.github.io/2021/05/16/html/"/>
-    <id>https://mrr-cxh.github.io/2021/05/16/html/</id>
-    <published>2021-05-16T10:47:20.000Z</published>
-    <updated>2021-05-19T05:12:20.125Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;概览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概览&quot;&gt;#&lt;/a&gt; 概览&lt;/h2&gt;
-&lt;p&gt;HTML 的全称为超文本标记语言，是一种标记语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的 Internet</summary>
-        
-      
-    
-    
-    
-    <category term="前端基础" scheme="https://mrr-cxh.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="HTML" scheme="https://mrr-cxh.github.io/tags/HTML/"/>
-    
-    <category term="基础" scheme="https://mrr-cxh.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
