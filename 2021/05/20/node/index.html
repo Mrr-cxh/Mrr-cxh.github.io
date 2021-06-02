@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -446,9 +446,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-05-20
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    668
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    2 分
+                </div>
                 
 
                 
@@ -498,30 +513,30 @@
 </ul>
 <h3 id="node-模块-的导入导出"><a class="markdownIt-Anchor" href="#node-模块-的导入导出">#</a> node 模块 的导入导出</h3>
 <p>index.js 文件</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//node 模块的导入方式</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// node 模块的导入方式</span>
 <span class="token comment">// 将模块分为三大类</span>
 
 <span class="token comment">// 1.node 核心模块，无需下载直接使用。导入的时候直接使用模块名称</span>
 <span class="token comment">/* var http = require("http");
 console.log(http); */</span>
 
-<span class="token comment">// 2. 第三方模块，使用 npm 工具下载的。导入的时候直接使用模块名称</span>
-<span class="token comment">//jquery 下载之后才能导入 (从 packgage.json 中判断是否下载)</span>
+<span class="token comment">// 2.第三方模块，使用 npm 工具下载的。导入的时候直接使用模块名称</span>
+<span class="token comment">// jquery 下载之后才能导入(从 packgage.json 中判断是否下载)</span>
 <span class="token comment">/* let $ = require("jquery");
 console.log($); */</span>
 
-<span class="token comment">// 3. 自定义模块，就是新建的 js 文件。导入的需要使用相对路径</span>
-<span class="token comment">//js 模块导入的时候可以省略后缀 (.js)</span>
+<span class="token comment">// 3.自定义模块，就是新建的 js 文件。导入的需要使用相对路径</span>
+<span class="token comment">// js 模块导入的时候可以省略后缀(.js)</span>
 <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./about"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>about.js 文件</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
-<span class="token comment">//node 模块的导出</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> a<span class="token punctuation">;</span> <span class="token comment">// 导出的是 100</span>
+<span class="token comment">// node 模块的导出</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> a<span class="token punctuation">;</span> <span class="token comment">//导出的是100</span>
 <span class="token comment">// 导出多个用对象</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">,</span> b <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 导出的是对象 {a: 100, b: 200}</span>
-<span class="token comment">//module.exports 下边的会覆盖上边的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">,</span> b <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">//导出的是对象{ a: 100, b: 200 }</span>
+<span class="token comment">// module.exports下边的会覆盖上边的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="简单命令"><a class="markdownIt-Anchor" href="#简单命令">#</a> 简单命令</h3>
 <p>作为 node 项目，可以直接使用 package.json 内的 script 字段设置该项目的命令行简化命令，使用 npm 替你去执行一些命令</p>
 <p>package.json</p>
@@ -1089,6 +1104,9 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">72.1k</span>
             
             
             

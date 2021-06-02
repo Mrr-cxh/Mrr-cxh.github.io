@@ -376,9 +376,9 @@
     <category term="项目搭建" scheme="https://mrr-cxh.github.io/categories/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
     
     
-    <category term="Git" scheme="https://mrr-cxh.github.io/tags/Git/"/>
-    
     <category term="服务器" scheme="https://mrr-cxh.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Git" scheme="https://mrr-cxh.github.io/tags/Git/"/>
     
   </entry>
   
@@ -438,9 +438,9 @@ Ajax 用来描述一种使用现有技术集合的‘新’方法，包括: HTML
     <category term="Java Script" scheme="https://mrr-cxh.github.io/categories/Java-Script/"/>
     
     
-    <category term="Java Script" scheme="https://mrr-cxh.github.io/tags/Java-Script/"/>
-    
     <category term="数据请求" scheme="https://mrr-cxh.github.io/tags/%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/"/>
+    
+    <category term="Java Script" scheme="https://mrr-cxh.github.io/tags/Java-Script/"/>
     
   </entry>
   
@@ -478,7 +478,7 @@ Ajax 用来描述一种使用现有技术集合的‘新’方法，包括: HTML
     <link href="https://mrr-cxh.github.io/2021/05/18/java-script-2.0-shu-zu-zhuan-lan/"/>
     <id>https://mrr-cxh.github.io/2021/05/18/java-script-2.0-shu-zu-zhuan-lan/</id>
     <published>2021-05-18T07:33:18.000Z</published>
-    <updated>2021-05-19T02:27:08.803Z</updated>
+    <updated>2021-05-22T09:47:57.001Z</updated>
     
     
       
