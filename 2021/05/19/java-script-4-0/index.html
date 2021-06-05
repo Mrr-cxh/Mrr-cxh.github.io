@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-20
+                    2021-06-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.3k
+                    6.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    26 分
+                    27 分
                 </div>
                 
 
@@ -1135,6 +1135,39 @@ document<span class="token punctuation">.</span><span class="token function">que
 document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".search"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>oninput <span class="token operator">=</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>ts 防抖写法</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">// 防抖
+// 1. 存储事件触发时的时间作比较  event.timeStamp
+// 2. 利用 setTimeout 触发事件,根据上一个 setTimeout 是否执行完毕
+function debounce(fn: Function, delay: number) {
+  let timer: number = 0;
+  /*  return function() {
+    // 因为要给 onclick 赋值，所以必须写成函数
+    if (timer !== 0) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(fn, delay);
+  }; */
+  return function () {
+    const that = this;
+    const args = arguments;
+    if (timer !== 0) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(function () {
+      fn.apply(that);
+    }, delay);
+  };
+}
+
+// function showTop() {
+function showTop(event: any) {
+  var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+  console.log("滚动条位置" + scrollTop);
+  console.log(this);
+  console.log(event);
+}
+document.body.onclick = debounce(showTop, 500);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="__proto__"><a class="markdownIt-Anchor" href="#__proto__">#</a> __proto__</h3>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">当对对象进行拷贝的时候对象内的 __proto__ 属性是不可以拷贝的
 
@@ -1830,7 +1863,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">72.1k</span>
+                        class="white-color">72.3k</span>
             
             
             
