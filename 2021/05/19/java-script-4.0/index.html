@@ -1281,38 +1281,38 @@ document<span class="token punctuation">.</span><span class="token function">que
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>TypeScript 防抖写法</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">// 防抖
-// 1. 存储事件触发时的时间作比较  event.timeStamp
-// 2. 利用 setTimeout 触发事件,根据上一个 setTimeout 是否执行完毕
-function debounce(fn: Function, delay: number) {
-  let timer: number = 0;
-  /*  return function() {
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 防抖</span>
+<span class="token comment">// 1. 存储事件触发时的时间作比较  event.timeStamp</span>
+<span class="token comment">// 2. 利用 setTimeout 触发事件,根据上一个 setTimeout 是否执行完毕</span>
+<span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token operator">:</span> Function<span class="token punctuation">,</span> delay<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> timer<span class="token operator">:</span> number <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token comment">/*  return function() {
     // 因为要给 onclick 赋值，所以必须写成函数
     if (timer !== 0) {
       clearTimeout(timer);
     }
     timer = setTimeout(fn, delay);
-  }; */
-  return function () {
-    const that = this;
-    const args = arguments;
-    if (timer !== 0) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(function () {
-      fn.apply(that, args);
-    }, delay);
-  };
-}
+  }; */</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> args <span class="token operator">=</span> arguments<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timer <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>that<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// function showTop() {
-function showTop(event: any) {
-  var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-  console.log("滚动条位置" + scrollTop);
-  console.log(this);
-  console.log(event);
-}
-document.body.onclick = debounce(showTop, 500);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// function showTop() {</span>
+<span class="token keyword">function</span> <span class="token function">showTop</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> scrollTop <span class="token operator">=</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"滚动条位置"</span> <span class="token operator">+</span> scrollTop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>onclick <span class="token operator">=</span> <span class="token function">debounce</span><span class="token punctuation">(</span>showTop<span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1863,7 +1863,7 @@ document.body.onclick = debounce(showTop, 500);<span aria-hidden="true" class="l
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">72.3k</span>
+                        class="white-color">89.3k</span>
             
             
             
