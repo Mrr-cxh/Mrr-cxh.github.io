@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-05
+                    2021-06-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    11 分
                 </div>
                 
 
@@ -753,6 +753,39 @@ windows 查找文件：我的电脑<span class="token operator">-</span>用户<s
 <li>
 <p>切换到 main 分支，合并 bbb 分支的更新  <code>git merge bbb</code> ，然后上传  <code>git push</code></p>
 </li>
+</ul>
+<h4 id="8vue-部署"><a class="markdownIt-Anchor" href="#8vue-部署">#</a> 8.vue 部署</h4>
+<p>因为都是单页面应用，如果用了路由的话，分两种情况。<br>
+情况一：使用路由的 hash 模式</p>
+<ul>
+<li>将 mode 改成 hash</li>
+<li>如果部署的服务器地址是带路径的，比如  <code>https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;/</code> ，就是要部署到 GitHub 的 gh-pages。需要给 vue 项目添加一个 publicPath 配置
+<ul>
+<li>在项目根目录新建 vue.confing.js，这个文件是 vue 的配置文件，会自动和项目原配置合并</li>
+<li>根据服务器地址修改对应的 publicPath</li>
+</ul>
+</li>
+<li>重启项目，保证本地运行项目没问题</li>
+<li>打包成品到本地 执行  <code>npm run build</code></li>
+<li>npm i -g serve 能够在本地搭载一个小型服务器 (没下载 serve 需要下载 serve)</li>
+<li>在 dist 文件夹下起一个本地服务，项目可以正常运行</li>
+<li>将 dist 文件夹的所有内容 serve . 挂载到服务器上</li>
+<li>上传完毕后，直接使用服务器网址访问即可</li>
+</ul>
+<p>情况二：使用路由的 history 模式，此模式的时候必须对部署的服务器进行部署，所有地址全部指向根目录的 index.html</p>
+<h4 id="9github-部署-vue-项目的时候借助-gh-pages-工具包自动更新-gh-pages-分支"><a class="markdownIt-Anchor" href="#9github-部署-vue-项目的时候借助-gh-pages-工具包自动更新-gh-pages-分支">#</a> 9.GitHub 部署 vue 项目的时候借助 gh-pages 工具包，自动更新 gh-pages 分支</h4>
+<ul>
+<li>项目内安装 gh-pages 包  <code>npm i gh-pages --save-dev</code></li>
+<li>在 package.json scripts 字段添加一个 deploy 如下所示，作用是将项目根目录内下的 dist 内的所有内容上传到 gh-pages 分支<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"serve"</span><span class="token operator">:</span> <span class="token string">"vue-cli-service serve"</span><span class="token punctuation">,</span>
+  <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"vue-cli-service build"</span><span class="token punctuation">,</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"vue-cli-service lint"</span><span class="token punctuation">,</span>
+  <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token string">"gh-pages -d dist"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>对你的项目进行本地更新，打包编译  <code>npm run build</code></li>
+<li>将对项目修改的源码更新到 main 分支 (git 三连)</li>
+<li>直接可以使用 <code>npm run deploy</code>  自动更新 gh-pages , 在 main 中运行</li>
 </ul>
 
                 
@@ -1312,7 +1345,7 @@ windows 查找文件：我的电脑<span class="token operator">-</span>用户<s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">89.3k</span>
+                        class="white-color">122.9k</span>
             
             
             

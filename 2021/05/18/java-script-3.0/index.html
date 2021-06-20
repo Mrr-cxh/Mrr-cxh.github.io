@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-19
+                    2021-06-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7k
+                    7.1k
                 </div>
                 
 
@@ -838,7 +838,19 @@ m  换行匹配  【注】如果在字符串，遇到换行，重新开始计算
 <span class="token punctuation">(</span><span class="token punctuation">)</span> 分组
 <span class="token function">分组内的一个特殊写法</span>   <span class="token punctuation">(</span><span class="token operator">?</span><span class="token operator">=</span>x<span class="token punctuation">)</span>  后面紧跟着 x 的
 <span class="token keyword">var</span> re2 <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a(?=[ab])</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>re2<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"abaac"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>re2<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"abaac"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+
+<span class="token comment">// replace 后边跟函数案例</span>
+<span class="token keyword">function</span> <span class="token function">template</span><span class="token punctuation">(</span><span class="token parameter">templateStr<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 这里的 \$ 是转义 $</span>
+  <span class="token keyword">const</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\${([a-zA-Z]+)}</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+  <span class="token comment">// 有几个分组就写几个 b，从 b 依次类推</span>
+  <span class="token keyword">return</span> templateStr<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>re<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// a:匹配的字符串  b:分组(正则的分组())匹配到的  没有分组的话指的是开始匹配的索引</span>
+    <span class="token comment">// console.log(a, b);</span>
+    <span class="token keyword">return</span> data<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="方法"><a class="markdownIt-Anchor" href="#方法">#</a> 方法</h3>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">test
 格式：正则<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>字符串<span class="token punctuation">)</span>
@@ -2005,7 +2017,7 @@ window<span class="token punctuation">.</span><span class="token function-variab
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">89.3k</span>
+                        class="white-color">122.9k</span>
             
             
             
