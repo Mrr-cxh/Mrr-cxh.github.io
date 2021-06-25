@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-19
+                    2021-06-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    1.9k
                 </div>
                 
 
@@ -484,14 +484,10 @@
 <p>HTML 的全称为超文本标记语言，是一种标记语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的 Internet 资源连接为一个逻辑整体。HTML 文本是由 HTML 命令组成的描述性文本，HTML 命令可以说明文字，图形、动画、声音、表格、链接等。</p>
 <h2 id="html-标签"><a class="markdownIt-Anchor" href="#html-标签">#</a> HTML 标签</h2>
 <h3 id="效果及注意点"><a class="markdownIt-Anchor" href="#效果及注意点">#</a> 效果及注意点</h3>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>: 段落文字，忽略连续多个空格，不显示空行且不换行<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>: 段落文字，忽略连续多个空格，不显示空行且不换行
 块元素不能放在<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>里面
-p标签不能包含p标签和div标签
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span>:预留格式,一般和 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>混用 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>:行内组合，利用CSS改变样式(比如文中一部分换颜色)
-       行内样式，会和其他行元素在一行，改变需要转成块元素
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span>:预留格式,一般和 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>混用
 
 超链接 href是链接地址,_blank是新页面跳转
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>文字或图片<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
@@ -508,16 +504,11 @@ a:active 链接被点击的时刻
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>del</span><span class="token punctuation">&gt;</span></span>打折 在原价上有一道横线
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ins</span><span class="token punctuation">&gt;</span></span>500元 500元下边有一道横线
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle(空心圆) square(空心方块)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>无序列表
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>a<span class="token punctuation">"</span></span> <span class="token attr-name">"i"</span> <span class="token attr-name">"1(默认)"</span><span class="token punctuation">&gt;</span></span>有序列表
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>列表项
-
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>表格
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>行
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>列(表示n个单元格)
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>表头(会加粗显示)
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">cellspacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>0(单元格空隙)</span><span class="token punctuation">&gt;</span></span>
-col:列属性 colspan:跨列并用 rowspan:跨行并用 col,colspan,rowspan:简历
 
 表单
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>提交的URL地址<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>get/post<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -534,13 +525,11 @@ checkbox:复选框 name属性可以不同
 
 select:下拉列表框
 option:下拉列表项 默认选择要将selected属性设为selected
-placeholder: 为提示信息，当有焦点时会消失
+
 submit:提交按钮 用value属性改文本文字
 
-文本框中可以用 text-indent 来控制placeholder 的位置，
-也可以用padding来控制placeholder或其他的位置，然后在width中减去相对应的值
-文本框在登陆页面中可以不用 margin:0 auto 来控制，可以给文本框外的盒子padding值来撑开
-获取验证码可用按钮来做 注册可用submit来做<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+文本框中可以用 text-indent 来控制 placeholder 的位置，
+也可以用padding来控制placeholder或其他的位置，然后在width中减去相对应的值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="制作一个别样的-checkbox复选框"><a class="markdownIt-Anchor" href="#制作一个别样的-checkbox复选框">#</a> 制作一个别样的 checkbox (复选框)</h3>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-check<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
  <span class="token comment">&lt;!-- 当label内的for和input的id相同的时候点击label就相当于点击了input --&gt;</span>
@@ -571,19 +560,18 @@ submit:提交按钮 用value属性改文本文字
   <span class="token attr-name">muted</span>
   <span class="token attr-name">loop</span>
 <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">&gt;</span></span>
-controls 显示控件 autoplay 自动播放 谷歌浏览器要求静音时才可以自动播放 muted
-静音 poster 封面 loop 循环播放<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+controls 显示控件 autoplay 自动播放(谷歌浏览器要求静音时才可以自动播放)
+muted静音 poster 封面 loop 循环播放<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="音频"><a class="markdownIt-Anchor" href="#音频">#</a> 音频</h3>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./music/Alan Walker - Faded.mp3<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span> <span class="token attr-name">muted</span> <span class="token attr-name">loop</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./music/Alan Walker - Faded.mp3<span class="token punctuation">"</span></span> <span class="token attr-name">autoplay</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">&gt;</span></span>
-背景音乐 自动播放但是有些浏览器不支持，比如谷歌
-目前只能用点击文档之类有交互的事件进行背景音乐播放<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+背景音乐自动播放,但是有些浏览器不支持，比如谷歌<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="行内元素块级元素"><a class="markdownIt-Anchor" href="#行内元素块级元素">#</a> 行内元素 &amp; 块级元素</h2>
 <h4 id="粗通皮毛"><a class="markdownIt-Anchor" href="#粗通皮毛">#</a> 粗通皮毛</h4>
 <p>行内元素有：<br>
-a, span, label, strong, em, br, img, input, select, textarea, cite,<br>
+a, span, label, strong, em, img, input, select, textarea<br>
  块级元素：<br>
-div, h1~h6, p, form, ul, li, ol, dl, address, hr, menu, table, fieldset</p>
+div, h1~h6, p, form, ul, li, ol, table</p>
 <h4 id="驾轻就熟"><a class="markdownIt-Anchor" href="#驾轻就熟">#</a> 驾轻就熟</h4>
 <ul>
 <li>
@@ -669,7 +657,7 @@ div, h1~h6, p, form, ul, li, ol, dl, address, hr, menu, table, fieldset</p>
 <span class="token punctuation">}</span> <span class="token comment">/*DIV父容器设置宽度*/</span>
 
 <span class="token selector">div p</span> <span class="token punctuation">{</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span> 0 aut0<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
   <span class="token property">line-height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span> <span class="token comment">/*块级元素p也可以加个宽度， 以达到相对于DIV父容器的水平居中效果*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -680,17 +668,17 @@ div, h1~h6, p, form, ul, li, ol, dl, address, hr, menu, table, fieldset</p>
 <h4 id="返璞归真"><a class="markdownIt-Anchor" href="#返璞归真">#</a> 返璞归真</h4>
 <p>在标准文档流里面，块级元素具有以下特点：</p>
 <ul>
-<li>① 总是在新行上开始，占据一整行；</li>
-<li>② 高度，行高以及外边距和内边距都可控制；</li>
-<li>③ 宽带始终是与浏览器宽度一样，与内容无关；</li>
-<li>④ 它可以容纳内联元素和其他块元素。</li>
+<li>总是在新行上开始，占据一整行；</li>
+<li>高度，行高以及外边距和内边距都可控制；</li>
+<li>宽度始终是与父元素宽度一样，与内容无关；</li>
+<li>它可以容纳内联元素和其他块元素。</li>
 </ul>
 <p>行内元素的特点：</p>
 <ul>
-<li>① 和其他元素都在一行上；</li>
-<li>② 高，行高及外边距和内边距部分可改变；</li>
-<li>③ 宽度只与内容有关；</li>
-<li>④ 行内元素只能容纳文本或者其他行内元素。<br>
+<li>和其他元素都在一行上；</li>
+<li>高，行高及外边距和内边距部分可改变；</li>
+<li>宽度只与内容有关；</li>
+<li>行内元素只能容纳文本或者其他行内元素。<br>
 不可以设置宽高，其宽度随着内容增加，高度随字体大小而改变，内联元素可以设置外边界，但是外边界不对上下起作用，只能对左右起作用，也可以设置内边界，但是内边界在 ie6 中不对上下起作用，只能对左右起作用</li>
 </ul>
 <p>本文节选自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yc8930143/p/7237456.html">https://www.cnblogs.com/yc8930143/p/7237456.html</a></p>
@@ -1237,7 +1225,7 @@ div, h1~h6, p, form, ul, li, ol, dl, address, hr, menu, table, fieldset</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">122.9k</span>
+                        class="white-color">121.9k</span>
             
             
             

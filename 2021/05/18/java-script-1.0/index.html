@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-16
+                    2021-06-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    3.6k
                 </div>
                 
 
@@ -480,17 +480,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概览"><a class="markdownIt-Anchor" href="#概览">#</a> 概览</h2>
-<p>JavaScript（简称 “JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发 Web 页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。</p>
-<h2 id="变量"><a class="markdownIt-Anchor" href="#变量">#</a> 变量</h2>
+                <h2 id="变量"><a class="markdownIt-Anchor" href="#变量">#</a> 变量</h2>
 <ul>
-<li>创建变量必须使用 关键字 声明 = 赋值，将变量右面的值赋值给符号左面</li>
-<li>变量的命名规范：只能用 数字 字母 下划线 $ 构成，其中不能以数字开头</li>
-<li>不能使用关键字和保留字命名 (关键字就是 js 本身的语法使用的关键字，保留字是 js 下一个版本可能被当做关键字的词)</li>
-<li>语义化命名</li>
-<li>小驼峰 多个单词组合后面的首字母大写</li>
-<li>变量未声明就使用就报错 xx is not defined</li>
-<li>事件外声明的变量事件内可以获取，事件内声明 (var) 的变量事件外不能获取</li>
+<li>
+<p>创建变量必须使用  <code>关键字</code>  声明  <code>=</code>  赋值，将变量右面的值赋值给符号左面</p>
+</li>
+<li>
+<p>变量的命名规范：只能用  <code>数字</code>   <code>字母</code>   <code>下划线</code>   <code>$</code>  构成，其中不能以 <code>数字</code> 开头</p>
+</li>
+<li>
+<p>不能使用关键字和保留字命名 (关键字就是 js 本身的语法使用的关键字，保留字是 js 下一个版本可能被当做关键字的词)</p>
+</li>
+<li>
+<p>语义化命名</p>
+</li>
+<li>
+<p>小驼峰 多个单词组合后面的首字母大写</p>
+</li>
+<li>
+<p>变量未声明就使用就报错 xx is not defined</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>aa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// aa is not defined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>事件外声明的变量事件内可以获取，事件内声明 (var) 的变量事件外不能获取</p>
+</li>
 </ul>
 <h2 id="let-和-var-的区别"><a class="markdownIt-Anchor" href="#let-和-var-的区别">#</a> let 和 var 的区别</h2>
 <ul>
@@ -519,13 +533,14 @@
 <span class="token keyword">var</span> age<span class="token punctuation">;</span> <span class="token comment">// Uncaught SyntaxError: Identifier 'age' has already been declared</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>
-<p>全局声明：与 var 关键字不同，使用 let 在全局作用域中声明的变量不会成为 window 对象的属性（var 声明的变量则会）。</p>
+<p>全局声明：与 var 关键字不同，使用 let 在全局作用域中声明的变量不会成为 window 对象的属性（var 声明的变量则会）。<br>
+不过，let 声明仍然是在全局作用域中发生的，相应变量会在页面的生命周期内存续.<br>
+ 因此，为了避免 SyntaxError，必须确保页面不会重复声明同一个变量。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"Matt"</span><span class="token punctuation">;</span>
 consoloe<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"Matt"</span>
 <span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">;</span>
-consoloe<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>不过，let 声明仍然是在全局作用域中发生的，相应变量会在页面的生命周期内存续.<br>
- 因此，为了避免 SyntaxError，必须确保页面不会重复声明同一个变量。</p>
+consoloe<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//undefined</span>
+<span class="token comment">// 访问对象下不存在的属性也会拿到 undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h2 id="const-声明常量关键字"><a class="markdownIt-Anchor" href="#const-声明常量关键字">#</a> const 声明常量关键字</h2>
@@ -534,34 +549,22 @@ alert(IP);<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <h2 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型">#</a> 数据类型</h2>
 <p>分为基本数据类型 (string,number,boolean,undefind,null,symbol) 和引用数据类型 (obj,array,function)<br>
  undefined 的意思是 变量声明未赋值就使用会得到 undefined, 不会创建该变量 只是用来查错</p>
-<h4 id="undefined"><a class="markdownIt-Anchor" href="#undefined">#</a> undefined</h4>
+<h3 id="undefined"><a class="markdownIt-Anchor" href="#undefined">#</a> undefined</h3>
 <p>访问对象下不存在的属性也会拿到 undefined</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> x<span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//undefined</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>fs<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//undefined</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fs<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//fs is not defined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="nan"><a class="markdownIt-Anchor" href="#nan">#</a> NaN</h4>
+<h3 id="nan"><a class="markdownIt-Anchor" href="#nan">#</a> NaN</h3>
 <p>not a number 当进行了错误的数学运算结果就会是 NaN，NaN 依然是属于数字类型<br>
 用 Number.isNaN () 方法判断一个值是否是 NaN</p>
-<h4 id="检测数据类型方法"><a class="markdownIt-Anchor" href="#检测数据类型方法">#</a> 检测数据类型方法</h4>
-<h5 id="typeof"><a class="markdownIt-Anchor" href="#typeof">#</a> typeof</h5>
-<p>数据类型的基础检测方法 (typeof 数据) 会得到该数据的数据类型 (使用英文字符串表示的)</p>
+<h3 id="检测数据类型方法"><a class="markdownIt-Anchor" href="#检测数据类型方法">#</a> 检测数据类型方法</h3>
+<h4 id="typeof"><a class="markdownIt-Anchor" href="#typeof">#</a> typeof</h4>
+<p>数据类型的基础检测方法 (typeof 数据) 会得到该数据的数据类型 ( <code>使用英文字符串表示的</code> )</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num1 <span class="token operator">=</span> <span class="token number">10</span>；
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> num1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//number</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h5 id="instanceof"><a class="markdownIt-Anchor" href="#instanceof">#</a> instanceof</h5>
-<p>typeof 在判断一个 object 的数据的时候只能告诉我们这个数据是 object, 而不能细致的具体到是哪一种 object,</p>
-<p>要想判断一个数据具体是哪一种 object 的时候 (来判断对象的具体类型)，我们需要利用 instanceof 这个操作符来判断<br>
-其实 instanceof 主要的作用就是判断一个实例是否属于某种类型<br>
- instanceof 的实现原理就是只要右边变量的 prototype 在左边变量的原型链上即可。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">typeof</span> s <span class="token operator">===</span> <span class="token string">"object"</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
-s <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
-
-<span class="token keyword">let</span> <span class="token function-variable function">person</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> nicole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-nicole <span class="token keyword">instanceof</span> <span class="token class-name">person</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="objectprototypetostringcall"><a class="markdownIt-Anchor" href="#objectprototypetostringcall">#</a> Object.prototype.toString.call()</h5>
+<h4 id="objectprototypetostringcall"><a class="markdownIt-Anchor" href="#objectprototypetostringcall">#</a> Object.prototype.toString.call()</h4>
 <p>还有一个不错的判断类型的方法，就是 Object.prototype.toString.call ()<br>
  我们可以利用这个方法来对一个变量的类型来进行比较准确的判断</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "[object Number]"</span>
@@ -581,15 +584,25 @@ nicole <span class="token keyword">instanceof</span> <span class="token class-na
 <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "[object Undefined]"</span>
 
 <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "[object Symbol]"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="instanceof"><a class="markdownIt-Anchor" href="#instanceof">#</a> instanceof</h4>
+<p><code>instanceof</code>  主要用来判断时哪个构造函数 (实例) 的，其实  <code>instanceof</code>  主要的作用就是判断一个实例是否属于某种类型<br>
+ <code>instanceof</code>  的实现原理就是只要  <code>左边变量的原型链</code> 上有  <code>右边变量的 prototype</code>  即可。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> s <span class="token operator">===</span> <span class="token string">"object"</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+s <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+<span class="token keyword">let</span> <span class="token function-variable function">person</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> nicole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+nicole <span class="token keyword">instanceof</span> <span class="token class-name">person</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="字符串转数字"><a class="markdownIt-Anchor" href="#字符串转数字">#</a> 字符串转数字</h2>
 <h3 id="1隐式自动转换"><a class="markdownIt-Anchor" href="#1隐式自动转换">#</a> 1. 隐式 (自动) 转换</h3>
 <ul>
 <li>
-<p>* - / % 会自动将符号左右的非数字转化为数字再运算<br>
-转化的规则是整体看是否可以变成数字，可以的话就转换成数字，不可以就变成 NaN</p>
+<p><code>*</code>   <code>-</code>   <code>/</code>   <code>%</code>  会自动将符号左右的非数字转化为数字再运算<br>
+转化的规则是 <code>整体看是否可以变成数字</code> ，可以的话就转换成数字，不可以就变成 NaN</p>
 </li>
 <li>
-<p>+ 只要符号左右出现了字符串，就会将不是字符串的数据转化为字符串，然后实现拼接运算</p>
+<p><code>+</code>  只要符号左右出现了字符串，就会将不是字符串的数据转化为字符串，然后实现拼接运算</p>
 </li>
 </ul>
 <h3 id="2使用-js-的三种方法"><a class="markdownIt-Anchor" href="#2使用-js-的三种方法">#</a> 2. 使用 js 的三种方法</h3>
@@ -614,18 +627,18 @@ console<span class="token punctuation">.</span><span class="token function">log<
 num <span class="token operator">=</span> num<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//string</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="转换为布尔值"><a class="markdownIt-Anchor" href="#转换为布尔值">#</a> 转换为布尔值</h2>
-<p>转化为布尔值 对数字而言：非 0 为真， 0 为假<br>
-<b>注意：</b>只有 数字 0，空字符串，null，undefined，NaN 这些值转化为布尔值的时候是 false<br>
- 其余的都是 true</p>
+<p>转化为布尔值 对数字而言: <code>非 0 为真，0 为假</code> <br>
+<b>注意：只有 数字 0，空字符串，null，undefined，NaN 这些值转化为布尔值的时候是 false</b><br>
+<b>其余的都是 true</b></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Boolean</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="运算符"><a class="markdownIt-Anchor" href="#运算符">#</a> 运算符</h2>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">+</span> <span class="token operator">-</span> <span class="token operator">*</span> <span class="token operator">/</span> <span class="token operator">%</span> <span class="token operator">=</span><span class="token punctuation">(</span>赋值<span class="token punctuation">)</span>
 
 <span class="token operator">&gt;</span> <span class="token operator">&lt;</span> <span class="token operator">&gt;=</span> <span class="token operator">&lt;=</span> <span class="token operator">==</span> <span class="token operator">===</span> <span class="token operator">!=</span> <span class="token operator">!==</span>
 <span class="token operator">==</span> 和 <span class="token operator">===</span>
-判断是否相等<span class="token punctuation">,</span>后者要求高必须满足值和类型都相同<span class="token punctuation">,</span>以后判断必须都使用<span class="token operator">===</span>
+判断是否相等<span class="token punctuation">,</span>后者要求高必须满足值和类型都相同
 <span class="token operator">!=</span> 和 <span class="token operator">!==</span>
-判断不相等<span class="token punctuation">,</span><span class="token function">始终认为不同类型的数据是不同的</span><span class="token punctuation">(</span>不可以比较的<span class="token punctuation">)</span><span class="token punctuation">,</span>然后判断值 先判断类型<span class="token punctuation">,</span>再判断值
+判断不相等<span class="token punctuation">,</span><span class="token function">始终认为不同类型的数据是不同的</span><span class="token punctuation">(</span>不可以比较的<span class="token punctuation">)</span> 先判断类型<span class="token punctuation">,</span>再判断值
 
 <span class="token operator">&amp;&amp;</span> <span class="token operator">||</span><span class="token punctuation">(</span>回车上边的<span class="token punctuation">)</span> ！
 
@@ -668,10 +681,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="switch-语句"><a class="markdownIt-Anchor" href="#switch-语句">#</a> switch 语句</h3>
 <p>switch 语句也属于判断<br>
-每有一种条件就设置一个 case, 而且判断成功的语句后面必须加上 break 关键字用于跳出 switch<br>
-switch 括号里的应是判断变量<br>
- case 后边加的是可能值 要加冒号<br>
- switch 语句的判断使用的是 ===</p>
+每有一种条件就设置一个  <code>case</code> , 而且判断成功的语句后面必须加上  <code>break</code>  关键字用于跳出 switch<br>
+switch  <code>括号里</code> 的应是判断 <code>变量</code> <br>
+ case 后边加的是可能值 要加 <code>冒号</code> <br>
+ switch 语句的判断使用的是  <code>===</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> day <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token keyword">switch</span> <span class="token punctuation">(</span>day<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// 当day等于1的时候</span>
@@ -715,7 +728,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span class="token keyword">while</span><span class="token punctuation">(</span>条件<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="object-对象"><a class="markdownIt-Anchor" href="#object-对象">#</a> Object 对象</h2>
 <p>对象 (object)： 属性的无序集合<br>
- delete 方法，删除对象的属性</p>
+ <code>delete</code>  方法，删除对象的属性</p>
 <h3 id="object-语法"><a class="markdownIt-Anchor" href="#object-语法">#</a> object 语法</h3>
 <p 属性名:属性值,属性名:属性值,...=""></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> goods <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -723,17 +736,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
   price<span class="token operator">:</span> <span class="token number">9999</span><span class="token punctuation">,</span>
   inventory<span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>goods<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> name <span class="token operator">=</span> goods<span class="token punctuation">.</span>goodsName<span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
 <span class="token comment">//对象属性的修改</span>
 goods<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">9000</span><span class="token punctuation">;</span>
 
 <span class="token comment">//直接给新的属性赋值就是添加新属性</span>
 goods<span class="token punctuation">.</span>imgSrc <span class="token operator">=</span> <span class="token string">"https://img1.360buyimg.com/n6/jfs/t1.jpg"</span><span class="token punctuation">;</span>
 <span class="token comment">//使用 delete 关键字删除某个属性</span>
-<span class="token keyword">delete</span> goods<span class="token punctuation">.</span>imgSrc<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">delete</span> goods<span class="token punctuation">.</span>imgSrc<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="创建一个小猫对象"><a class="markdownIt-Anchor" href="#创建一个小猫对象">#</a> 创建一个小猫对象</h3>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> cat <span class="token operator">=</span> <span class="token punctuation">{</span>
   name<span class="token operator">:</span> <span class="token string">"大花"</span><span class="token punctuation">,</span>
@@ -768,7 +777,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">var</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="date-对象方法"><a class="markdownIt-Anchor" href="#date-对象方法">#</a> Date 对象方法</h3>
 <h4 id="var-date-new-date"><a class="markdownIt-Anchor" href="#var-date-new-date">#</a> var date = new Date();</h4>
-<p>下述的变量 date 是这里定义的</p>
+<p><b>下述的变量 date 是这里定义的</b></p>
 <h4 id="getfullyear-获取年份"><a class="markdownIt-Anchor" href="#getfullyear-获取年份">#</a> getFullYear () 获取年份</h4>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> year <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="getmonth-011-获取月份"><a class="markdownIt-Anchor" href="#getmonth-011-获取月份">#</a> getMonth () 0——11 获取月份</h4>
@@ -814,13 +823,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token comment">/* 系统给我们的不一定是最好的，最好是自定义 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="number-对象"><a class="markdownIt-Anchor" href="#number-对象">#</a> Number 对象</h2>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span> <span class="token function">toFixed</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>   将数字转化成字符串并保留几位小数  四舍五入
-<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<p><b>toFixed (n) 将数字转化成字符串并保留几位小数 四舍五入</b></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> str <span class="token operator">=</span> num<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token comment">//10.00</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//10.00</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="string-对象"><a class="markdownIt-Anchor" href="#string-对象">#</a> String 对象</h2>
 <h3 id="属性"><a class="markdownIt-Anchor" href="#属性">#</a> 属性</h3>
-<p>length 获取字符串的长度</p>
+<p><b>length 获取字符串的长度</b></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"helloll"</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//7</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="方法"><a class="markdownIt-Anchor" href="#方法">#</a> 方法</h3>
@@ -839,7 +848,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h5 id="lastindexofstr-从后面开始检测位置永远是小的那个"><a class="markdownIt-Anchor" href="#lastindexofstr-从后面开始检测位置永远是小的那个">#</a> lastIndexOf (str) 从后面开始检测，位置永远是小的那个</h5>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"ll"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//5</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="substringstart-end-方法用于提取字符串中介于两个下标之间的字符"><a class="markdownIt-Anchor" href="#substringstart-end-方法用于提取字符串中介于两个下标之间的字符">#</a> substring (start, end) 方法用于提取字符串中介于两个下标之间的字符。</h5>
-<p>[start,end) 如果省略 end，那么返回的子串会一直到字符串的结尾</p>
+<p><code>[start,end)</code>  如果省略  <code>end</code> ，那么返回的子串会一直到字符串的结尾</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//ell</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="indexofstr-判断当前字符串是否包含某个字符串-返回开始位置或者-1"><a class="markdownIt-Anchor" href="#indexofstr-判断当前字符串是否包含某个字符串-返回开始位置或者-1">#</a> indexOf (str) 判断当前字符串是否包含某个字符串 返回开始位置或者 -1</h5>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"ll"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -856,7 +865,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> newstr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newstr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//HELLOLL</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h5 id="split-拆分"><a class="markdownIt-Anchor" href="#split-拆分">#</a> split () 拆分</h5>
-<p>将字符串使用某个字符拆分成数组 返回数组 原字符串不变，如果什么都不写，就将整个字符串作为整体存入数组中 (对应数组的 join 方法)</p>
+<p>将 <code>字符串</code> 使用某个字符 <code>拆分成数组</code>  返回数组  <code>原字符串不变</code> ，如果什么都不写，就将整个字符串作为整体存入数组中 (对应 <code>数组</code> 的  <code>join</code>  方法)</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// str.split(""); 按每个字符拆分</span>
 <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"2020-12-14"</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> arr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1469,7 +1478,7 @@ Math<span class="token punctuation">.</span><span class="token function">ceil</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">122.9k</span>
+                        class="white-color">121.9k</span>
             
             
             

@@ -448,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-17
+                    2021-06-25
                 </div>
                 
 
@@ -480,16 +480,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概览"><a class="markdownIt-Anchor" href="#概览">#</a> 概览</h2>
-<p>浏览器是用来检索、展示以及传递 Web 信息资源的应用程序。Web 信息资源由统一资源标识符 (URI) 所标记，它是一张网页、一张图片、一段视频或者任何在 Web 上所呈现的内容。使用者可以借助超级链接 ( Hyperlinks)，通过浏览器浏览互相关联的信息。</p>
-<h2 id="跨标签页通信"><a class="markdownIt-Anchor" href="#跨标签页通信">#</a> 跨标签页通信</h2>
+                <h2 id="跨标签页通信"><a class="markdownIt-Anchor" href="#跨标签页通信">#</a> 跨标签页通信</h2>
 <h3 id="引言"><a class="markdownIt-Anchor" href="#引言">#</a> 引言</h3>
 <p>在浏览器中，我们可以同时打开多个 Tab 页，每个 Tab 页可以粗略理解为一个 “独立” 的运行环境，即使是全局对象也不会在多个 Tab 间共享。然而有些时候，我们希望能在这些 “独立” 的 Tab 页面之间同步页面的数据、信息或状态。<br>
 比如：我在列表页点击 “收藏” 后，对应的详情页按钮会自动更新为 “已收藏” 状态；类似的，在详情页点击 “收藏” 后，列表页中按钮也会更新。这就是我们所说的前端跨页面通信。</p>
 <h3 id="一-同源页面间的跨页面通信"><a class="markdownIt-Anchor" href="#一-同源页面间的跨页面通信">#</a> 一、同源页面间的跨页面通信</h3>
 <h4 id="1localstorage"><a class="markdownIt-Anchor" href="#1localstorage">#</a> 1.LocalStorage</h4>
-<p>LocalStorage 作为前端最常用的本地存储，大家应该已经非常熟悉了；但 StorageEvent 这个与它相关的事件有些同学可能会比较陌生。<br>
-当 LocalStorage 变化时，会触发 storage 事件。利用这个特性，我们可以在发送消息时，把消息写入到某个 LocalStorage 中；然后在各个页面内，通过监听 storage 事件即可收到通知。</p>
+<p>LocalStorage 作为前端最常用的本地存储，大家应该已经非常熟悉了；但  <code>StorageEvent</code>  这个与它相关的事件有些同学可能会比较陌生。<br>
+当 LocalStorage 变化时，会触发  <code>storage</code>  事件。利用这个特性，我们可以在发送消息时，把消息写入到某个 LocalStorage 中；然后在各个页面内，通过监听  <code>storage</code>  事件即可收到通知。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"storage"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>key <span class="token operator">===</span> <span class="token string">"ctc-msg"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -497,16 +495,16 @@
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"[Storage I] receive message:"</span><span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在各个页面添加如上的代码，即可监听到 LocalStorage 的变化。当某个页面需要发送消息时，只需要使用我们熟悉的 setItem 方法即可：</p>
+<p>在各个页面添加如上的代码，即可监听到 LocalStorage 的变化。当某个页面需要发送消息时，只需要使用我们熟悉的  <code>setItem</code>  方法即可：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">mydata<span class="token punctuation">.</span>st <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"ctc-msg"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>mydata<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>注意，这里有一个细节：我们在 mydata <a target="_blank" rel="noopener" href="http://xn--4gqta1hoqh5neoa83ei02bk3fepkj5q2zf4l6alikvm0i.st">上添加了一个取当前毫秒时间戳的.st</a> 属性。这是因为，storage 事件只有在值真正改变时才会触发。举个例子：</p>
+<p>注意，这里有一个细节：我们在 mydata 上添加了一个取当前毫秒时间戳的  <code>.st</code>  属性。这是因为， <code>storage</code>  事件只有在值真正改变时才会触发。举个例子：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>由于第二次的值’123’与第一次的值相同，所以以上的代码只会在第一次 setItem 时触发 storage 事件。因此我们通过设置 st 来保证每次调用时一定会触发 storage 事件。</p>
+<p>由于第二次的值 <code>'123'</code>  与第一次的值相同，所以以上的代码只会在第一次  <code>setItem</code>  时触发  <code>storage</code>  事件。因此我们通过设置 st 来保证每次调用时一定会触发  <code>storage</code>  事件。</p>
 <h4 id="2windowopen-windowopener"><a class="markdownIt-Anchor" href="#2windowopen-windowopener">#</a> 2.window.open + window.opener</h4>
-<p>当我们使用 window.open 打开页面时，方法会返回一个被打开页面 window 的引用。而在未显示指定 noopener 时，被打开的页面可以通过 window.opener 获取到打开它的页面的引用 —— 通过这种方式我们就将这些页面建立起了联系（一种树形结构）。</p>
-<p>首先，我们把 window.open 打开的页面的 window 对象收集起来：</p>
+<p>当我们使用  <code>window.open</code>  打开页面时，方法会返回一个被打开页面  <code>window</code>  的引用。而在未显示指定  <code>noopener</code>  时，被打开的页面可以通过  <code>window.opener</code>  获取到打开它的页面的引用 —— 通过这种方式我们就将这些页面建立起了联系（一种树形结构）。</p>
+<p>首先，我们把  <code>window.open</code>  打开的页面的  <code>window</code>  对象收集起来：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> childWins <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"btn"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> win <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"./some/sample"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -523,7 +521,7 @@ childWins <span class="token operator">=</span> childWins<span class="token punc
   mydata<span class="token punctuation">.</span>fromOpenner <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
   window<span class="token punctuation">.</span>opener<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span>mydata<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>注意，我这里先用.closed 属性过滤掉已经被关闭的 Tab 窗口。这样，作为消息发送方的任务就完成了。下面看看，作为消息接收方，它需要做什么。</p>
+<p>注意，我这里先用 <code>.closed</code>  属性过滤掉已经被关闭的 Tab 窗口。这样，作为消息发送方的任务就完成了。下面看看，作为消息接收方，它需要做什么。</p>
 <p>此时，一个收到消息的页面就不能那么自私了，除了展示收到的消息，它还需要将消息再传递给它所 “知道的人”（打开与被它打开的页面）:</p>
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">需要注意的是，我这里通过判断消息来源，避免将消息回传给发送方，防止消息在两者间死循环的传递。
 (该方案会有些其他小问题，实际中可以进一步优化)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -553,7 +551,9 @@ window<span class="token punctuation">.</span><span class="token function">addEv
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后，当页面要与其他的同源或非同源页面通信时，会先给 iframe 发送消息：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/* 业务页面代码 */</span>
-window<span class="token punctuation">.</span>frames<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>window<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span>mydata<span class="token punctuation">,</span> <span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+window<span class="token punctuation">.</span>frames<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>window<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span>mydata<span class="token punctuation">,</span> <span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// mydata 将要发送到其他 window的数据</span>
+<span class="token comment">// 第二个参数：指定哪些窗口能接收到消息事件，其值可以是字符串"*"（表示无限制）或者一个URI。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中为了简便此处将 postMessage 的第二个参数设为了’*’，你也可以设为 iframe 的 URL。iframe 收到消息后，会使用某种跨页面消息通信技术在所有 iframe 间同步消息，例如下面使用的 Broadcast Channel：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/* iframe 内代码 */</span>
 <span class="token keyword">const</span> bc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BroadcastChannel</span><span class="token punctuation">(</span><span class="token string">"AlienZHOU"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -594,7 +594,7 @@ bc<span class="token punctuation">.</span><span class="token function-variable f
 </ul>
 <p>它们的区别最明显的就是 hash 会在浏览器地址后面增加 #号，而 history 可以自定义地址。</p>
 <h3 id="hash-模式"><a class="markdownIt-Anchor" href="#hash-模式">#</a> hash 模式</h3>
-<p>使用 window.location.hash 属性及窗口的 onhashchange 事件，可以实现监听浏览器地址 hash 值变化，执行相应的 js 切换网页。下面具体介绍几个使用过程中必须理解的要点：</p>
+<p>使用  <code>window.location.hash</code>  属性及窗口的  <code>onhashchange</code>  事件，可以实现监听浏览器地址 hash 值变化，执行相应的 js 切换网页。下面具体介绍几个使用过程中必须理解的要点：</p>
 <ul>
 <li>1.hash 指的是地址中 #号以及后面的字符，也称为散列值。hash 也称作锚点，本身是用来做页面跳转定位的。如 <a target="_blank" rel="noopener" href="http://localhost/index.html#abc%EF%BC%8C%E8%BF%99%E9%87%8C%E7%9A%84#abc">http://localhost/index.html#abc，这里的 #abc</a> 就是 hash；</li>
 <li>2. 散列值是不会随请求发送到服务器端的，所以改变 hash，不会重新加载页面；</li>
@@ -1218,7 +1218,7 @@ history<span class="token punctuation">.</span><span class="token function">go</
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">122.9k</span>
+                        class="white-color">121.9k</span>
             
             
             
