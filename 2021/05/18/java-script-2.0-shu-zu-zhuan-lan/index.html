@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-22
+                    2021-06-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    2.9k
                 </div>
                 
 
@@ -482,7 +482,7 @@
             <div id="articleContent">
                 <h2 id="数组-array"><a class="markdownIt-Anchor" href="#数组-array">#</a> 数组 Array</h2>
 <p>数组 array: 数据的有序集合<br>
-用 typeof 检测数组 结果是 object</p>
+用  <code>typeof</code>  检测数组 结果是  <code>object</code></p>
 <h3 id="数组的创建"><a class="markdownIt-Anchor" href="#数组的创建">#</a> 数组的创建</h3>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//创建了长度为30的数组</span>
 <span class="token keyword">var</span> users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"赵四"</span><span class="token punctuation">,</span> <span class="token string">"王五"</span><span class="token punctuation">,</span> <span class="token string">"张三"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -496,7 +496,7 @@
   <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="数组的元素"><a class="markdownIt-Anchor" href="#数组的元素">#</a> 数组的元素</h3>
-<p>数组的顺序从 0 开始 也叫元素的下标 索引</p>
+<p>数组的下标 (索引) 从  <code>0</code>  开始</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// 获取第六个数字</span>
 <span class="token keyword">var</span> sixNum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -513,7 +513,6 @@ nums<span class="token punctuation">[</span><span class="token number">7</span><
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, 4, 5, 100, empty, 7]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="数组的属性和方法"><a class="markdownIt-Anchor" href="#数组的属性和方法">#</a> 数组的属性和方法</h3>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> numArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"1111"</span><span class="token punctuation">;</span>
 <span class="token comment">//  length 属性  获取数组的长度 也就是元素个数</span>
 <span class="token keyword">var</span> len <span class="token operator">=</span> numArr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//5</span>
@@ -521,7 +520,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 numArr<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
 <span class="token comment">// 如果直接给 length 属性赋值的话,就是向数组内增加 empty</span>
 <span class="token comment">// 或者删除后面的元素 ，一般不会使用</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numArr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//(3) [5, 6, 7]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numArr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//(3) [5, 6, 7]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="直接使用大写的-array-下的方法"><a class="markdownIt-Anchor" href="#直接使用大写的-array-下的方法">#</a> 直接使用大写的 Array 下的方法</h4>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>值<span class="token punctuation">)</span>  检测这个值是否是数组<span class="token punctuation">,</span>是数组返回 <span class="token boolean">true</span> 不是的话返回 <span class="token boolean">false</span>
 
@@ -535,32 +534,32 @@ aLis <span class="token operator">=</span> Array<span class="token punctuation">
 slice<span class="token punctuation">,</span> concat<span class="token punctuation">,</span> indexOf<span class="token punctuation">,</span> includes<span class="token punctuation">,</span> join<span class="token punctuation">,</span> filter不修改原数组<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="var-arr-1-2-3-4-5-6"><a class="markdownIt-Anchor" href="#var-arr-1-2-3-4-5-6">#</a> var arr = [1, 2, 3, 4, 5, 6];</h4>
 <h5 id="arrpush值值值"><a class="markdownIt-Anchor" href="#arrpush值值值">#</a> arr.push (值，值，值…)</h5>
-<p>向数组后面添加一个或多个元素，并返回数组的新长度，修改了原数组</p>
+<p>向数组 <code>后面添加</code> 一个或多个元素，并 <code>返回数组的新长度并修改了原数组</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1,2,3,4,5,6,7,8,9,10</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrpop"><a class="markdownIt-Anchor" href="#arrpop">#</a> arr.pop()</h5>
-<p>删除数组内的最后一个元素，并返回被删除的元素，修改了原数组</p>
+<p><code>删除</code> 数组内的 <code>最后</code> 一个元素，并 <code>返回被删除的元素,修改了原数组</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num1 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1,2,3,4,5,6,7,8,9</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrunshift一个或多个值"><a class="markdownIt-Anchor" href="#arrunshift一个或多个值">#</a> arr.unshift (一个或多个值)</h5>
-<p>向数组的前面添加一个或多个元素，并返回数组的新长度，修改了原数组</p>
+<p>向数组的 <code>前面添加</code> 一个或多个元素，并 <code>返回数组的新长度,修改了原数组</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num2 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//-1,0,1,2,3,4,5,6,7,8,9</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//11</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrshift"><a class="markdownIt-Anchor" href="#arrshift">#</a> arr.shift()</h5>
-<p>删除数组内的第一个元素，并返回被删除的元素，修改了原数组</p>
+<p><code>删除</code> 数组内的 <code>第一个</code> 元素，并 <code>返回被删除的元素,修改了原数组</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num3 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//0,1,2,3,4,5,6,7,8,9</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num3<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//-1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrspliceabc"><a class="markdownIt-Anchor" href="#arrspliceabc">#</a> arr.splice(a,b,c)</h5>
-<p>数组的删除或添加，返回被删除的元素组成的数组或者空数组，修改了原数组<br>
+<p>数组的删除或添加， <code>返回被删除的元素组成的数组或者空数组,修改了原数组</code> <br>
  a 代表删除或者添加的起始位置<br>
  b 代表删除的个数 0 代表不删除<br>
  c 代表添加的元素 c 可以省略也可以加多个 c 省略的话就是删除不是添加<br>
-在 a 位置删除 b 个元素，并添加上 c<br>
- 只写起始位置代表从起视位置一直删除到最后</p>
+ <code>在 a 位置删除 b 个元素，并添加上 c</code> <br>
+ <code>只写起始位置代表从起视位置一直删除到最后</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
 <span class="token keyword">var</span> newArr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[2, 3, 2, 3, 4, 5, 6, 7, 8, 9]</span>
@@ -570,10 +569,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[] 因为没被删除所以是空数组</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrslicebeginend"><a class="markdownIt-Anchor" href="#arrslicebeginend">#</a> arr.slice(begin,end)</h5>
-<p>数组的截取，返回截取后的数组，不修改原数组<br>
- begin 和 end 都代表数组的下标 (索引) begin 是截取的开始 end 是结束 规则是包括开始不包括结束 [begin,end)<br>
- 写负数的话代表的是倒数第几个的截取<br>
- end 可以省略，那么就截取到末尾</p>
+<p><code>数组的截取,返回截取后的数组,不修改原数组</code> <br>
+ begin 和 end 都代表数组的下标 (索引) begin 是截取的开始 end 是结束 规则是包括开始不包括结束  <code>[begin,end)</code> <br>
+ 写 <code>负数</code> 的话代表的是 <code>倒数第几个</code> 的截取<br>
+ <code>end</code>  可以省略，那么就截取到 <code>末尾</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 拷贝arr数组;</span>
 
@@ -581,29 +580,29 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[-1, 0, 1, 2]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrconcat一个或多个数组"><a class="markdownIt-Anchor" href="#arrconcat一个或多个数组">#</a> arr.concat (一个或多个数组)</h5>
-<p>数组的拼接，返回拼接之后数组，原数组不变</p>
+<p>数组的 <code>拼接</code> ， <code>返回拼接之后数组,原数组不变</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 拷贝数组：var arr1 = [].concat(arr)</span>
 <span class="token keyword">var</span> newArr2 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrindexof值"><a class="markdownIt-Anchor" href="#arrindexof值">#</a> arr.indexOf (值)</h5>
-<p>检测该值是否在数组中存在，如果存在的话返回位置，不存在的话返回 -1, 原数组不变</p>
+<p>检测 <code>该值是否在数组中存在</code> ，如果存在的话 <code>返回位置</code> ， <code>不存在</code> 的话返回 <code>-1</code> , 原数组不变</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> ind <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ind<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//7</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrincludes值"><a class="markdownIt-Anchor" href="#arrincludes值">#</a> arr.includes (值)</h5>
-<p>检测该值是否在数组中存在，如果存在的话返回 true，不存在的话返回 false, 原数组不变</p>
+<p>检测该值是否在数组中存在，如果存在的话返回  <code>true</code> ，不存在的话返回 <code>false</code> , 原数组不变</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> bool <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">55</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bool<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrreverse"><a class="markdownIt-Anchor" href="#arrreverse">#</a> arr.reverse()</h5>
-<p>颠倒数组顺序，返回结果，原数组也颠倒了，修改了原数组</p>
+<p><code>颠倒数组</code> 顺序，返回结果， <code>原数组也颠倒了</code> ，修改了原数组</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> newArr3 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[9,8,7,6,5,4,3,2,1,0,-1,-2]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr3<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[9,8,7,6,5,4,3,2,1,0,-1,-2]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrsort函数或者不写"><a class="markdownIt-Anchor" href="#arrsort函数或者不写">#</a> arr.sort (函数或者不写)</h5>
-<p>对数组进行排序，不写的话按照首字符 (从小到大) 排序，修改了原数组</p>
-<p>写函数的话要写成 function (a,b){return a-b} 就是从小到大排序 (升序) b-a 从大到小 (降序)<br>
+<p>对数组进行排序， <code>不写的话按照首字符(从小到大)排序</code> ，修改了原数组</p>
+<p>写函数的话要写成  <code>function(a,b){return a-b} 就是从小到大排序(升序) b-a 从大到小(降序)</code> <br>
  a 和 b 分别代表数组内相邻的元素</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">323</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> newArr4 <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -617,7 +616,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[323,123,78,34,23,9,6,5,5]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr4<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[323,123,78,34,23,9,6,5,5]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="arrjoin值"><a class="markdownIt-Anchor" href="#arrjoin值">#</a> arr.join (值)</h5>
-<p>将数组使用该值拼接成字符串，返回新的字符串，原数组不变，不设置值就会使用，(逗号) 拼接</p>
+<p>将数组使用该值拼接成字符串， <code>返回新的字符串</code> ，原数组不变， <code>不设置</code> 值就会使用  <code>,(逗号)</code>  拼接</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> str <span class="token operator">=</span> arr2<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[1,3,5,7,9]</span>
@@ -646,10 +645,10 @@ users<span class="token punctuation">.</span><span class="token function">sort</
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="some"><a class="markdownIt-Anchor" href="#some">#</a> .some()</h5>
-<p>检测数组中是否存在满足条件 (至少存在一个) 的元素，返回 true 或 false 和.every () 差不多</p>
+<p>检测数组中 <code>是否存在满足条件(至少存在一个)</code>  的元素，返回 true 或 false 和 <code>.every()</code>  差不多</p>
 <h5 id="every方法"><a class="markdownIt-Anchor" href="#every方法">#</a> .every () 方法</h5>
-<p>检测数组内的所有元素是否满足条件，条件写在函数的返回值内，返回 true 或者 false</p>
-<p><b>注意：</b>当数组为空的时候，every 的结果是 true</p>
+<p>检测数组内的 <code>所有元素</code> 是否满足条件，条件写在函数的返回值内，返回 true 或者 false</p>
+<p><b>注意：当数组为空的时候，every 的结果是 true</b></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> res <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ele<span class="token punctuation">,</span> ind<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// 在这可以做任何操作</span>
@@ -657,14 +656,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="find"><a class="markdownIt-Anchor" href="#find">#</a> .find()</h5>
-<p>查找数组中第一个满足条件的元素，否则返回 undefined</p>
+<p>查找数组中 <code>第一个满足条件</code> 的元素，否则返回  <code>undefined</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> res <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ele</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> ele <span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//7</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="findindex"><a class="markdownIt-Anchor" href="#findindex">#</a> .findIndex()</h5>
-<p>查找数组中第一个满足条件的元素索引，否则返回 -1</p>
+<p>查找数组中 <code>第一个满足条件的元素索引</code> ，否则返回 <code>-1</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> users <span class="token operator">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span>
     name<span class="token operator">:</span> <span class="token string">"小二"</span><span class="token punctuation">,</span>
@@ -684,7 +683,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>users<span class="token punctuation">[</span>ind<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//{name: "小二2", age: 30}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="filter"><a class="markdownIt-Anchor" href="#filter">#</a> .filter()</h5>
-<p>数组的筛选，筛选出满足条件的元素组成的数组，如果没有满足条件的数组，返回空数组，不修改原数组</p>
+<p>数组的筛选，筛选出满足条件的元素组成的数组， <code>如果没有满足条件的数组，返回空数组</code> ，不修改原数组</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> newUsers <span class="token operator">=</span> users<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ele</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> ele<span class="token punctuation">.</span>age <span class="token operator">&lt;</span> <span class="token number">24</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -699,9 +698,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newNums<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[1,4,9]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="reduce-累加器"><a class="markdownIt-Anchor" href="#reduce-累加器">#</a> .reduce () 累加器</h5>
 <p>reduce 方法接收两个参数<br>
-第一个参数是函数 该函数可接收四个参数 1 最终结果 (累加器)<br>
- 234 分别代表 ele ind array, 该函数必须设置一个返回值 (return), 这个返回值是新的最终结果<br>
-第二个参数是最终结果的初始值 你想要获取什么内容，就设置对应的初始值 数字是 0 字符串是空字符串等等</p>
+第一个参数是函数 该函数可接收四个参数  <code>1 最终结果(累加器)</code> <br>
+ <code>234 分别代表 ele ind array</code> , 该函数必须设置一个返回值 (return), 这个返回值是新的最终结果<br>
+第二个参数是 <code>最终结果的初始值</code>  你想要获取什么内容，就设置对应的初始值 数字是 0 字符串是空字符串等等</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> res <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res<span class="token punctuation">,</span> ele</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> res <span class="token operator">+</span> ele<span class="token punctuation">;</span>
@@ -719,23 +718,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//(2) [1, 3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="foreach函数-数组的遍历"><a class="markdownIt-Anchor" href="#foreach函数-数组的遍历">#</a> forEach (函数) 数组的遍历</h5>
+<p>function 可以设置三个参数 (形参)</p>
+<p>1.element 查找到的元素 2. index 该元素的索引 3. 原数组</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">66</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// 依次查找数组内的元素,每次查找到执行 function 内的内容</span>
-<span class="token comment">// function 可以设置三个参数(形参)</span>
-<span class="token comment">//  1. element查找到的元素  2.index 该元素的索引  3.原数组</span>
+
 numbers<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="数组的遍历-2"><a class="markdownIt-Anchor" href="#数组的遍历-2">#</a> 数组的遍历 2</h5>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"for, "</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"&lt;br/&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// i: 数组元素的下标</span>
-  document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"forin, "</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"&lt;br/&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="对象的遍历"><a class="markdownIt-Anchor" href="#对象的遍历">#</a> 对象的遍历</h5>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//对象遍历</span>
 <span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -758,18 +748,11 @@ numbers<span class="token punctuation">.</span><span class="token function">forE
   person1<span class="token punctuation">[</span>keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> person<span class="token punctuation">[</span>keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="对象的存储和比较"><a class="markdownIt-Anchor" href="#对象的存储和比较">#</a> 对象的存储和比较</h5>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> res <span class="token operator">=</span> users<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  username<span class="token operator">:</span> <span class="token string">"小赵"</span><span class="token punctuation">,</span>
-  age<span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>users<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token punctuation">{</span> username<span class="token operator">:</span> <span class="token string">"小赵"</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">28</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span>
-
-<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<p>当 <code>对象类型</code> 的数据进行 <code>比较</code> 的时候，比较的是数据的 <code>地址</code> 并不是里面的 <code>值</code> <br>
+对象数据类型在浏览器中存储方式和普通的数据存储方式不一样，对象存储的是地址，而其他存储的是值</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">===</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
-<span class="token comment">// 当对象类型的数据进行比较的时候，比较的是数据的地址并不是里面的值</span>
-<span class="token comment">// 对象数据类型在浏览器中存储方式和普通的数据存储方式不一样,对象存储的是地址,而其他存储的是值</span>
 
 <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
   name<span class="token operator">:</span> <span class="token string">"小二"</span><span class="token punctuation">,</span>
@@ -783,9 +766,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
     name<span class="token operator">:</span> <span class="token string">"小二"</span><span class="token punctuation">,</span>
     age<span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span> <span class="token operator">===</span> obj
-<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="对象的合并"><a class="markdownIt-Anchor" href="#对象的合并">#</a> 对象的合并</h5>
-<p>Object.assign (obj1,obj2,obj3……) 将第一个参数后面的所有对象合并到第一个参数内 重名的属性后面的覆盖前面的 (constructor 没有被覆盖)<br>
+<p>Object.assign (obj1,obj2,obj3……) 将 <code>第一个参数后面的</code> 所有对象 <code>合并到第一个参数</code> 内 重名的属性后面的覆盖前面的 (constructor 没有被覆盖)<br>
  Object.assign 只拷贝自身属性，不可枚举的属性（enumerable 为 false）和继承的属性不会被拷贝。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"哈哈哈"</span><span class="token punctuation">,</span> a<span class="token operator">:</span> <span class="token string">"hello"</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span> age<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -850,8 +833,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token function">alert</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="数组的拷贝"><a class="markdownIt-Anchor" href="#数组的拷贝">#</a> 数组的拷贝</h5>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// slice  map  filter</span>
-<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<p><code>slice map filter</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> arr1 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> arr3 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ele</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> ele<span class="token punctuation">;</span>
@@ -881,7 +864,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 newBooks<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>date <span class="token operator">=</span> <span class="token string">"yy-yy-yy"</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newBooks<span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newBooks<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> books<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true 因为上边拷贝的是最外层的大地址，没有拷贝里边的</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>books<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//{bookName: "红楼梦", date: "yy-yy-yy"}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>books<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//{bookName: "红楼梦", date: "yy-yy-yy"}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1424,7 +1407,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">121.9k</span>
+                        class="white-color">121.8k</span>
             
             
             
