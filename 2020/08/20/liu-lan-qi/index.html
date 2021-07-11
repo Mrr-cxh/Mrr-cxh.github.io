@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -448,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-05
+                    2021-07-11
                 </div>
                 
 
@@ -543,18 +543,19 @@ childWins <span class="token operator">=</span> childWins<span class="token punc
 <p>这样，每个节点（页面）都肩负起了传递消息的责任，也就是我说的 “口口相传”，而消息就在这个树状结构中流转了起来。</p>
 <h3 id="二-非同源页面之间的通信"><a class="markdownIt-Anchor" href="#二-非同源页面之间的通信">#</a> 二、非同源页面之间的通信</h3>
 <p>上面我们介绍了两种前端跨页面通信的方法，但它们大都受到同源策略的限制。然而有时候，我们有两个不同域名的产品线，也希望它们下面的所有页面之间能无障碍地通信。那该怎么办呢？</p>
-<p>要实现该功能，可以使用一个用户不可见的 iframe 作为 “桥”。由于 iframe 与父页面间可以通过指定 origin 来忽略同源限制，因此可以在每个页面中嵌入一个 iframe （例如：<a target="_blank" rel="noopener" href="http://sample.com/bridge.html">http://sample.com/bridge.html</a>)，而这些 iframe 由于使用的是一个 url，因此属于同源页面，其通信方式可以复用上面第一部分提到的各种方式。</p>
+<p>要实现该功能，可以使用一个用户不可见的  <code>iframe</code>  作为 <code>桥</code> 。由于  <code>iframe</code>  与父页面间可以通过指定  <code>origin</code>  来忽略同源限制，因此可以在每个页面中嵌入一个 iframe （例如：<a target="_blank" rel="noopener" href="http://sample.com/bridge.html">http://sample.com/bridge.html</a>)，而这些 iframe 由于使用的是一个 url，因此属于同源页面，其通信方式可以复用上面第一部分提到的各种方式。</p>
 <p>页面与 iframe 通信非常简单，首先需要在页面中监听 iframe 发来的消息，做相应的业务处理：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/* 业务页面代码 */</span>
 window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// …… do something</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>然后，当页面要与其他的同源或非同源页面通信时，会先给 iframe 发送消息：</p>
+<p>然后，当页面要与其他的同源或非同源页面通信时，会先给 iframe 发送消息：<br>
+ <code>postMessage</code>  可以安全的实现跨源通信。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/* 业务页面代码 */</span>
 window<span class="token punctuation">.</span>frames<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>window<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span>mydata<span class="token punctuation">,</span> <span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// mydata 将要发送到其他 window的数据</span>
 <span class="token comment">// 第二个参数：指定哪些窗口能接收到消息事件，其值可以是字符串"*"（表示无限制）或者一个URI。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>其中为了简便此处将 postMessage 的第二个参数设为了’*’，你也可以设为 iframe 的 URL。iframe 收到消息后，会使用某种跨页面消息通信技术在所有 iframe 间同步消息，例如下面使用的 Broadcast Channel：</p>
+<p>其中为了简便此处将 postMessage 的 <code>第二个参数设为了*</code> ，你也可以设为 iframe 的  <code>URL</code> 。iframe 收到消息后，会使用某种跨页面消息通信技术在所有 iframe 间同步消息，例如下面使用的 Broadcast Channel：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/* iframe 内代码 */</span>
 <span class="token keyword">const</span> bc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BroadcastChannel</span><span class="token punctuation">(</span><span class="token string">"AlienZHOU"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 收到来自页面的消息后，在 iframe 间进行广播</span>
@@ -626,9 +627,9 @@ window<span class="token punctuation">.</span><span class="token function">addEv
 <h3 id="history-模式"><a class="markdownIt-Anchor" href="#history-模式">#</a> history 模式</h3>
 <h4 id="概述"><a class="markdownIt-Anchor" href="#概述">#</a> 概述</h4>
 <ul>
-<li>window.history 属性指向 History 对象，它表示当前窗口的浏览历史。当发生改变时，只会改变页面的路径，不会刷新页面。</li>
+<li><code>window.history</code>  属性指向  <code>History</code>  对象，它表示当前窗口的浏览历史。当发生改变时，只会改变页面的路径，不会刷新页面。</li>
 <li>History 对象保存了当前窗口访问过的所有页面网址。通过 history.length 可以得出当前窗口一共访问过几个网址。</li>
-<li>由于安全原因，浏览器不允许脚本读取这些地址，但是允许在地址之间导航。</li>
+<li>由于安全原因， <code>浏览器不允许脚本读取这些地址</code> ，但是允许在地址之间导航。</li>
 <li>浏览器工具栏的 “前进” 和 “后退” 按钮，其实就是对 History 对象进行操作。</li>
 </ul>
 <h4 id="属性"><a class="markdownIt-Anchor" href="#属性">#</a> 属性</h4>
@@ -638,7 +639,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
 <p>History.length：当前窗口访问过的网址数量（包括当前网页）</p>
 </li>
 <li>
-<p>History.state：History 堆栈最上层的状态值（详见下文）</p>
+<p>History.state：History 堆栈最上层的状态值</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 当前窗口访问过多少个网页</span>
 history<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token comment">// 1</span>
 
@@ -658,7 +659,7 @@ history<span class="token punctuation">.</span>state<span class="token punctuati
 <p>History.forward ()：移动到下一个网址，等同于点击浏览器的前进键。对于最后一个访问的网址，该方法无效果。</p>
 </li>
 <li>
-<p>History.go ()：接受一个整数作为参数，以当前网址为基准，移动到参数指定的网址。如果参数超过实际存在的网址范围，该方法无效果；如果不指定参数，默认参数为 0，相当于刷新当前页面。</p>
+<p>History.go ()：接受一个整数作为参数，以当前网址为基准，移动到参数指定的网址。 <code>如果参数超过实际存在的网址范围，该方法无效果</code> ；如果不指定参数，默认参数为 0，相当于刷新当前页面。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">history<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 history<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 history<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//相当于history.forward()</span>
@@ -1218,7 +1219,7 @@ history<span class="token punctuation">.</span><span class="token function">go</
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">121.9k</span>
+                        class="white-color">121.8k</span>
             
             
             

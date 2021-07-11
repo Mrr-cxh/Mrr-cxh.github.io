@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -448,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-05
+                    2021-07-11
                 </div>
                 
 
@@ -560,7 +560,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token comment">//将作用域内的loop 暴露出去(暴露到全局)</span>
   window<span class="token punctuation">.</span>xxx <span class="token operator">=</span> loop<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xxx<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 轮播图操作</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xxx<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 轮播图操作</span>
 
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> m <span class="token operator">&lt;</span> liArr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> m<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">m</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -637,7 +637,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3 id="箭头函数"><a class="markdownIt-Anchor" href="#箭头函数">#</a> 箭头函数</h3>
 <p>【注】适当的省略函数中的 function 和 return 关键字。<br>
 箭头函数需要注意的部分<br>
- 1、箭头函数，不能用 new<br>
+<b>1、箭头函数，不能用 new</b><br>
 <b>2、箭头，如果返回值是一个对象，一定要加 ()；</b><br>
 <b>3、箭头函数中的 this，指向的是上一层函数的主人。</b></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -690,8 +690,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="arguments函数实参集合"><a class="markdownIt-Anchor" href="#arguments函数实参集合">#</a> arguments (函数实参集合)</h3>
 <p>函数内的关键字 arguments<br>
- 指的是 函数的实参集合 也就是将函数的实参组成一个类数组<br>
-类数组 只能 .length 或者 [n] 不能使用真正函数的方法之类的</p>
+ 指的是  <code>函数的实参集合</code>  也就是将函数的实参组成一个类数组<br>
+类数组 只能  <code>.length </code> 或者  <code>[n]</code>  不能使用真正函数的方法之类的</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/* function fun() {
   console.log(arguments); 
   // Arguments(9) [1, 2, 3, 4, 5, 6, 7, 8, 9, callee: ƒ, Symbol(Symbol.iterator): ƒ]
@@ -732,7 +732,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><b>异步：非阻塞，当前程序运行，和前面程序的运行没有任何关系。</b></li>
 <li>同步操作：写的代码 90% 都是同步操作</li>
 <li>异步操作：jQuery 动画 计时器 ajax……</li>
-<li><b>异步和同步都出现的时候，异步操作肯定会在同步之后执行</b></li>
+<li><b>异步和同步都出现的时候，同步优先于异步执行</b></li>
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -742,7 +742,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token function">x</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token comment">//答案是一秒之后输出 3次3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// 答案是一秒之后输出 3次3</span>
+<span class="token comment">// 把 var 换成 let 输出 0 1 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="regexp-正则表达式"><a class="markdownIt-Anchor" href="#regexp-正则表达式">#</a> RegExp 正则表达式</h2>
 <p>其实就是一个用来检测字符串或数字的规则<br>
 这里边写什么东西就代表要检测什么东西，最两边不可以有空格</p>
@@ -1083,8 +1084,13 @@ window<span class="token punctuation">.</span><span class="token function-variab
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>appName<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="递归函数内调用函数本身"><a class="markdownIt-Anchor" href="#递归函数内调用函数本身">#</a> 递归 (函数内调用函数本身)</h2>
-<p>递归方法： 1. 首先去找临界值，即无需计算，获得的值 2. 找这一次和上一次的关系 3. 假设当前函数已经可以使用，调用自身计算上一次<br>
-当形成递归的时候 递归函数内声明的变量是不可以相互访问的 需要递归函数设置返回值，最后的 return 才是真正的返回值<br>
+<p>递归方法：</p>
+<ul>
+<li>1. <code>首先去找临界值</code> ，即无需计算，获得的值</li>
+<li>2. 找 <code>这一次和上一次</code> 的关系</li>
+<li>3. 假设当前函数已经可以使用， <code>调用自身计算上一次</code></li>
+</ul>
+<p>当形成递归的时候 递归函数内声明的变量是不可以相互访问的 需要递归函数设置返回值，最后的 return 才是真正的返回值<br>
  return 后面什么都不写代表：返回，不往下面跑了，函数不需要返回值，所以就什么都不加</p>
 <h3 id="二叉树的查找"><a class="markdownIt-Anchor" href="#二叉树的查找">#</a> 二叉树的查找</h3>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>
@@ -1163,7 +1169,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="闭包"><a class="markdownIt-Anchor" href="#闭包">#</a> 闭包</h2>
-<p>闭包就是能够读取其他函数内部变量的函数。例如在 js 中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成 “定义在一个函数内部的函数 “。<br>
+<p>闭包就是 <code>能够读取其他函数内部变量的函数</code> 。<br>
+例如在 js 中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成 “ <code>定义在一个函数内部的函数</code>  “。<br>
 在本质上，闭包是将函数内部和函数外部连接起来的桥梁。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 函数内嵌套函数就形成了闭包</span>
 <span class="token comment">// 闭包就是作用域的嵌套 而且嵌套关系永远存在</span>
@@ -1240,7 +1247,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 c<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1</span>
 c<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="domdocument-文档对象模型"><a class="markdownIt-Anchor" href="#domdocument-文档对象模型">#</a> DOM (document 文档对象模型)</h2>
-<p>html 标签</p>
 <h3 id="节点类型"><a class="markdownIt-Anchor" href="#节点类型">#</a> 节点类型</h3>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>div id <span class="token operator">=</span> <span class="token string">'div'</span><span class="token operator">&gt;</span>div文本<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 <span class="token function">元素节点</span><span class="token punctuation">(</span>标签<span class="token punctuation">)</span>  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
@@ -1306,7 +1312,7 @@ document<span class="token punctuation">.</span><span class="token function">que
 
 window<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="修改样式"><a class="markdownIt-Anchor" href="#修改样式">#</a> 修改样式</h3>
-<p>dom 元素.style<br>
+<p><code>dom 元素.style</code> <br>
  获取该元素的行内样式表对象 这个对象内的属性可以直接修改 也可以获取</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> box <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".box"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 box<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token string">"300px"</span><span class="token punctuation">;</span>
@@ -2014,7 +2020,7 @@ window<span class="token punctuation">.</span><span class="token function-variab
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">121.9k</span>
+                        class="white-color">121.8k</span>
             
             
             
