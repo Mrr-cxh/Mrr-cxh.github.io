@@ -271,7 +271,7 @@
     <link href="https://mrr-cxh.github.io/2021/04/23/vue-1.0/"/>
     <id>https://mrr-cxh.github.io/2021/04/23/vue-1.0/</id>
     <published>2021-04-23T02:12:12.000Z</published>
-    <updated>2021-07-05T14:01:07.271Z</updated>
+    <updated>2021-07-12T14:33:21.307Z</updated>
     
     
       
@@ -279,7 +279,9 @@
         
         
     <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
-&lt;p&gt;Vue 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue</summary>
+&lt;p&gt;Vue 属于单页面应用 (SPA)，指令后边都可以写 js 内容&lt;br&gt;
+单页面只需加载一次就把整个项目加载完了&lt;/p&gt;
+&lt;h2</summary>
         
       
     
