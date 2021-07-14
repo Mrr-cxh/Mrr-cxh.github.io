@@ -6,7 +6,7 @@
   <link href="https://mrr-cxh.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrr-cxh.github.io/"/>
-  <updated>2021-07-05T14:03:01.522Z</updated>
+  <updated>2021-07-14T13:37:02.521Z</updated>
   <id>https://mrr-cxh.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uni-app</title>
+    <link href="https://mrr-cxh.github.io/2021/07/14/uni-app/"/>
+    <id>https://mrr-cxh.github.io/2021/07/14/uni-app/</id>
+    <published>2021-07-14T13:34:11.000Z</published>
+    <updated>2021-07-14T13:37:02.521Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;uni-app&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#uni-app&quot;&gt;#&lt;/a&gt; uni-app&lt;/h2&gt;
+&lt;p&gt;安装 HBuilderX (&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="小程序" scheme="https://mrr-cxh.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+    <category term="小程序" scheme="https://mrr-cxh.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="https://mrr-cxh.github.io/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>Vuex 1.0</title>
@@ -211,7 +239,7 @@
     <link href="https://mrr-cxh.github.io/2021/05/08/vue-3.0/"/>
     <id>https://mrr-cxh.github.io/2021/05/08/vue-3.0/</id>
     <published>2021-05-08T07:31:02.000Z</published>
-    <updated>2021-07-05T14:01:58.906Z</updated>
+    <updated>2021-07-14T13:56:20.414Z</updated>
     
     
       
@@ -353,7 +381,7 @@
     <link href="https://mrr-cxh.github.io/2021/04/03/git/"/>
     <id>https://mrr-cxh.github.io/2021/04/03/git/</id>
     <published>2021-04-03T03:08:01.000Z</published>
-    <updated>2021-07-05T13:59:40.581Z</updated>
+    <updated>2021-07-14T12:28:05.827Z</updated>
     
     
       
@@ -382,7 +410,7 @@
     <link href="https://mrr-cxh.github.io/2021/03/25/js-shen-ru-bian-liang-dui-xiang/"/>
     <id>https://mrr-cxh.github.io/2021/03/25/js-shen-ru-bian-liang-dui-xiang/</id>
     <published>2021-03-25T11:37:22.000Z</published>
-    <updated>2021-07-05T13:59:20.963Z</updated>
+    <updated>2021-07-14T13:30:28.971Z</updated>
     
     
       
@@ -438,7 +466,7 @@
     <link href="https://mrr-cxh.github.io/2021/03/12/js-shen-ru-yuan-xing-lian/"/>
     <id>https://mrr-cxh.github.io/2021/03/12/js-shen-ru-yuan-xing-lian/</id>
     <published>2021-03-12T11:01:08.000Z</published>
-    <updated>2021-07-05T13:59:02.401Z</updated>
+    <updated>2021-07-14T13:28:36.101Z</updated>
     
     
       
@@ -544,34 +572,6 @@
     <category term="HTML" scheme="https://mrr-cxh.github.io/tags/HTML/"/>
     
     <category term="基础" scheme="https://mrr-cxh.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JQuery</title>
-    <link href="https://mrr-cxh.github.io/2021/01/26/jquery/"/>
-    <id>https://mrr-cxh.github.io/2021/01/26/jquery/</id>
-    <published>2021-01-26T03:21:05.000Z</published>
-    <updated>2021-07-05T13:57:42.659Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;概览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概览&quot;&gt;#&lt;/a&gt; 概览&lt;/h2&gt;
-&lt;p&gt;jQuery 是一个快速、简洁的 JavaScript 框架，是继 Prototype 之后又一个优秀的 JavaScript</summary>
-        
-      
-    
-    
-    
-    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="jQuery" scheme="https://mrr-cxh.github.io/tags/jQuery/"/>
-    
-    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   

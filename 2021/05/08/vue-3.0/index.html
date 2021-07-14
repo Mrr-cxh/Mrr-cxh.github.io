@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-05
+                    2021-07-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.6k
+                    5.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    28 分
+                    26 分
                 </div>
                 
 
@@ -503,12 +503,6 @@
         <span class="token attr-name">:changeTodoText</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>changeTodoText<span class="token punctuation">"</span></span>
       <span class="token punctuation">/&gt;</span></span>
 
-      <span class="token comment">&lt;!-- &lt;TodoFooter @changeType="changeType" /&gt; --&gt;</span>
-
-      <span class="token comment">&lt;!-- 这个自定义事件的名称是 update:type 传递的函数其实是 function($event){type=$event} --&gt;</span>
-      <span class="token comment">&lt;!-- &lt;TodoFooter @update:type="type = $event" /&gt; --&gt;</span>
-      <span class="token comment">&lt;!-- changeType 换成了 update:type  --&gt;</span>
-
       <span class="token comment">&lt;!-- .sync 缩写 --&gt;</span>
       <span class="token comment">&lt;!-- .sync 不仅传递了自定义事件，还传递了对应的prop --&gt;</span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TodoFooter</span>
@@ -532,9 +526,6 @@
       <span class="token keyword">return</span> <span class="token punctuation">{</span>
         todos<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token string">"7t7t7d"</span><span class="token punctuation">,</span> text<span class="token operator">:</span> <span class="token string">"666"</span><span class="token punctuation">,</span> isCompleted<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
         type<span class="token operator">:</span> <span class="token string">"all"</span><span class="token punctuation">,</span>
-        <span class="token comment">// 这个 data 需要子组件修改，一般做法是在父组件定义好的方法，然后传递给子组件执行</span>
-        <span class="token comment">// 也可以使用 自定义事件的 .sync 修饰符实现,一班只用在非引用数据类型的data上</span>
-        <span class="token comment">// .sync 修饰符的用法不需要再父组件定义修改的方法</span>
         editTodoId<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
       <span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -548,28 +539,10 @@
           <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
       <span class="token function">showTodos</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">/* const { type } = this;
-        let showTodos = [];
-        if (type === "all") {
-          showTodos = this.todos;
-        } else if (type === "active") {
-          showTodos = this.todos.filter(todo =&gt; todo.isCompleted === false);
-        } else if (type === "completed") {
-          showTodos = this.todos.filter(todo =&gt; todo.isCompleted === true);
-        }
-        return showTodos; */</span>
         <span class="token keyword">const</span> <span class="token punctuation">{</span> type<span class="token punctuation">,</span> todos <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-        <span class="token comment">/* return todos.filter(todo =&gt;
-          type === "all"
-            ? true
-            : type === "active"
-            ? !todo.isCompleted
-            : todo.isCompleted &amp;&amp; type === "completed"
-        ); */</span>
         <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">filterTodoByType</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> todos<span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
       <span class="token function">activeTodoNums</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">// return this.todos.filter(todo=&gt;!todo.isCompleted).length</span>
         <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">filterTodoByType</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>todos<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
       <span class="token function">completedTodoNums</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -617,9 +590,6 @@
           isCompleted<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token comment">/* changeType(newType) {
-        this.type = newType;
-      }, */</span>
       <span class="token comment">// 删除所有的已完成</span>
       <span class="token function">delAllCompleted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">// console.log(id);</span>
@@ -634,7 +604,7 @@
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>
 <p>TodoForm.vue 子组件</p>
@@ -679,17 +649,8 @@
 <p>TodoList.vue 子组件</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>todo-list<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token comment">&lt;!-- 循环的时候 todo 指的是具体的一项，我们需要其所有内容全部传递给 TodoItem 组件，所以选择了传递整个对象 :todo="todo",也可以直接将整个对象下的所有属性一次性传递 v-bind="todo" --&gt;</span>
-
-    <span class="token comment">&lt;!-- 传入一个对象的所有属性 --&gt;</span>
-    <span class="token comment">&lt;!-- &lt;TodoItem
-        v-for="todo in todos"
-        :todo="todo"
-        :key="todo.id"
-        @delTodo="delTodo"
-        @completedTodo="completedTodo"
-      /&gt;--&gt;</span>
-
+    <span class="token comment">&lt;!-- 循环的时候 todo 指的是具体的一项，我们需要其所有内容全部传递给 TodoItem 组件 --&gt;</span>
+    <span class="token comment">&lt;!-- 所以选择了传递整个对象 :todo="todo",也可以直接将整个对象下的所有属性一次性传递 v-bind="todo" --&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TodoItem</span>
       <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>todo in todos<span class="token punctuation">"</span></span>
       <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>todo.id<span class="token punctuation">"</span></span>
@@ -708,7 +669,7 @@
     components<span class="token operator">:</span> <span class="token punctuation">{</span> TodoItem <span class="token punctuation">}</span><span class="token punctuation">,</span>
     props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"todos"</span><span class="token punctuation">,</span> <span class="token string">"delTodo"</span><span class="token punctuation">,</span> <span class="token string">"completedTodo"</span><span class="token punctuation">,</span> <span class="token string">"changeTodoText"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>
 <p>TodoItem.vue 孙子组件</p>
@@ -747,7 +708,6 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
     name<span class="token operator">:</span> <span class="token string">"TodoItem"</span><span class="token punctuation">,</span>
-    <span class="token comment">//   props: ["todo"],</span>
     props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token string">"isCompleted"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token comment">// 因为这里采用了传递属性的方式，所以上边的属性都没有了todo.id ，直接变成了id</span>
     <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -759,13 +719,8 @@
       <span class="token function">dblClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>isEditing <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
         <span class="token comment">// 使用 focus 方法 让 input 获取焦点</span>
-        <span class="token comment">// 直接使用 focus 方法获得焦点不成功，因为 focus 执行的时候，页面中的 input 并没有出现(focus比先出现先执行，获得焦点在出现之前执行的)</span>
-        <span class="token comment">// 要在 input 更新完毕之后再执行 focus</span>
-        <span class="token comment">// document.querySelector(".edit-input").focus(); //获取不了，因为这是在出现之后执行，但v-show在这之前执行(已经获取焦点了)</span>
-        <span class="token comment">/* setTimeout(() =&gt; {
-          document.querySelector(".edit-input").focus();
-        }, 10); //可以实现 */</span>
-
+        <span class="token comment">// 直接使用 focus 方法获得焦点不成功</span>
+        <span class="token comment">// 因为 focus 执行的时候，页面中的 input 并没有出现(focus比先出现先执行，获得焦点在出现之前执行的)</span>
         <span class="token comment">// 当直接修改了数据之后想要获取对应的更新之后的dom节点，需要借助 $nextTick 方法</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
           <span class="token comment">// document.querySelector(".edit-input").focus(); //这个不保险,推荐使用ref</span>
@@ -784,7 +739,7 @@
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>
 <p>TodoFooter.vue 子组件</p>
@@ -794,10 +749,6 @@
       <span class="token punctuation">&gt;</span></span>{{activeTodoNums}} item{{activeTodoNums !== 1 ?'s':''}} left<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span>
     <span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btns<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-      <span class="token comment">&lt;!--  &lt;button @click="$emit('changeType','all')"&gt;all&lt;/button&gt;
-        &lt;button @click="$emit('changeType','active')"&gt;active&lt;/button&gt;
-        &lt;button @click="$emit('changeType','completed')"&gt;completed&lt;/button&gt;--&gt;</span>
-
       <span class="token comment">&lt;!-- changeType 换成了 update:type  --&gt;</span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
         <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>type===<span class="token punctuation">'</span>all<span class="token punctuation">'</span>&amp;&amp;<span class="token punctuation">'</span>active<span class="token punctuation">'</span><span class="token punctuation">"</span></span>
@@ -833,7 +784,7 @@
     name<span class="token operator">:</span> <span class="token string">"TodoFooter"</span><span class="token punctuation">,</span>
     props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"type"</span><span class="token punctuation">,</span> <span class="token string">"activeTodoNums"</span><span class="token punctuation">,</span> <span class="token string">"completedTodoNums"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h2 id="sync-修饰符"><a class="markdownIt-Anchor" href="#sync-修饰符">#</a> .sync 修饰符</h2>
@@ -905,8 +856,7 @@
       <span class="token attr-name">:filterTitleStr.sync</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>filterTitleStr<span class="token punctuation">"</span></span>
       <span class="token attr-name">@changeShow</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>changeShow<span class="token punctuation">"</span></span>
     <span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span>
       <span class="token attr-name">:postList</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>showPostList<span class="token punctuation">"</span></span>
       <span class="token attr-name">:delPost</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delPost<span class="token punctuation">"</span></span>
@@ -914,6 +864,7 @@
       <span class="token attr-name">:changeEditId</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>changeEditId<span class="token punctuation">"</span></span>
       <span class="token attr-name">:filterTitleStr</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>filterTitleStr<span class="token punctuation">"</span></span>
     <span class="token punctuation">/&gt;</span></span>
+
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PostDialog</span>
       <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span>
       <span class="token attr-name">:show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span>
@@ -951,22 +902,6 @@
             country<span class="token operator">:</span> <span class="token string">"Japan"</span><span class="token punctuation">,</span>
             author<span class="token operator">:</span> <span class="token string">"Susan"</span><span class="token punctuation">,</span>
             reads<span class="token operator">:</span> <span class="token string">"3485"</span><span class="token punctuation">,</span>
-          <span class="token punctuation">}</span><span class="token punctuation">,</span>
-          <span class="token punctuation">{</span>
-            id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-            time<span class="token operator">:</span> <span class="token string">"1993-05-31"</span><span class="token punctuation">,</span>
-            title<span class="token operator">:</span> <span class="token string">"Ksfspbw Vtmqgheo Fpkv Oyrrxddoc Eugb Crq Mnkho Xlxf"</span><span class="token punctuation">,</span>
-            country<span class="token operator">:</span> <span class="token string">"Eurozone"</span><span class="token punctuation">,</span>
-            author<span class="token operator">:</span> <span class="token string">"Joseph"</span><span class="token punctuation">,</span>
-            reads<span class="token operator">:</span> <span class="token string">"2531"</span><span class="token punctuation">,</span>
-          <span class="token punctuation">}</span><span class="token punctuation">,</span>
-          <span class="token punctuation">{</span>
-            id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-            time<span class="token operator">:</span> <span class="token string">"1981-05-26"</span><span class="token punctuation">,</span>
-            title<span class="token operator">:</span> <span class="token string">"Ethdqmz Yohehr Kslmkuuh Aocv Xlfhiyx Lszyy Ggeemdux Pip"</span><span class="token punctuation">,</span>
-            country<span class="token operator">:</span> <span class="token string">"USA"</span><span class="token punctuation">,</span>
-            author<span class="token operator">:</span> <span class="token string">"Jeffirey"</span><span class="token punctuation">,</span>
-            reads<span class="token operator">:</span> <span class="token string">"3274"</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
         filterTitleStr<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
@@ -1017,7 +952,7 @@
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>
 <p>TableFilter.vue 文件</p>
@@ -1234,15 +1169,29 @@
 <ul>
 <li>
 <p>有六个 clss 状态</p>
-<pre class="line-numbers language-none"><code class="language-none">进入 出现 enter
-xx-enter：定义进入过渡的开始状态。在元素被插入之前生效，在元素被插入之后的下一帧移除。
-xx-enter-active：定义进入过渡生效时的状态。在整个进入过渡的阶段中应用，在元素被插入之前生效，在过渡/动画完成之后移除。这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数。
-xx-enter-to： 版及以上定义进入过渡的结束状态。在元素被插入之后下一帧生效 (与此同时 xx-enter 被移除)，在过渡/动画完成之后移除。
-
-离开 消失 leave
-xx-leave：定义离开过渡的开始状态。在离开过渡被触发时立刻生效，下一帧被移除。
-xx-leave-active：定义离开过渡生效时的状态。在整个离开过渡的阶段中应用，在离开过渡被触发时立刻生效，在过渡/动画完成之后移除。这个类可以被用来定义离开过渡的过程时间，延迟和曲线函数。
-xx-leave-to：2.1.8 版及以上定义离开过渡的结束状态。在离开过渡被触发之后下一帧生效 (与此同时 xx-leave 被删除)，在过渡/动画完成之后移除。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p><code>进入 出现 enter</code></p>
+</li>
+<li>
+<p><code>xx-enter</code> ：定义进入过渡的开始状态。在元素被插入之前生效，在元素被插入之后的下一帧移除。</p>
+</li>
+<li>
+<p><code>xx-enter-active</code> ：定义进入过渡生效时的状态。在整个进入过渡的阶段中应用，在元素被插入之前生效，在过渡 / 动画完成之后移除。这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数。</p>
+</li>
+<li>
+<p><code>xx-enter-to</code> ： 版及以上定义进入过渡的结束状态。在元素被插入之后下一帧生效 (与此同时 xx-enter 被移除)，在过渡 / 动画完成之后移除。</p>
+</li>
+<li>
+<p><code>离开 消失 leave</code></p>
+</li>
+<li>
+<p><code>xx-leave</code> ：定义离开过渡的开始状态。在离开过渡被触发时立刻生效，下一帧被移除。 - <code> xx-leave-active</code> ：定义离开过渡生效时的状态。在整个离开过渡的阶段中应用，在离开过渡被触发时立刻生效，在过渡 / 动画完成之后移除。这个类可以被用来定义离开过渡的过程时间，延迟和曲线函数。</p>
+</li>
+<li>
+<p><code>xx-leave-to</code> ：2.1.8 版及以上定义离开过渡的结束状态。在离开过渡被触发之后下一帧生效 (与此同时 xx-leave 被删除)，在过渡 / 动画完成之后移除。</p>
+</li>
+</ul>
 </li>
 <li>
 <p>简单案例</p>
@@ -1653,22 +1602,16 @@ xx-leave-to：2.1.8 版及以上定义离开过渡的结束状态。在离开过
 </li>
 <li>
 <p>全局过滤器</p>
+<ul>
+<li>
 <p>main.js 文件</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./App.vue"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">"./assets/global.css"</span><span class="token punctuation">;</span>
-
-Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"capitalize"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"capitalize"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">;</span>
   value <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> value<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">"#app"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
 <p>FilterDemo.vue 组件 因为是全局的，所以可以直接使用</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -1698,6 +1641,8 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
+</ul>
+</li>
 <li>
 <p>搜索案例</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
@@ -1707,8 +1652,6 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>todo in showTodos<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>todo.id<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
         <span class="token comment">&lt;!-- 如果 todo 的内容部分包含了 searchTxt，那么对应的关键字变色 --&gt;</span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>!searchTxt<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{{ todo.text }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
-        <span class="token comment">&lt;!-- 下面使用的是方法getStr --&gt;</span>
-        <span class="token comment">&lt;!-- &lt;span v-else v-html="getStr(todo)"&gt;&lt;/span&gt; --&gt;</span>
         <span class="token comment">&lt;!-- 在 vue2 中 v-html 内默认不能使用过滤器，需要使用 $options.filters.过滤器名称 获取过滤器函数然后直接使用 --&gt;</span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
           <span class="token attr-name">v-else</span>
@@ -1749,18 +1692,8 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
         <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token comment">/* getStr(todo) {
-        return `${todo.text.slice(
-          0,
-          todo.text.indexOf(this.searchTxt)
-        )}&lt;span class='color'&gt;${this.searchTxt}&lt;/span&gt;${todo.text.slice(
-          todo.text.indexOf(this.searchTxt) + this.searchTxt.length
-        )}`;
-      }, */</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 
@@ -2305,7 +2238,7 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">119.2k</span>
+                        class="white-color">121.7k</span>
             
             
             
