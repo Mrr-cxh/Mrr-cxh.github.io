@@ -77,7 +77,7 @@
     <link href="https://mrr-cxh.github.io/2021/05/30/vue-router-2.0/"/>
     <id>https://mrr-cxh.github.io/2021/05/30/vue-router-2.0/</id>
     <published>2021-05-30T08:02:00.000Z</published>
-    <updated>2021-07-05T14:02:41.270Z</updated>
+    <updated>2021-07-16T14:30:27.587Z</updated>
     
     
       
@@ -111,7 +111,7 @@
     <link href="https://mrr-cxh.github.io/2021/05/24/vue-router-1.0/"/>
     <id>https://mrr-cxh.github.io/2021/05/24/vue-router-1.0/</id>
     <published>2021-05-24T07:47:48.000Z</published>
-    <updated>2021-07-05T14:02:30.786Z</updated>
+    <updated>2021-07-16T14:27:04.629Z</updated>
     
     
       
@@ -131,73 +131,6 @@
     <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
     
     <category term="Vue-Router" scheme="https://mrr-cxh.github.io/tags/Vue-Router/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统下</title>
-    <link href="https://mrr-cxh.github.io/2021/05/22/cao-zuo-xi-tong-xia/"/>
-    <id>https://mrr-cxh.github.io/2021/05/22/cao-zuo-xi-tong-xia/</id>
-    <published>2021-05-22T07:12:22.000Z</published>
-    <updated>2021-06-15T01:45:57.246Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;进程调度策略&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#进程调度策略&quot;&gt;#&lt;/a&gt; 进程调度策略&lt;/h2&gt;
-&lt;h3 id=&quot;一先来先服务调度算法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>网络</title>
-    <link href="https://mrr-cxh.github.io/2021/05/22/wang-luo/"/>
-    <id>https://mrr-cxh.github.io/2021/05/22/wang-luo/</id>
-    <published>2021-05-22T07:01:35.000Z</published>
-    <updated>2021-06-15T01:45:50.730Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;网络模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#网络模型&quot;&gt;#&lt;/a&gt; 网络模型&lt;/h2&gt;
-&lt;p&gt;OSI: open system interconnection 开放式系统互联参考模型&lt;br&gt;
- OSI 和 TCP/IP</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统</title>
-    <link href="https://mrr-cxh.github.io/2021/05/20/cao-zuo-xi-tong/"/>
-    <id>https://mrr-cxh.github.io/2021/05/20/cao-zuo-xi-tong/</id>
-    <published>2021-05-20T11:58:51.000Z</published>
-    <updated>2021-06-15T01:46:01.768Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
-&lt;p&gt;操作系统（operation system，简称</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
@@ -572,6 +505,94 @@
     <category term="HTML" scheme="https://mrr-cxh.github.io/tags/HTML/"/>
     
     <category term="基础" scheme="https://mrr-cxh.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JQuery</title>
+    <link href="https://mrr-cxh.github.io/2021/01/26/jquery/"/>
+    <id>https://mrr-cxh.github.io/2021/01/26/jquery/</id>
+    <published>2021-01-26T03:21:05.000Z</published>
+    <updated>2021-07-05T13:57:42.659Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概览&quot;&gt;#&lt;/a&gt; 概览&lt;/h2&gt;
+&lt;p&gt;jQuery 是一个快速、简洁的 JavaScript 框架，是继 Prototype 之后又一个优秀的 JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="jQuery" scheme="https://mrr-cxh.github.io/tags/jQuery/"/>
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node</title>
+    <link href="https://mrr-cxh.github.io/2021/01/16/node/"/>
+    <id>https://mrr-cxh.github.io/2021/01/16/node/</id>
+    <published>2021-01-16T03:20:50.000Z</published>
+    <updated>2021-07-14T12:26:00.274Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;node 其实是主要为了让 Js 可以实现后台的功能。作为前端使用 node，一般使用 node 的 npm</summary>
+        
+      
+    
+    
+    
+    <category term="项目搭建" scheme="https://mrr-cxh.github.io/categories/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="服务器" scheme="https://mrr-cxh.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Node" scheme="https://mrr-cxh.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Promise</title>
+    <link href="https://mrr-cxh.github.io/2021/01/08/promise/"/>
+    <id>https://mrr-cxh.github.io/2021/01/08/promise/</id>
+    <published>2021-01-08T03:20:39.000Z</published>
+    <updated>2021-07-14T12:24:58.154Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简单使用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#简单使用&quot;&gt;#&lt;/a&gt; 简单使用&lt;/h2&gt;
+&lt;pre class=&quot;line-numbers language-js&quot; data-language=&quot;js&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="前端基础" scheme="https://mrr-cxh.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="数据请求" scheme="https://mrr-cxh.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/"/>
+    
+    
+    <category term="数据请求" scheme="https://mrr-cxh.github.io/tags/%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/"/>
+    
+    <category term="服务器" scheme="https://mrr-cxh.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="Promise" scheme="https://mrr-cxh.github.io/tags/Promise/"/>
     
   </entry>
   
