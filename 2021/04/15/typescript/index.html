@@ -444,21 +444,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-19
+                    2021-07-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.3k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    24 分
+                    21 分
                 </div>
                 
 
@@ -548,15 +548,6 @@ Red: 0} */</span>
 <span class="token comment">// enum Color {Red = 1, Green, Blue} // 编号就成了1,2,3</span>
 <span class="token comment">// enum Color {Red = 1, Green = 2, Blue = 4} // 编号自定义</span>
 
-<span class="token comment">/* var Color;
-(function (Color) {
-    Color[Color["Red"] = 0] = "Red";
-    Color[Color["Green"] = 1] = "Green";
-    Color[Color["Blue"] = 2] = "Blue";
-})(Color || (Color = {}));
-var c = Color.Green;
-console.log(c); */</span>
-
 <span class="token comment">// any(任何一种类型) 赋值的时候可以随意赋值</span>
 <span class="token comment">// let notSure: any = 0;</span>
 <span class="token comment">// notSure = "嘿嘿嘿";</span>
@@ -597,7 +588,7 @@ b: 20,
 
 <span class="token keyword">let</span> strLength<span class="token operator">:</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>someValue <span class="token keyword">as</span> string<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
 <span class="token comment">// 两种形式是等价的。 至于使用哪个大多数情况下是凭个人喜好；</span>
-<span class="token comment">// 然而，当你在TypeScript里使用JSX时，只有 as语法断言是被允许的。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// 然而，当你在TypeScript里使用JSX时，只有 as语法断言是被允许的。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>
 <p>异步输出小案例</p>
@@ -653,19 +644,19 @@ b: 20,
 
 <span class="token comment">// 整个函数类型的声明，很少写</span>
 <span class="token comment">/* let add: (x: number, y: number) =&gt; number = (
-      xx: number,
-      yy: number
-      ): number =&gt; {
-      return xx + yy;
-      };
-      // 第一个不是箭头函数(创建了一个 add 的变量，箭头右边是返回值的声明),第二个是箭头函数
+  xx: number,
+  yy: number
+): number =&gt; {
+  return xx + yy;
+};
+// 第一个不是箭头函数(创建了一个 add 的变量，箭头右边是返回值的声明),第二个是箭头函数
 
-      let add1: (x: number, y: number) =&gt; number = function (
-      x: number,
-      y: number
-      ): number {
-      return x + y;
-      }; */</span>
+let add1: (x: number, y: number) =&gt; number = function (
+  x: number,
+  y: number
+): number {
+  return x + y;
+}; */</span>
 
 <span class="token comment">// 返回值无类型，也就是 void 类型</span>
 <span class="token comment">// void 可省略</span>
@@ -1432,150 +1423,6 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 </ul>
 </li>
 </ul>
-<h3 id="装饰器解析理解"><a class="markdownIt-Anchor" href="#装饰器解析理解">#</a> 装饰器解析 (理解)</h3>
-<ul>
-<li>
-<p>decorator.ts</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 一般装饰器都装饰 类</span>
-
-<span class="token comment">//装饰器就是一个函数</span>
-
-<span class="token comment">// 装饰器</span>
-<span class="token comment">// 1. 类的装饰器  vue 中用到的 @Component</span>
-
-<span class="token comment">// 类装饰器函数默认接收类本身作为参数</span>
-<span class="token comment">// demoDectorator 函数的 constructor 指的就是 Greeter 类本身</span>
-<span class="token comment">// 装饰器函数自动会触发</span>
-
-<span class="token comment">// 普通装饰器</span>
-<span class="token comment">/* function demoDectorator(constructor: Function) {
-  // console.log(constructor);
-  constructor.prototype.count = 100;
-}*/</span>
-
-<span class="token comment">// 可传参装饰器  装饰器工厂</span>
-<span class="token comment">/* function demoDectorator(countValue: number) {
-  // console.log(constructor);
-  // 返回的函数接收参数
-  // target 类本身
-  return function(target: any) {
-    console.log(countValue); //1000
-    console.log(target); // ƒ Greeter(message)……
-    target.prototype.count = countValue;
-    target.prototype.showCount = function() {
-      console.log("我是装饰器方法" + this.count);
-    };
-  };
-} */</span>
-
-<span class="token comment">// 类装饰器重载构造函数</span>
-<span class="token comment">// 把构造函数里同样的东西给覆盖掉</span>
-
-<span class="token comment">/* function demoDectorator(target: any) {
-  return class extends target {
-    count = 200;
-    greet(){
-      return '我是装饰器重载后的方法' + this.greeting
-    }
-  };
-}
-// 类装饰器
-@demoDectorator
-// @demoDectorator(1000) // 可传参装饰器
-// @demoDectorator // 普通装饰器
-class Greeter {
-  greeting: string;
-  count: number;
-  constructor(message: string) {
-    this.greeting = message;
-    this.count = 100;
-  }
-  greet() {
-    return "Hello, " + this.greeting;
-  }
-}
-const greeter: any = new Greeter("lucy");
-// 加 any 主要是为了解决编辑器报错
-console.log(greeter.count);
-// 第一次100(普通装饰器) 第二次1000(可传参装饰器) 第三次200(类装饰器重载构造函数)
-console.log(greeter.greet());
-// 我是装饰器重载后的方法lucy
-// greeter.showCount(); */</span>
-
-<span class="token comment">// 2. 方法装饰器  vue 中用到的 @Emit</span>
-
-<span class="token comment">// function Emit(param: any) {</span>
-<span class="token comment">/* function Emit(param?: string) {
-  // targetPrototype 类(Point)的原型对象
-  // methodName 方法名
-  // desc 方法的描述   desc.value 是方法本身
-  return function(targetPrototype: any, methodName: any, desc: any) {
-    // 利用 desc.value 修改了原来类里边的方法 showPoint
-
-    // 存原来的方法
-    const oDescValue = desc.value;
-
-    // 重写原来的方法
-    desc.value = function(...arg: any[]) {
-      // console.log(param); //xxx
-
-      // 做自己的事
-      const eventName = param ? param : methodName;
-      console.log(eventName); // show
-      // this.$emit(methodName, ...arg);
-
-      // 执行原来的方法并替换 this 以及传递参数
-      oDescValue.apply(this, arg);
-      // console.log(id);
-    };
-  };
-}
-
-class Point {
-  x: number;
-  y: number;
-  constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
-  }
-  // 将自定义事件 写到 showPoint 中
-  // 装饰器其实做的是写了一新的 showPoint 将需要做的和原来合并了
-  // @Emit("xxx") // @Emit可改名
-  @Emit("show") // @Emit可改名
-  showPoint(id: string) {
-    // console.log(`x坐标是${this.x},y坐标是${this.y}`);
-    //x坐标是1,y坐标是2
-    console.log('自己的事',thix.x,id)
-  }
-}
-
-const point = new Point(1, 2);
-point.showPoint("我是id"); */</span>
-
-<span class="token comment">// 3. 属性装饰器  vue 中用到的 @Prop</span>
-
-<span class="token keyword">function</span> <span class="token function">Prop</span><span class="token punctuation">(</span><span class="token parameter">param<span class="token operator">?</span><span class="token operator">:</span> string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// targetPrototype 类的原型对象</span>
-  <span class="token comment">// propName 属性名</span>
-  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">targetPrototype<span class="token operator">:</span> any<span class="token punctuation">,</span> propName<span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    targetPrototype<span class="token punctuation">[</span>propName<span class="token punctuation">]</span> <span class="token operator">=</span> param <span class="token operator">?</span> param <span class="token operator">:</span> propName<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">ColorPoint</span> <span class="token punctuation">{</span>
-  x<span class="token operator">:</span> number<span class="token punctuation">;</span>
-  y<span class="token operator">:</span> number<span class="token punctuation">;</span>
-  @<span class="token function">Prop</span><span class="token punctuation">(</span><span class="token string">"bgc"</span><span class="token punctuation">)</span> color<span class="token operator">!</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token operator">:</span> number<span class="token punctuation">,</span> y<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">const</span> colorPoint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ColorPoint</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>colorPoint<span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//bgc</span>
-<span class="token comment">// 如果不传参的话,输出 color(和color重名的)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
 
                 
             </div>
@@ -2110,7 +1957,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">96.8k</span>
+                        class="white-color">96.1k</span>
             
             
             
