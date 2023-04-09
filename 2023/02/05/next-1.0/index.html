@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.8k
+                    5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    19 分
                 </div>
                 
 
@@ -890,6 +890,28 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="路由"><a class="markdownIt-Anchor" href="#路由">#</a> 路由</h1>
+<h2 id="页面路由"><a class="markdownIt-Anchor" href="#页面路由">#</a> 页面路由</h2>
+<p>当一个文件被添加到 pages 目录中，它会自动作为路由使用。pages 目录中的文件可以用来定义最常见的模式。</p>
+<h3 id="index-routes"><a class="markdownIt-Anchor" href="#index-routes">#</a> Index routes</h3>
+<p>路由器会自动将名为  <code>index</code>  的路由文件到目录的根目录。</p>
+<ul>
+<li><code>pages/index.js</code>  →  <code>/</code></li>
+<li><code>pages/blog/index.js</code>  →  <code>/blog</code></li>
+</ul>
+<h3 id="嵌套路由"><a class="markdownIt-Anchor" href="#嵌套路由">#</a> 嵌套路由</h3>
+<p>路由器支持嵌套文件。如果创建嵌套文件夹结构，文件仍将以相同的方式自动路由。</p>
+<ul>
+<li><code>pages/blog/first-post.js</code>  →  <code>/blog/first-post</code></li>
+<li><code>pages/dashboard/settings/username.js</code>  →  <code>/dashboard/settings/username</code></li>
+</ul>
+<h3 id="动态路由"><a class="markdownIt-Anchor" href="#动态路由">#</a> 动态路由</h3>
+<p>可以使用括号语法，这允许您匹配命名参数。</p>
+<ul>
+<li><code>pages/blog/[slug].js</code>  →  <code>/blog/:slug (/blog/hello-world)</code></li>
+<li><code>pages/[username]/settings.js</code>  →  <code>/:username/settings (/foo/settings)</code></li>
+<li><code>pages/post/[...all].js</code>  →  <code>/post/* (/post/2020/id/title)</code></li>
+</ul>
+<h2 id="api-路由"><a class="markdownIt-Anchor" href="#api-路由">#</a> API 路由</h2>
 
                 
             </div>
@@ -1434,7 +1456,7 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">183.8k</span>
+                        class="white-color">184k</span>
             
             
             
