@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mrr-cxh</title>
+  
+  
+  <link href="https://mrr-cxh.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://mrr-cxh.github.io/"/>
+  <updated>2023-04-09T08:49:59.495Z</updated>
+  <id>https://mrr-cxh.github.io/</id>
+  
+  <author>
+    <name>Mrr-cxh</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next 1.0</title>
+    <link href="https://mrr-cxh.github.io/2023/02/05/next-1.0/"/>
+    <id>https://mrr-cxh.github.io/2023/02/05/next-1.0/</id>
+    <published>2023-02-05T13:16:05.000Z</published>
+    <updated>2023-04-09T08:49:59.495Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#简介&quot;&gt;#&lt;/a&gt; 简介&lt;/h1&gt;
+&lt;p&gt;Next.js 是一个 React 开发框架。它能确保您和您的团队成功地构建 React 应用程序。&lt;/p&gt;
+&lt;p&gt;Next.js</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Next" scheme="https://mrr-cxh.github.io/tags/Next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Native</title>
+    <link href="https://mrr-cxh.github.io/2022/11/28/react-native/"/>
+    <id>https://mrr-cxh.github.io/2022/11/28/react-native/</id>
+    <published>2022-11-28T12:46:05.000Z</published>
+    <updated>2022-12-04T14:07:27.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#简介&quot;&gt;#&lt;/a&gt; 简介&lt;/h2&gt;
+&lt;p&gt;React Native (简称 RN) 是 Facebook 于 2015 年 4 月开源的跨平台移动应用开发框架，是 Facebook</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="React Native" scheme="https://mrr-cxh.github.io/tags/React-Native/"/>
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sentry</title>
+    <link href="https://mrr-cxh.github.io/2022/07/12/sentry/"/>
+    <id>https://mrr-cxh.github.io/2022/07/12/sentry/</id>
+    <published>2022-07-12T12:27:50.000Z</published>
+    <updated>2022-07-12T15:35:07.762Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;sentry-简介&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sentry-简介&quot;&gt;#&lt;/a&gt; Sentry 简介&lt;/h2&gt;
+&lt;p&gt;Sentry 是一个开源的实时错误监控的项目，它支持很多端的配置，包括 web</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://mrr-cxh.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Sentry" scheme="https://mrr-cxh.github.io/tags/Sentry/"/>
+    
+    <category term="监控" scheme="https://mrr-cxh.github.io/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DeepLink深度链接</title>
+    <link href="https://mrr-cxh.github.io/2022/06/30/deeplink-shen-du-lian-jie/"/>
+    <id>https://mrr-cxh.github.io/2022/06/30/deeplink-shen-du-lian-jie/</id>
+    <published>2022-06-30T12:11:46.494Z</published>
+    <updated>2022-06-30T12:13:39.495Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;deeplink-深度链接是什么&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#deeplink-深度链接是什么&quot;&gt;#&lt;/a&gt; Deeplink</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://mrr-cxh.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="DeepLink" scheme="https://mrr-cxh.github.io/tags/DeepLink/"/>
+    
+    <category term="H5" scheme="https://mrr-cxh.github.io/tags/H5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>移动端适配你需要知道的</title>
+    <link href="https://mrr-cxh.github.io/2022/06/28/yi-dong-duan-gua-pei-ni-xu-yao-zhi-dao-de/"/>
+    <id>https://mrr-cxh.github.io/2022/06/28/yi-dong-duan-gua-pei-ni-xu-yao-zhi-dao-de/</id>
+    <published>2022-06-28T12:56:42.000Z</published>
+    <updated>2022-06-30T12:37:51.583Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;移动端适配你需要知道的&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#移动端适配你需要知道的&quot;&gt;#&lt;/a&gt; 移动端适配你需要知道的&lt;/h2&gt;
+&lt;h3 id=&quot;导读&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://mrr-cxh.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="H5" scheme="https://mrr-cxh.github.io/tags/H5/"/>
+    
+    <category term="移动端适配" scheme="https://mrr-cxh.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3</title>
+    <link href="https://mrr-cxh.github.io/2022/06/20/vue3/"/>
+    <id>https://mrr-cxh.github.io/2022/06/20/vue3/</id>
+    <published>2022-06-20T13:48:42.000Z</published>
+    <updated>2022-08-09T15:27:03.995Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;中文文档&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#中文文档&quot;&gt;#&lt;/a&gt; 中文文档&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Vue" scheme="https://mrr-cxh.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kwai一些解决方案</title>
+    <link href="https://mrr-cxh.github.io/2022/06/19/kwai-yi-xie-jie-jue-fang-an/"/>
+    <id>https://mrr-cxh.github.io/2022/06/19/kwai-yi-xie-jie-jue-fang-an/</id>
+    <published>2022-06-19T09:57:42.000Z</published>
+    <updated>2022-06-19T10:17:23.363Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;巧妙运用 continue 和 undefined（本次用到的场景是过滤无效字段，如果要判断的字段为 undefined，则用 continue 跳出赋值阶段）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Number (moment ().subtract</summary>
+        
+      
+    
+    
+    
+    <category term="解决方案" scheme="https://mrr-cxh.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+    
+    <category term="解决方案" scheme="https://mrr-cxh.github.io/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ReactRouter6</title>
+    <link href="https://mrr-cxh.github.io/2022/06/16/reactrouter6/"/>
+    <id>https://mrr-cxh.github.io/2022/06/16/reactrouter6/</id>
+    <published>2022-06-16T12:48:42.000Z</published>
+    <updated>2022-06-18T16:18:02.769Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;React Router 以三个不同的包发布到 npm</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="React" scheme="https://mrr-cxh.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 4.0</title>
+    <link href="https://mrr-cxh.github.io/2022/05/15/react-4.0/"/>
+    <id>https://mrr-cxh.github.io/2022/05/15/react-4.0/</id>
+    <published>2022-05-15T12:48:42.000Z</published>
+    <updated>2022-08-21T15:02:09.463Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;redux&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#redux&quot;&gt;#&lt;/a&gt; Redux&lt;/h2&gt;
+&lt;h3 id=&quot;相关文档&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#相关文档&quot;&gt;#&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="React" scheme="https://mrr-cxh.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 3.0</title>
+    <link href="https://mrr-cxh.github.io/2022/05/12/react-3.0/"/>
+    <id>https://mrr-cxh.github.io/2022/05/12/react-3.0/</id>
+    <published>2022-05-12T03:04:42.000Z</published>
+    <updated>2022-05-14T14:25:53.185Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;浏览器扩展程序 (FeHelper)：有个功能可以自动整理 JSON 格式数据&lt;/p&gt;
+&lt;h2 id=&quot;react-脚手架配置代理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#react-脚手架配置代理&quot;&gt;#&lt;/a&gt; React</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="React" scheme="https://mrr-cxh.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 2.0</title>
+    <link href="https://mrr-cxh.github.io/2021/09/12/react-2.0/"/>
+    <id>https://mrr-cxh.github.io/2021/09/12/react-2.0/</id>
+    <published>2021-09-12T03:04:42.000Z</published>
+    <updated>2022-05-12T03:46:46.652Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;收集表单数据&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#收集表单数据&quot;&gt;#&lt;/a&gt; 收集表单数据&lt;/h2&gt;
+&lt;h3 id=&quot;非受控组件&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="React" scheme="https://mrr-cxh.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 1.0</title>
+    <link href="https://mrr-cxh.github.io/2021/09/11/react-1.0/"/>
+    <id>https://mrr-cxh.github.io/2021/09/11/react-1.0/</id>
+    <published>2021-09-11T02:40:33.000Z</published>
+    <updated>2022-05-08T13:33:57.573Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;也是单页面应用 (spa)，public 下只有一个 index.html，也是数据驱动视图，也是虚拟 dom&lt;br&gt;
+React</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="React" scheme="https://mrr-cxh.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pc端OA管理系统解决方案</title>
+    <link href="https://mrr-cxh.github.io/2021/08/09/pc-duan-oa-guan-li-xi-tong-jie-jue-fang-an/"/>
+    <id>https://mrr-cxh.github.io/2021/08/09/pc-duan-oa-guan-li-xi-tong-jie-jue-fang-an/</id>
+    <published>2021-08-09T13:13:45.000Z</published>
+    <updated>2022-06-19T09:58:05.422Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;OA</summary>
+        
+      
+    
+    
+    
+    <category term="解决方案" scheme="https://mrr-cxh.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+    
+    <category term="解决方案" scheme="https://mrr-cxh.github.io/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>uni-app</title>
+    <link href="https://mrr-cxh.github.io/2021/07/14/uni-app/"/>
+    <id>https://mrr-cxh.github.io/2021/07/14/uni-app/</id>
+    <published>2021-07-14T13:34:11.000Z</published>
+    <updated>2021-08-09T13:13:58.789Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;uni-app&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#uni-app&quot;&gt;#&lt;/a&gt; uni-app&lt;/h2&gt;
+&lt;p&gt;安装 HBuilderX (&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="小程序" scheme="https://mrr-cxh.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+    <category term="小程序" scheme="https://mrr-cxh.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="https://mrr-cxh.github.io/tags/uni-app/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vuex</title>
+    <link href="https://mrr-cxh.github.io/2021/06/08/vuex/"/>
+    <id>https://mrr-cxh.github.io/2021/06/08/vuex/</id>
+    <published>2021-06-08T08:06:10.000Z</published>
+    <updated>2021-07-19T13:52:05.277Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;Vuex 是一个专为 Vue.js</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Vuex" scheme="https://mrr-cxh.github.io/tags/Vuex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue-Router</title>
+    <link href="https://mrr-cxh.github.io/2021/05/24/vue-router-1.0/"/>
+    <id>https://mrr-cxh.github.io/2021/05/24/vue-router-1.0/</id>
+    <published>2021-05-24T07:47:48.000Z</published>
+    <updated>2021-07-18T14:42:28.433Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;路由基础&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#路由基础&quot;&gt;#&lt;/a&gt; 路由基础&lt;/h2&gt;
+&lt;p&gt;路由的切换其实就是切换 div,</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Vue-Router" scheme="https://mrr-cxh.github.io/tags/Vue-Router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 4.0</title>
+    <link href="https://mrr-cxh.github.io/2021/05/16/vue-4.0/"/>
+    <id>https://mrr-cxh.github.io/2021/05/16/vue-4.0/</id>
+    <published>2021-05-16T07:37:47.000Z</published>
+    <updated>2021-07-15T14:21:12.489Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;vue-组件通信&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#vue-组件通信&quot;&gt;#&lt;/a&gt; Vue 组件通信&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;父传子 prop&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;父传子 插槽</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Vue" scheme="https://mrr-cxh.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 3.0</title>
+    <link href="https://mrr-cxh.github.io/2021/05/08/vue-3.0/"/>
+    <id>https://mrr-cxh.github.io/2021/05/08/vue-3.0/</id>
+    <published>2021-05-08T07:31:02.000Z</published>
+    <updated>2021-08-02T12:37:55.298Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;todo-大案例&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#todo-大案例&quot;&gt;#&lt;/a&gt; todo 大案例&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;TodoWrap.vue 父组件&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Vue" scheme="https://mrr-cxh.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 2.0</title>
+    <link href="https://mrr-cxh.github.io/2021/04/30/vue-2.0/"/>
+    <id>https://mrr-cxh.github.io/2021/04/30/vue-2.0/</id>
+    <published>2021-04-30T09:33:53.000Z</published>
+    <updated>2021-07-13T14:19:12.690Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;插槽&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#插槽&quot;&gt;#&lt;/a&gt; 插槽&lt;/h2&gt;
+&lt;p&gt;当父组件想展示给子组件不同的结构 (div,span……) 时，可以使用插槽&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Vue" scheme="https://mrr-cxh.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 1.0</title>
+    <link href="https://mrr-cxh.github.io/2021/04/23/vue-1.0/"/>
+    <id>https://mrr-cxh.github.io/2021/04/23/vue-1.0/</id>
+    <published>2021-04-23T02:12:12.000Z</published>
+    <updated>2021-07-13T12:13:29.607Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;Vue 属于单页面应用 (SPA)，指令后边都可以写 js 内容&lt;br&gt;
+单页面只需加载一次就把整个项目加载完了&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Vue" scheme="https://mrr-cxh.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+</feed>
