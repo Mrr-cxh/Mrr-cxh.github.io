@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.6k
+                    6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    24 分
                 </div>
                 
 
@@ -1027,10 +1027,39 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
 
 <span class="token comment">// URL将更新为/?counter=10。并且页面不会被替换，只会更改路由的状态。</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> Page<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>注意：浅路由只适用于相同页面的 URL 更改。例如，假设我们有另一个名为  <code>pages/about.js</code>  的页面，您可以运行以下操作：</p>
+<p>注意：浅路由 <code>只适用</code> 于相同页面的 URL 更改。例如，假设我们有另一个名为  <code>pages/about.js</code>  的页面，您可以运行以下操作：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"/?counter=10"</span><span class="token punctuation">,</span> <span class="token string">"/about?counter=10"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> shallow<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>由于这是一个新页面，即使我们要求进行浅路由，它也会卸载当前页面，加载新页面并等待数据获取。</p>
 <h2 id="api-路由"><a class="markdownIt-Anchor" href="#api-路由">#</a> API 路由</h2>
+<p>API 路由为使用 Next.js 构建你自己的 API 提供了一种解决方案。</p>
+<p><code>pages/api</code>  目录下的任何文件都将作为 API 端点映射到  <code>/api/\*</code> ，而不是  <code>page</code> 。这些文件只会增加服务端文件包的体积，而不会增加客户端文件包的大小。</p>
+<p>为了使 API 路由能正常工作，你需要导出（export）一个默认函数（即 <b>请求处理器</b>），并且该函数能够接收以下参数：</p>
+<ul>
+<li><code>req</code> : 一个  <code>http.IncomingMessage</code>  实例，以及一些预先构建的中间件</li>
+<li><code>res</code> : 一个  <code>http.ServerResponse</code>  实例，以及一些辅助函数</li>
+</ul>
+<p>要处理 API 路由的不同 HTTP 方法，可以在请求处理器中使用  <code>req.method</code> ，如下所示：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">"POST"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Process a POST request</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Handle any other HTTP method</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对于新项目，您可以使用 API Routes 构建整个 API。如果您有一个现有的 API，则不需要通过 API 路由将调用转发到 API。API 路由的其他一些用例包括：</p>
+<ul>
+<li>屏蔽外部服务的 URL（例如 <code>/api/secret</code> ，而不是 <code>https://company.com/secret-url</code> )</li>
+<li>使用服务器上的环境变量来安全地访问外部服务。</li>
+</ul>
+<p><b>注意事项：</b></p>
+<ul>
+<li>
+<p>如果 API 路由未指定 CORS 标头则意味着它们在默认情况下仅是同源策略。你可以通过使用 CORS 中间件包装出一个请求处理器来自定义此行为。</p>
+</li>
+<li>
+<p>API 路由不能同  <code>next export</code>  一起使用</p>
+</li>
+</ul>
 
                 
             </div>
@@ -1575,7 +1604,7 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">184.6k</span>
+                        class="white-color">185k</span>
             
             
             
