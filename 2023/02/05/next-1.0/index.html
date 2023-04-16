@@ -455,7 +455,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6k
+                    6.1k
                 </div>
                 
 
@@ -1031,6 +1031,7 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"/?counter=10"</span><span class="token punctuation">,</span> <span class="token string">"/about?counter=10"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> shallow<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>由于这是一个新页面，即使我们要求进行浅路由，它也会卸载当前页面，加载新页面并等待数据获取。</p>
 <h2 id="api-路由"><a class="markdownIt-Anchor" href="#api-路由">#</a> API 路由</h2>
+<h3 id="简介-2"><a class="markdownIt-Anchor" href="#简介-2">#</a> 简介</h3>
 <p>API 路由为使用 Next.js 构建你自己的 API 提供了一种解决方案。</p>
 <p><code>pages/api</code>  目录下的任何文件都将作为 API 端点映射到  <code>/api/\*</code> ，而不是  <code>page</code> 。这些文件只会增加服务端文件包的体积，而不会增加客户端文件包的大小。</p>
 <p>为了使 API 路由能正常工作，你需要导出（export）一个默认函数（即 <b>请求处理器</b>），并且该函数能够接收以下参数：</p>
@@ -1060,6 +1061,14 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
 <p>API 路由不能同  <code>next export</code>  一起使用</p>
 </li>
 </ul>
+<h3 id="动态-api-路由"><a class="markdownIt-Anchor" href="#动态-api-路由">#</a> 动态 API 路由</h3>
+<p>API 路由支持，并与 pages 一样遵循相同的文件命名规则。</p>
+<p>例如，API 路由  <code>pages/api/post/[pid].js</code>  的实现代码如下：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> pid <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>query<span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Post: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>pid<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>现在，发往  <code>/api/post/abc</code>  的请求将收到响应： <code>Post: abc</code> 。</p>
 
                 
             </div>
