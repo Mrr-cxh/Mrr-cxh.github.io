@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-04-16
+                    2023-10-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.1k
+                    6.2k
                 </div>
                 
 
@@ -1069,6 +1069,13 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
   res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Post: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>pid<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>现在，发往  <code>/api/post/abc</code>  的请求将收到响应： <code>Post: abc</code> 。</p>
+<h3 id="api-中间件"><a class="markdownIt-Anchor" href="#api-中间件">#</a> API 中间件</h3>
+<p>API 路由提供了内置的中间件，用于解析传入的请求 ( <code>req</code> )。这些中间件是：</p>
+<ul>
+<li><code>req.cookies</code> : 包含请求发送的 cookie 的对象。默认为｛｝</li>
+<li><code>req.query</code> : 包含查询字符串的对象。默认为｛｝</li>
+<li><code>req.body</code> : 包含按内容类型解析的正文的对象，如果未发送正文，则为 null</li>
+</ul>
 
                 
             </div>
@@ -1611,7 +1618,7 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">185.7k</span>
+                        class="white-color">185.8k</span>
             
             
             
