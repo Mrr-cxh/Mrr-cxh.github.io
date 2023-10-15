@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Sentry, Mrr-cxh">
+    <meta name="keywords" content="Next 性能优化, Mrr-cxh">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Sentry | Mrr-cxh</title>
+    <title>Next 性能优化 | Mrr-cxh</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -291,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Sentry</h1>
+                    <h1 class="description center-align post-title">Next 性能优化</h1>
                 </div>
             </div>
         </div>
@@ -412,12 +412,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Sentry/">
-                                <span class="chip bg-color">Sentry</span>
+                            <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                <span class="chip bg-color">框架</span>
                             </a>
                         
-                            <a href="/tags/%E7%9B%91%E6%8E%A7/">
-                                <span class="chip bg-color">监控</span>
+                            <a href="/tags/Next/">
+                                <span class="chip bg-color">Next</span>
                             </a>
                         
                     </div>
@@ -428,8 +428,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                学习
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                框架
                             </a>
                         
                     </div>
@@ -441,28 +441,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-12
+                    2023-10-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-12
+                    2023-10-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    684
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -480,116 +480,56 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="sentry-简介"><a class="markdownIt-Anchor" href="#sentry-简介">#</a> Sentry 简介</h2>
-<p>Sentry 是一个开源的实时错误监控的项目，它支持很多端的配置，包括 web 前端、服务器端、移动端及其游戏端。支持各种语言，例如 python、oc、java、node、javascript 等。也可以应用到各种不同的框架上面，如前端框架中的 vue 、angular 、react 等最流行的前端框架。Sentry 可以帮助我们完成以下工作：例如，线上有一个 bug，代码的某处逻辑的 NullPointerException 造成了这个问题，Sentry 会立即发现错误，并通过邮件或其他基于通知规则的集成通知到相关责任人员，这个通知可以把我们引入到一个指示板，这个指示板为我们提供了快速分类问题所需的上下文，如：频率、用户影响、代码哪一部分受到影响以及那个团队可能是问题的所有者。</p>
-<h2 id="为什么选择-sentry"><a class="markdownIt-Anchor" href="#为什么选择-sentry">#</a> 为什么选择 Sentry</h2>
-<ul>
-<li>100% 开源：源码开放，性能卓越，易于扩展</li>
-<li>支持 Sass 和私有化部署</li>
-<li>支持主流的编程语言</li>
-<li>支持多个第三方集成，如 gitlab，github，jira，webhook</li>
-</ul>
-<h2 id="sentry-功能架构"><a class="markdownIt-Anchor" href="#sentry-功能架构">#</a> Sentry 功能架构</h2>
-<ul>
-<li>异常管理：支持项目组，多环境管理，版本管理</li>
-<li>服务部署：docker，k8s，python</li>
-<li>性能监测：自动监测，手动监测，指标可视化</li>
-<li>报告与告警：配置告警规则，邮箱 webhook，日志清洗，自动报表，群组项目组，报警频率</li>
-<li>可扩展能力：GitLab，Jira，WebHooks，Datadog，Twilio</li>
-<li>异常详情：可视化列表，环境信息，行为信息，soureMap，异常聚合，用户信息，面包屑信息</li>
-</ul>
-<h2 id="异常监控的背景"><a class="markdownIt-Anchor" href="#异常监控的背景">#</a> 异常监控的背景</h2>
-<h3 id="目前现状"><a class="markdownIt-Anchor" href="#目前现状">#</a> 目前现状</h3>
-<p>工程师在处理线上问题的时候基本上都来自于工单，工程师只是被动的接收客户发现的问题。</p>
-<h3 id="目前痛点"><a class="markdownIt-Anchor" href="#目前痛点">#</a> 目前痛点</h3>
-<p>兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急。</p>
-<h3 id="实现目标"><a class="markdownIt-Anchor" href="#实现目标">#</a> 实现目标</h3>
-<p>做一个异常监控平台，化被动为主动，主动优化和修复线上问题，并且建立报警机制、提高工程师线上服务意识。</p>
-<h2 id="异常监控的意义"><a class="markdownIt-Anchor" href="#异常监控的意义">#</a> 异常监控的意义</h2>
-<!-- 随着互联网的发展，现在的前端业务特别是环境变得越来越复杂，小程序，H5，多页面应用，单页面应用，浏览器的兼容性，用户的网络速度，手机的型号都可能对我们的业务产生影响。在这么多的因素下，如何保证业务的稳定性，用户体验的一致性，所以这就需要一个前端监控来进行覆盖。虽然我们开发阶段已经有了EsLint，单元测试这种环节。但是它保证不了我们代码的每一处的问题。只有加上了前端监控这个环节，才能实现前端质量的一个闭环。因为监控本身就是软件质量最后的一道防线。它能够帮助我们发现真实场景下可能会出现的一些问题。不管我们做了多少次 code review，总会有一些潜在的发现不了的问题。比如一些脏数据导致的问题，网络环境差导致的一些问题，浏览器缓存导致的一些问题。这些问题很难用静态代码去检查出来，即使我们有单元测试，也很难去发现。因此，前端监控是一个质量保证的兜底方案。它能够让我们在出现问题之后，能够及时的去发现。 -->
-<ul>
+                <ol>
 <li>
-<p>实时感知<br>
-实时感知线上问题，并及时同步到业务相关人</p>
+<p>从 CDN 加载 CSS 速度慢，阻塞页面渲染：CSS 加载慢导致 FCP 时间长，原因是 DOM 解析之后不会立即渲染，而是等待这几个外部 CSS 文件加载，如果他们很慢，渲染树就会一直导致阻塞。<br>
+<img src="https://static.soyoung.com/sy-pre/31y41znm2l68a-1691719800830.png"><br>
+解决方案：<br>
+使用 <a target="_blank" rel="noopener" href="https://github.com/GoogleChromeLabs/critters">critters</a>（在服务器端运行）将体积较小的 css 文件嵌入 <code>&lt;style /&gt;</code>  中，使浏览器加载完 html 立刻渲染。输出的 HTML 会发现干掉了 <code>&lt;link&gt;</code>  标签，替换成了内嵌 <code>&lt;style&gt;</code> ，效果就是 HTML 加载完之后会立即开始渲染。结果：FCP 可能会降 100ms 左右，FID 可交互时间能降低 20ms 左右。但是 HTML 增量大约 15-20kb，组件库的样式会固定占用一些</p>
+<pre><code><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// bash 安装 critters</span>
+npm i <span class="token operator">-</span><span class="token constant">D</span> critters
+<span class="token comment">// next.config.js</span>
+experimental<span class="token operator">:</span> <span class="token punctuation">{</span>
+  optimizeCss<span class="token operator">:</span> <span class="token punctuation">{</span>
+    compress<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    inlineThreshold<span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token comment">// 60kb 以下全量嵌入，60kb 以上的会根据 HTML 标签动态抽取嵌入（动态抽取对 html体积影响更小，但会增加 TTFB）</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 </li>
 <li>
-<p>主动聚焦</p>
-<ul>
-<li>具备错误定位，行为还原的能力，助力快速解决问题。</li>
-<li>采集和分析静态资源加载、接口响应等性能数据，帮助定位性能瓶颈，提升用户体验。</li>
-</ul>
+<p>图片体积太大<br>
+<img src="https://static.soyoung.com/sy-pre/db0aszk3g21g-1691730600720.png"><br>
+<a target="_blank" rel="noopener" href="https://img2.soyoung.com/origin/20230406/3/35d8dc71fb86be7be3ddaca1b647bf75.png">https://img2.soyoung.com/origin/20230406/3/35d8dc71fb86be7be3ddaca1b647bf75.png</a></p>
 </li>
 <li>
-<p>预测分析</p>
-<ul>
-<li>各纬度、各区域的埋点以及热力分析，生成业务发展的数据抓手。</li>
-</ul>
+<p>首屏图片请求数量太多<br>
+解决方案：业务代码尽量使用懒加载标签 <code>&lt;Image /&gt;</code></p>
 </li>
-</ul>
-<h2 id="异常监控的核心问题"><a class="markdownIt-Anchor" href="#异常监控的核心问题">#</a> 异常监控的核心问题</h2>
-<p>异常采集 —&gt; 数据存储 —&gt; 统计分析 —&gt; 报告告警</p>
-<h3 id="异常采集"><a class="markdownIt-Anchor" href="#异常采集">#</a> 异常采集</h3>
-<p>采集哪些内容？异常捕获方法</p>
-<ol>
-<li>性能和信息全面性之间做出取舍</li>
-<li>捕获异常的自动化，不遗漏任何一处报错</li>
-<li>高效、准确和全面的捕获异常</li>
-<li>如何选择上报的时机、收集异常日志等</li>
+<li>
+<p>Js Chunk 数量多体积大<br>
+ webpack 打包的过程中，生成的 js 文件，每一个 js 文件我们把它叫做 chunk。<br>
+<img src="https://static.soyoung.com/sy-pre/chunk-1691734200810.png"><br>
+方案：改造部分库，使其支持 tree-shaking<br>
+<a href="滑动验证页面">Tree shaking 原理及应用</a><br>
+tree-shaking: 在项目开发中，我们会按照模块划分的方式将代码组织起来，tree shaking 的作用是把项目中没必要的代码全部抖落掉，消除被引用，删除没被调用的无用模块代码，该优化最终实现的是代码体积的减少，也属于项目性能优化的一部分。<br>
+Tree shaking 早期由 rollup 实现，后期 webpack2 也增加了 Tree shaking 的功能，在 webpack 中，Tree shaking 指的就是按需加载，即没有被引用的模块不会被打包进来，减少我们的包大小，缩小应用的加载时间，呈现给用户更佳的体验。</p>
+</li>
+<li>
+<p>首屏接口服务器端响应慢<br>
+需要确认问题是在 node 端还是 api 端，简单的排查方案：在浏览器的客户端和 initprops 中添加 console.log，使用 sentry 的 breadcrumbs 可以将 Event 和后端接口请求时间关联起来。<br>
+<img src="https://static.soyoung.com/sy-pre/sentry-console-1691745000794.png"><br>
+<img src="https://static.soyoung.com/sy-pre/ssr-console-1691745000794.png"></p>
+</li>
+<li>
+<p>redirect 耗时<br>
+状态码 308，耗时可能长达数十秒。<br>
+原因：如果 URL 不带尾斜杠，可以必现这个问题，有时候加载慢都是重定向造成的。<br>
+解决方案：查找配置错误的入口并修改；升级到 v12.3.4 或 v13 使用 skipTrailingSlashRedirect 配置。<br>
+(<a target="_blank" rel="noopener" href="https://github.com/vercel/next.js/discussions/23988#discussioncomment-4213430">Nextjs should have more options for trailing slash. · vercel/next.js · Discussion #23988</a>)<br>
+(<a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/building-your-application/routing/middleware#advanced-middleware-flags">Routing: Middleware</a>)</p>
+</li>
 </ol>
-<h4 id="采集内容"><a class="markdownIt-Anchor" href="#采集内容">#</a> 采集内容</h4>
-<ol>
-<li>用户信息：当时此刻的状态、权限等，用户多终端登录时异常产生的终端。</li>
-<li>行为信息：用户所在的界面路径、执行了什么操作、操作时使用了哪些数据。</li>
-<li>异常信息：用户操作的 DOM 元素节点、异常级别、异常类型、代码 stack 信息等。</li>
-<li>环境信息：网络环境、设备型号和标识码、操作系统版本、客户端版本、API 接口版本等。</li>
-</ol>
-<h4 id="异常捕获"><a class="markdownIt-Anchor" href="#异常捕获">#</a> 异常捕获</h4>
-<ol>
-<li>try-catch</li>
-<li>window.onerror (全局捕获的一种方式)</li>
-<li>window.addEventListener(‘error’)</li>
-<li>window.addEventListener(‘unhandledrejection’)</li>
-<li>iframe 异常</li>
-<li>奔溃和卡顿</li>
-<li>Vue.config.errorHandler 和 React ErrorBoundary</li>
-</ol>
-<h3 id="异常数据的存储"><a class="markdownIt-Anchor" href="#异常数据的存储">#</a> 异常数据的存储</h3>
-<p>其实是后端要做的一些事情，就是接收一些前端上报的异常数据，经过一些处理，比如说数据的一些清洗，并且按照一些存储方式进行存储。数据存储面临的一些问题就是数据量大，数据结构不规律，差异需求大，这是后端可能要考虑的一些事情。</p>
-<h3 id="统计分析"><a class="markdownIt-Anchor" href="#统计分析">#</a> 统计分析</h3>
-<p>我们可以根据上报的一些信息，得出跟深层的有价值的一个结论。<br>
-它可以分为自动分析和人工分析。自动分析就是通过一些预设的条件和算法，对存储的信息进行一个筛选，并发现一些问题，触发一些告警。人工分析的话，它可以通过提供一个可视化的面板，让用户可以看到一些具体的异常信息，根据信息，我们可以发现问题的一个根源。</p>
-<h3 id="报告告警"><a class="markdownIt-Anchor" href="#报告告警">#</a> 报告告警</h3>
-<p>我们要考虑什么时候报警，报警要按照一定的级别自动报警。通过设置一个渠道，按照一定的触发规则，还要考虑什么方式报警，比如通过邮件，短信，微信，电话。最后我们要考虑自动报表的一种能力，因为我们要通过一次报警，让他自动生成比如日报，周报，月报，并通过这种邮件的方式发送到一个相关的群，并形成一个告警。这是我们全局监控要考虑的一个方面。</p>
-<h2 id="实战"><a class="markdownIt-Anchor" href="#实战">#</a> 实战</h2>
-<ul>
-<li>
-<p>安装 sdk (官网中的 npm i 那条命令)</p>
-</li>
-<li>
-<p>在入口文件中初始化 Sentry (去官网找，这里是瞎写的…)</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Sentry <span class="token keyword">from</span> <span class="token string">"@sentry/react"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> Integrations <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@sentry/react"</span><span class="token punctuation">;</span>
-Sentry<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  release<span class="token operator">:</span> <span class="token string">"cool-web@1.0.0"</span><span class="token punctuation">,</span> <span class="token comment">//版本号</span>
-  dsn<span class="token operator">:</span><span class="token string">"https://xxx"</span><span class="token punctuation">,</span>
-  integrations<span class="token operator">:</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">integrations<span class="token punctuation">.</span>BrowserTracing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token operator">...</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li>
-<p>集成 SourceMap (去官网找…)</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">[</span>defaults<span class="token punctuation">]</span>
-url<span class="token operator">=</span> https<span class="token operator">:</span>xxx <span class="token comment">// 服务器</span>
-org <span class="token operator">=</span> xxx <span class="token comment">// 组织</span>
-project<span class="token operator">=</span> xxx <span class="token comment">//项目</span>
-<span class="token punctuation">[</span>path<span class="token punctuation">]</span>
-token <span class="token operator">=</span> xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> SentryPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@sentry/webpack-plugin'</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
-  plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
 
                 
             </div>
@@ -616,7 +556,7 @@ token <span class="token operator">=</span> xxx<span aria-hidden="true" class="l
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mrr-cxh.github.io/2022/07/12/sentry/">https://mrr-cxh.github.io/2022/07/12/sentry/</a>
+                    <a href="https://mrr-cxh.github.io/2023/10/15/next-xing-neng-you-hua/">https://mrr-cxh.github.io/2023/10/15/next-xing-neng-you-hua/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -654,12 +594,12 @@ token <span class="token operator">=</span> xxx<span aria-hidden="true" class="l
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Sentry/">
-                                    <span class="chip bg-color">Sentry</span>
+                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">框架</span>
                                 </a>
                             
-                                <a href="/tags/%E7%9B%91%E6%8E%A7/">
-                                    <span class="chip bg-color">监控</span>
+                                <a href="/tags/Next/">
+                                    <span class="chip bg-color">Next</span>
                                 </a>
                             
                         </div>
@@ -831,29 +771,84 @@ token <span class="token operator">=</span> xxx<span aria-hidden="true" class="l
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/11/28/react-native/">
+                <a href="/2023/10/15/next-xing-neng-you-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="React Native">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Next 性能优化">
                         
-                        <span class="card-title">React Native</span>
+                        <span class="card-title">Next 性能优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            React Native (简称RN)是Facebook于2015年4月开源的跨平台移动应用开发框架，是Facebook早先开源的JS框架 React 在原生移动应用平台的衍生产物，支持iOS和安卓两大平台。RN使用Javascript语言，类似于HTML的JSX，以及CSS来开发移动应用，因此熟悉Web前端开发的技术人员只需很少的学习就可以进入移动应用开发领域。
+                            Next是一个React开发框架。它能确保您和您的团队成功地构建 React 应用程序。Next.js 具有同类框架中最佳的“开发人员体验”和许多内置功能。比如：服务端渲染(SSR)和页面级的静态生成(SSG)；基于页面的路由系统(并支持动态路由)；具有经过优化的预取功能的客户端路由…….Next.js被用于数以万计的网站和Web应用程序，包括许多世界上最大的品牌都在使用Next.js。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-28
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    框架
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">框架</span>
+                    </a>
+                    
+                    <a href="/tags/Next/">
+                        <span class="chip bg-color">Next</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/02/05/next-1.0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Next 1.0">
+                        
+                        <span class="card-title">Next 1.0</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Next是一个React开发框架。它能确保您和您的团队成功地构建 React 应用程序。Next.js 具有同类框架中最佳的“开发人员体验”和许多内置功能。比如：服务端渲染(SSR)和页面级的静态生成(SSG)；基于页面的路由系统(并支持动态路由)；具有经过优化的预取功能的客户端路由…….Next.js被用于数以万计的网站和Web应用程序，包括许多世界上最大的品牌都在使用Next.js。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -869,65 +864,12 @@ token <span class="token operator">=</span> xxx<span aria-hidden="true" class="l
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/React-Native/">
-                        <span class="chip bg-color">React Native</span>
-                    </a>
-                    
                     <a href="/tags/%E6%A1%86%E6%9E%B6/">
                         <span class="chip bg-color">框架</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/06/30/deeplink-shen-du-lian-jie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="DeepLink深度链接">
-                        
-                        <span class="card-title">DeepLink深度链接</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            先说一个日常场景帮大家理解下什么是深度链接（Deeplink）。最近双十一、双十二，不知道大家有没有被亲故们发的某宝、某东、或拼夕夕的各类信息轮番轰炸？此外，大家的亲友群、闺蜜群里常年有一类链接挂着小红薯的笔记分享、某宝的化妆品。深度链接（Deeplink）可能存在在以下几个场景下：1. 如果小伙伴 A 已经安装了该 App，那她只要点开链接就可以直接跳转到 App 内2. 如果小伙伴 A 没有安装相关 App，那就会跳转到应用市场指引下载 App 并安装。类型场景还有其他可能性：
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/DeepLink/">
-                        <span class="chip bg-color">DeepLink</span>
-                    </a>
-                    
-                    <a href="/tags/H5/">
-                        <span class="chip bg-color">H5</span>
+                    <a href="/tags/Next/">
+                        <span class="chip bg-color">Next</span>
                     </a>
                     
                 </div>

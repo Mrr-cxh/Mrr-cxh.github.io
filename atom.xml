@@ -6,7 +6,7 @@
   <link href="https://mrr-cxh.github.io/atom.xml" rel="self"/>
   
   <link href="https://mrr-cxh.github.io/"/>
-  <updated>2023-04-16T13:48:04.783Z</updated>
+  <updated>2023-10-15T08:59:03.443Z</updated>
   <id>https://mrr-cxh.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next 性能优化</title>
+    <link href="https://mrr-cxh.github.io/2023/10/15/next-xing-neng-you-hua/"/>
+    <id>https://mrr-cxh.github.io/2023/10/15/next-xing-neng-you-hua/</id>
+    <published>2023-10-15T08:58:05.000Z</published>
+    <updated>2023-10-15T08:59:03.443Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;从 CDN 加载 CSS 速度慢，阻塞页面渲染：CSS 加载慢导致 FCP 时间长，原因是 DOM 解析之后不会立即渲染，而是等待这几个外部 CSS 文件加载，如果他们很慢，渲染树就会一直导致阻塞。&lt;br&gt;
+&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="Next" scheme="https://mrr-cxh.github.io/tags/Next/"/>
+    
+  </entry>
   
   <entry>
     <title>Next 1.0</title>
@@ -547,36 +577,6 @@ React</summary>
     <summary type="html">&lt;h2 id=&quot;插槽&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#插槽&quot;&gt;#&lt;/a&gt; 插槽&lt;/h2&gt;
 &lt;p&gt;当父组件想展示给子组件不同的结构 (div,span……) 时，可以使用插槽&lt;/p&gt;
 &lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="框架" scheme="https://mrr-cxh.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="框架" scheme="https://mrr-cxh.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
-    
-    <category term="Vue" scheme="https://mrr-cxh.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue 1.0</title>
-    <link href="https://mrr-cxh.github.io/2021/04/23/vue-1.0/"/>
-    <id>https://mrr-cxh.github.io/2021/04/23/vue-1.0/</id>
-    <published>2021-04-23T02:12:12.000Z</published>
-    <updated>2021-07-13T12:13:29.607Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
-&lt;p&gt;Vue 属于单页面应用 (SPA)，指令后边都可以写 js 内容&lt;br&gt;
-单页面只需加载一次就把整个项目加载完了&lt;/p&gt;
-&lt;h2</summary>
         
       
     
