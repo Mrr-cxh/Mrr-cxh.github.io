@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -511,7 +511,7 @@ experimental<span class="token operator">:</span> <span class="token punctuation
  webpack 打包的过程中，生成的 js 文件，每一个 js 文件我们把它叫做 chunk。<br>
 <img src="https://static.soyoung.com/sy-pre/chunk-1691734200810.png"><br>
 方案：改造部分库，使其支持 tree-shaking<br>
-<a href="滑动验证页面">Tree shaking 原理及应用</a><br>
+<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000040037144">Tree shaking 原理及应用</a><br>
 tree-shaking: 在项目开发中，我们会按照模块划分的方式将代码组织起来，tree shaking 的作用是把项目中没必要的代码全部抖落掉，消除被引用，删除没被调用的无用模块代码，该优化最终实现的是代码体积的减少，也属于项目性能优化的一部分。<br>
 Tree shaking 早期由 rollup 实现，后期 webpack2 也增加了 Tree shaking 的功能，在 webpack 中，Tree shaking 指的就是按需加载，即没有被引用的模块不会被打包进来，减少我们的包大小，缩小应用的加载时间，呈现给用户更佳的体验。</p>
 </li>
