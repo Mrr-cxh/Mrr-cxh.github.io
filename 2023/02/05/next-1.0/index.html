@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-10-15
+                    2023-11-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.2k
+                    6.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    24 分
+                    27 分
                 </div>
                 
 
@@ -1076,6 +1076,63 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
 <li><code>req.query</code> : 包含查询字符串的对象。默认为｛｝</li>
 <li><code>req.body</code> : 包含按内容类型解析的正文的对象，如果未发送正文，则为 null</li>
 </ul>
+<h3 id="响应助手函数response-helpers"><a class="markdownIt-Anchor" href="#响应助手函数response-helpers">#</a> 响应助手函数 (Response Helpers)</h3>
+<p><code>服务器响应对象</code> （通常缩写为 res）包括一组类似 Express.js 的辅助方法，以改善开发人员的体验并提高创建新 API 端点的速度。</p>
+<ul>
+<li>
+<p>包括:</p>
+<ul>
+<li>
+<p><code>res.status(code)</code>  - 设置状态代码的功能。代码必须是有效的 HTTP 状态代码</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 将响应发送回客户端时，您可以设置响应的状态代码。</span>
+<span class="token comment">// 以下示例将响应的状态代码设置为200( OK) 并返回message值为 的属性Hello from Next.js!作为 JSON响应：</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> <span class="token string">"Hello from Next.js!"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p><code>res.json(body)</code>  - 发送 JSON 响应。body 必须是可序列化的对象</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 将响应发送回客户端时，您可以发送 JSON 响应，这必须是可序列化的对象。在程序中，您可能希望根据请求端点的结果让客户端知道请求的状态。</span>
+<span class="token comment">// 以下示例发送带有状态代码200( OK) 和异步操作结果的 JSON 响应。它包含在 try catch 块中，用于处理可能发生的任何错误，捕获适当的状态代码和错误消息并将其发送回客户端：</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">someAsyncOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> result <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> <span class="token string">"failed to load data"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p><code>res.send(body)</code>  - 发送 HTTP 响应。主体可以是字符串、对象或缓冲区 (Buffer)</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 发送 HTTP 响应的方式与发送 JSON 响应的方式相同。唯一的区别是响应正文可以是 a string、 anobject或 a Buffer。</span>
+<span class="token comment">// 以下示例发送带有状态代码200( OK) 和异步操作结果的 HTTP 响应。</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">someAsyncOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span> result <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> <span class="token string">"failed to fetch data"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p><code>res.redirect([status,] path)</code>  - 重定向到指定的路径或 URL。status 必须是有效的 HTTP 状态代码。如果未指定，则状态默认为 “307”“临时重定向”。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 以表单为例，您可能希望在客户端提交表单后将其重定向到指定的路径或 URL。</span>
+<span class="token comment">// /如果表单提交成功，以下示例将客户端重定向到该路径：</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> message <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">handleFormInputAsync</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">,</span> message <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token number">307</span><span class="token punctuation">,</span> <span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> <span class="token string">"failed to fetch data"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>
@@ -1618,7 +1675,7 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">185.8k</span>
+                        class="white-color">186.4k</span>
             
             
             
