@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    8 分
                 </div>
                 
 
@@ -549,6 +549,125 @@
 <p>如果你正在使用  <code>next/image</code> ，请考虑通过在项目目录中运行  <code>npm install sharp</code> ，在生产环境中添加  <code>sharp</code>  以获得更高性能的图像优化。在 Linux 平台上， <code>sharp</code>  可能需要额外的配置，以防止过度使用内存。</p>
 <h2 id="docker-镜像"><a class="markdownIt-Anchor" href="#docker-镜像">#</a> Docker 镜像</h2>
 <p>具体查看官网</p>
+<h1 id="身份验证"><a class="markdownIt-Anchor" href="#身份验证">#</a> 身份验证</h1>
+<p>身份验证去验证用户是谁，而授权控制用户可以访问的内容。</p>
+<h2 id="身份验证模式"><a class="markdownIt-Anchor" href="#身份验证模式">#</a> 身份验证模式</h2>
+<p>确定您需要哪种身份验证模式的第一步是 <code>了解您想要的数据获取策略</code> 。然后我们可以确定哪些身份验证提供商支持此策略。主要有 <code>两种模式</code> ：</p>
+<ul>
+<li>
+<p>使用静态生成来服务器渲染加载状态，然后在客户端获取用户数据。</p>
+<p>如果没有阻塞数据要求，Next.js 会自动确定页面是静态的。这意味着页面中不存在  <code>getInitialProps</code>  和  <code>getServerSideProps</code> 。 相反，你的页面可以从服务器呈现加载状态，然后从客户端获取用户。</p>
+<p>这种模式的一个优点是，它允许从全局 CDN 提供页面，并使用 next/link 进行预加载。在实践中，这会导致更快的 TTI（交互时间）。</p>
+<p>示例：这将首先渲染加载骨架。一旦对用户的请求完成，它将显示用户的姓名：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// pages/profile.js</span>
+
+<span class="token keyword">import</span> useUser <span class="token keyword">from</span> <span class="token string">"../lib/useUser"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">"../components/Layout"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Profile</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Fetch the user client-side</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> user <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useUser</span><span class="token punctuation">(</span><span class="token punctuation">{</span> redirectTo<span class="token operator">:</span> <span class="token string">"/login"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Server-render loading state</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>user <span class="token operator">||</span> user<span class="token punctuation">.</span>isLoggedIn <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>Layout<span class="token operator">&gt;</span>Loading<span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>Layout<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Once the user request finishes, show the user</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Layout<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Your Profile<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>pre<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>pre<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Layout<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Profile<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>在服务器端获取用户数据，以消除未经身份验证的内容的闪现。<br>
+如果从页面导出一个名为  <code>getServerSideProps</code>  的异步函数，Next.js 将使用  <code>getServerSideProps</code>  返回的数据在每个请求中预呈现该页面。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getServerSideProps</span><span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    props<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// 将作为props传递给页面组件</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// pages/profile.js</span>
+
+<span class="token keyword">import</span> withSession <span class="token keyword">from</span> <span class="token string">"../lib/session"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">"../components/Layout"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> getServerSideProps <span class="token operator">=</span> <span class="token function">withSession</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> req<span class="token punctuation">,</span> res <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      redirect<span class="token operator">:</span> <span class="token punctuation">{</span>
+        destination<span class="token operator">:</span> <span class="token string">"/login"</span><span class="token punctuation">,</span>
+        permanent<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    props<span class="token operator">:</span> <span class="token punctuation">{</span> user <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Profile</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> user <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Show the user. No loading state is required</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Layout<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Your Profile<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>pre<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>pre<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Layout<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Profile<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这种模式的一个优点是在重定向之前防止未经身份验证的内容展示。需要注意的是，在 getServerSideProps 中获取用户数据将阻止渲染，直到对身份验证提供程序的请求得到解决。为了防止造成瓶颈并增加 TTFB（第一个字节的时间），您应该确保身份验证查找很快。否则，请考虑静态生成。</p>
+</li>
+</ul>
+<h1 id="高级特性"><a class="markdownIt-Anchor" href="#高级特性">#</a> 高级特性</h1>
+<h2 id="nextjs-编译器"><a class="markdownIt-Anchor" href="#nextjs-编译器">#</a> Next.js 编译器</h2>
+<p>Next.js 编译器是使用  <code>SWC</code>  在 Rust 中编写的，它允许 Next.js 转换和缩小你的 JavaScript 代码以用于生产。这取代了用于单个文件的 Babel 和用于缩小输出打包的 Terser。</p>
+<p>使用 Next.js 编译器编译比 Babel 快 17 倍，并且从 Next12 版本开始默认启用。如果您有现有的 Babel 配置或正在使用不受支持的功能，您的应用程序将选择退出 Next.js 编译器，继续使用 Babel。</p>
+<h3 id="为什么选择-swc"><a class="markdownIt-Anchor" href="#为什么选择-swc">#</a> 为什么选择 SWC</h3>
+<p>SWC 是一个基于 Rust 的可扩展平台，适用于下一代快速开发工具。<br>
+SWC 可用于编译、缩小、打包等，并且被设计为可扩展。您可以调用它来执行代码转换（内置或自定义）。运行这些转换是通过 Next.js 等更高级别的工具进行的。<br>
+选择基于 SWC 进行构建有以下几个原因：</p>
+<ul>
+<li><code>可扩展性</code> ：SWC 可以用作 Next.js 中的 Crate，而无需分叉库或解决设计约束。</li>
+<li><code>性能</code> ：通过切换到 SWC，我们能够在 Next.js 中实现约 3 倍的快速刷新速度和约 5 倍的构建速度，并且仍有更多优化空间。</li>
+<li><code>WebAssembly</code> ：Rust 对 WASM 的支持对于支持所有可能的平台以及在任何地方进行 Next.js 开发至关重要。</li>
+<li><code>社区</code> ：Rust 社区和生态系统非常出色，并且仍在不断发展。</li>
+</ul>
+<h3 id="实验特点"><a class="markdownIt-Anchor" href="#实验特点">#</a> 实验特点</h3>
+<ul>
+<li>
+<p>缩小化</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// next.config.js</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  swcMinify<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>您可以选择使用 Next.js 编译器进行缩小。这比 Terser 快 7 倍。</p>
+</li>
+<li>
+<p>样式化组件 (看文档)</p>
+</li>
+<li>
+<p>Jest (看文档)</p>
+</li>
+<li>
+<p>遗留装饰器 (看文档)</p>
+</li>
+<li>
+<p>导入源 (看文档)</p>
+</li>
+<li>
+<p>不支持的功能<br>
+当您的应用程序有一个 <code>.babelrc</code>  文件时，Next.js 将自动回退到使用 Babel 来转换单个文件。这确保了与利用自定义 Babel 插件的现有应用程序的向后兼容性。</p>
+</li>
+</ul>
 
                 
             </div>
@@ -1093,7 +1212,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">187.4k</span>
+                        class="white-color">188.5k</span>
             
             
             
