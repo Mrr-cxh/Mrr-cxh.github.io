@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -700,6 +700,37 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">.</span>next<span class="token operator">/</span>server<span class="token operator">/</span>pages<span class="token operator">/</span>about<span class="token punctuation">.</span>html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如果您将  <code>getServerSideProps</code>  添加到页面中，那么它将是 JavaScript，如下所示：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">.</span>next<span class="token operator">/</span>server<span class="token operator">/</span>pages<span class="token operator">/</span>about<span class="token punctuation">.</span>js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="src-目录"><a class="markdownIt-Anchor" href="#src-目录">#</a> src 目录</h2>
+<p>页面（pages）也可以添加到  <code>src/pages</code>  目录下，作为根目录下的  <code>pages</code>  目录的替代品。</p>
+<p>该  <code>src</code>  目录在许多应用程序中非常常见，并且 Next.js 默认支持该目录。</p>
+<h3 id="注意事项"><a class="markdownIt-Anchor" href="#注意事项">#</a> 注意事项</h3>
+<ul>
+<li>如果根目录下的  <code>pages</code>  目录存在的话， <code>src/pages</code>  目录将被忽略</li>
+<li>类似  <code>next.config.js</code>  和  <code>tsconfig.json</code>  的配置文件应放在根目录中，将他们移至  <code>src</code>  下的话将无法使用。这同样适用于  <code>public</code>  目录</li>
+</ul>
+<h2 id="绝对导入"><a class="markdownIt-Anchor" href="#绝对导入">#</a> 绝对导入</h2>
+<p>使用 <code>paths</code>  允许您配置模块别名。例如 <code>@/components/*</code>  到  <code>components/*</code> .<br>
+ 此配置的示例：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// tsconfig.json or jsconfig.json</span>
+<span class="token punctuation">{</span>
+  <span class="token string">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"baseUrl"</span><span class="token operator">:</span> <span class="token string">"."</span><span class="token punctuation">,</span>
+    <span class="token string">"paths"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"@/components/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"components/*"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token comment">// pages/index.js</span>
+<span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">"@/components/button"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">HomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Hello World</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Button</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1244,7 +1275,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">189.1k</span>
+                        class="white-color">189.3k</span>
             
             
             
