@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    767
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -528,12 +528,27 @@
 <li><code>Webpack Bundle Analyzer</code>  – 使用交互式、可缩放的树图可视化 webpack 输出文件的大小。</li>
 </ul>
 <p>在  <code>next build</code>  中， <code>pages/</code>  目录中的每个文件都将自动被代码拆分为自己的 JavaScript 捆绑包。您还可以使用 “动态导入” 来延迟加载组件和库。例如，您可能希望推迟加载模块代码，直到用户单击打开按钮。</p>
-<h2 id="记录"><a class="markdownIt-Anchor" href="#记录">#</a> 记录</h2>
+<h2 id="记录logging"><a class="markdownIt-Anchor" href="#记录logging">#</a> 记录 (logging)</h2>
 <p>由于 Next.js 在客户端和服务器上运行，因此支持多种形式的日志记录：</p>
 <ul>
 <li><code>console.log</code>  在浏览器中</li>
 <li><code>stdout</code>  在服务器上</li>
 </ul>
+<h1 id="部署"><a class="markdownIt-Anchor" href="#部署">#</a> 部署</h1>
+<h2 id="nodejs-服务器"><a class="markdownIt-Anchor" href="#nodejs-服务器">#</a> Node.js 服务器</h2>
+<p>Next.js 可以部署到任何支持 Node.js 的托管提供商处。确保你的  <code>package.json</code>  文件中设置了  <code>package.json</code>  文件中存在  <code>"build"</code>  和  <code>"start"</code>  两个构建命令。</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"next dev"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"next build"</span><span class="token punctuation">,</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"next start"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行  <code>next build</code>  命令将在  <code>.next</code>  文件夹中构建出用于生产环境的应用程序。构建之后，执行  <code>next start</code>  命令启动一个支持 混合页面（hybrid pages） 的 Node.js 服务程序，该服务程序将同时服务于 <code>静态生成的页面和服务器端渲染的页面</code> 。</p>
+<p>If you are using next/image, consider adding sharp for more performant Image Optimization in your production environment by running npm install sharp in your project directory. On Linux platforms, sharp may require additional configuration to prevent excessive memory usage.</p>
+<p>如果你正在使用  <code>next/image</code> ，请考虑通过在项目目录中运行  <code>npm install sharp</code> ，在生产环境中添加  <code>sharp</code>  以获得更高性能的图像优化。在 Linux 平台上， <code>sharp</code>  可能需要额外的配置，以防止过度使用内存。</p>
+<h2 id="docker-镜像"><a class="markdownIt-Anchor" href="#docker-镜像">#</a> Docker 镜像</h2>
+<p>具体查看官网</p>
 
                 
             </div>
@@ -1078,7 +1093,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">187.1k</span>
+                        class="white-color">187.4k</span>
             
             
             
