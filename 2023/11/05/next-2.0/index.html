@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
 
@@ -668,6 +668,38 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 当您的应用程序有一个 <code>.babelrc</code>  文件时，Next.js 将自动回退到使用 Babel 来转换单个文件。这确保了与利用自定义 Babel 插件的现有应用程序的向后兼容性。</p>
 </li>
 </ul>
+<h2 id="动态导入"><a class="markdownIt-Anchor" href="#动态导入">#</a> 动态导入</h2>
+<h3 id="基本用法"><a class="markdownIt-Anchor" href="#基本用法">#</a> 基本用法</h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> dynamic <span class="token keyword">from</span> <span class="token string">"next/dynamic"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> DynamicComponent <span class="token operator">=</span> <span class="token function">dynamic</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../components/hello"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">Home</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Header <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>DynamicComponent <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token constant">HOME</span> <span class="token constant">PAGE</span> is here<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Home<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>DynamicComponent</code>  将是返回的默认组件 <code>../components/hello</code> 。它的工作方式类似于 <code>常规的 React 组件</code> ，您可以像平常一样向它传递  <code>props</code> 。</p>
+<p>注意：在  <code>import('path/to/component')</code>  中，必须明确写入路径。它不能是 <code>模板字符串</code> ，也不能是 <code>变量</code> 。此外， <code>import()必须位于 dynamic()Next.js 的调用中</code> ，才能将 webpack 包 / 模块 id 与特定 dynamic () 调用相匹配，并在渲染之前预加载它们。 <code>dynamic()不能在 React 渲染内部使用</code> ，因为它需要在模块的顶层进行标记才能预加载工作，类似于  <code>React.lazy</code> .</p>
+<h2 id="自动静态优化"><a class="markdownIt-Anchor" href="#自动静态优化">#</a> 自动静态优化</h2>
+<p>如果页面没有阻塞数据要求，Next.js 会自动确定页面是静态的（可以预先呈现）。该确定是通过页面中缺少  <code>getServerSideProps</code>  和  <code>getInitialProps</code>  来做出的。<br>
+此功能允许 Next.js 发出包含 <code>服务器渲染页面和静态生成页面</code> 的混合应用程序。<br>
+此功能的主要好处之一是，优化的页面不需要服务器端计算，并且可以从多个 CDN 位置立即传输给最终用户。其结果是为您的用户提供超快速的加载体验。</p>
+<h3 id="怎么运行的"><a class="markdownIt-Anchor" href="#怎么运行的">#</a> 怎么运行的</h3>
+<p>如果页面中存在  <code>getServerSideProps</code>  或  <code>getInitialProps</code> ，Next.js 将切换为按需、按请求渲染页面（即服务器端渲染）。<br>
+如果不是上述情况，Next.js 将通过将页面预呈现为静态 HTML 来自动 <code>静态优化您的页面</code> 。<br>
+在 <code>预渲染期间</code> ，路由器的对象将为空，因为我们在此阶段  <code>query</code>  没有可提供的信息。水化之后，Next.js 将触发应用程序更新以提供对象中的路由参数 query。<br>
+注意：使用 <code>动态路由</code> 添加到正在使用的页面的参数  <code>getStaticProps</code>  将始终在对象内可用  <code>query</code> 。</p>
+<p><code>next build</code>  将为静态优化的页面发出 <code>.html</code>  文件。例如， <code>pages/about.js</code>  页面的结果是：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">.</span>next<span class="token operator">/</span>server<span class="token operator">/</span>pages<span class="token operator">/</span>about<span class="token punctuation">.</span>html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果您将  <code>getServerSideProps</code>  添加到页面中，那么它将是 JavaScript，如下所示：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">.</span>next<span class="token operator">/</span>server<span class="token operator">/</span>pages<span class="token operator">/</span>about<span class="token punctuation">.</span>js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -1212,7 +1244,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">188.5k</span>
+                        class="white-color">189.1k</span>
             
             
             
