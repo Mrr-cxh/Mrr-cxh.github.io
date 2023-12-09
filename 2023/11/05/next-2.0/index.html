@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    16 分
                 </div>
                 
 
@@ -859,6 +859,35 @@ router.prefetch(’/dashboard’)</p>
 <p>返回上一个路由；</p>
 <h3 id="routerreload"><a class="markdownIt-Anchor" href="#routerreload">#</a> router.reload</h3>
 <p>重载当前路由；</p>
+<h2 id="nextlink"><a class="markdownIt-Anchor" href="#nextlink">#</a> next/link</h2>
+<p>通过 Link 组件可以启用客户端的路由切换。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Link <span class="token keyword">from</span> <span class="token string">"next/link"</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">Home</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Link href<span class="token operator">=</span><span class="token string">"/about"</span> passHref<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>MyButton <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span>
+    <span class="token comment">// /about?name=test</span>
+    <span class="token operator">&lt;</span>Link
+      href<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+        pathname<span class="token operator">:</span> <span class="token string">'/about'</span><span class="token punctuation">,</span>
+        query<span class="token operator">:</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'test'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>About us<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span>
+    <span class="token comment">// /blog/my-post</span>
+    <span class="token operator">&lt;</span>Link
+      href<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+        pathname<span class="token operator">:</span> <span class="token string">'/blog/[slug]'</span><span class="token punctuation">,</span>
+        query<span class="token operator">:</span> <span class="token punctuation">{</span> slug<span class="token operator">:</span> <span class="token string">'my-post'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>Blog Post<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="nextimage"><a class="markdownIt-Anchor" href="#nextimage">#</a> next/image</h2>
 
                 
             </div>
@@ -1403,7 +1432,7 @@ router.prefetch(’/dashboard’)</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">190.3k</span>
+                        class="white-color">190.4k</span>
             
             
             
