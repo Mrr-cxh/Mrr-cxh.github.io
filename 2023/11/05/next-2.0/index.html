@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-12-04
+                    2023-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    15 分
                 </div>
                 
 
@@ -744,6 +744,121 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li>添加源映射会增加  <code>next build</code>  时间</li>
 <li>在  <code>next build</code>  期间增加内存使用量</li>
 </ol>
+<h1 id="api"><a class="markdownIt-Anchor" href="#api">#</a> API</h1>
+<h2 id="nextrouter"><a class="markdownIt-Anchor" href="#nextrouter">#</a> next/router</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> useRouter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"next/router"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">ActiveLink</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children<span class="token punctuation">,</span> href <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> style <span class="token operator">=</span> <span class="token punctuation">{</span>
+    marginRight<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+    color<span class="token operator">:</span> router<span class="token punctuation">.</span>asPath <span class="token operator">===</span> href <span class="token operator">?</span> <span class="token string">"red"</span> <span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token punctuation">{</span>href<span class="token punctuation">}</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span> style<span class="token operator">=</span><span class="token punctuation">{</span>style<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> ActiveLink<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以下是  <code>userRouter</code>  返回的一些参数:</p>
+<ul>
+<li><code>pathname</code> ：当前路由。这个路径是 <code>/pages</code>  中的路径，不包括配置的  <code>basePath</code>  或者  <code>locale</code> 。</li>
+<li><code>query</code> ：查询字符串</li>
+<li><code>asPath</code> ：浏览器中显示的路径（包括 query），但没有配置  <code>basePath</code>  或  <code>locale</code> 。</li>
+<li><code>isFallback</code> : 当前页面是否处于回退模式</li>
+<li><code>basePath</code></li>
+<li><code>locale</code></li>
+<li><code>locales</code></li>
+<li><code>defaultLocale</code></li>
+<li><code>domainLocales</code></li>
+<li><code>isReady</code></li>
+<li><code>isPreview</code></li>
+</ul>
+<h3 id="routerpush"><a class="markdownIt-Anchor" href="#routerpush">#</a> router.push</h3>
+<p>router.push(url, as, options);<br>
+ 进入某个路由；第二个参数 as，是为了装饰 URL ，如果你在服务器端设置了自定义路由将会起作用。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  pathname<span class="token operator">:</span> <span class="token string">"/post/[pid]"</span><span class="token punctuation">,</span>
+  query<span class="token operator">:</span> <span class="token punctuation">{</span> pid<span class="token operator">:</span> post<span class="token punctuation">.</span>id <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="routerreplace"><a class="markdownIt-Anchor" href="#routerreplace">#</a> router.replace</h3>
+<p>router.replace 将阻止在历史堆栈中添加新的 URL 条目。<br>
+router.replace(’/home’)<br>
+ 重定向路由；</p>
+<h3 id="routerprefetch"><a class="markdownIt-Anchor" href="#routerprefetch">#</a> router.prefetch</h3>
+<p>预读取某个路由的组件内容；仅在生产环境下有效；<br>
+router.prefetch(’/dashboard’)</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 假设您有一个登录页面，登录后，您将用户重定向到仪表板。</span>
+<span class="token comment">// 对于这种情况，我们可以预取仪表板以进行更快的转换，如以下示例所示：</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useCallback<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useRouter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"next/router"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Login</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> handleSubmit <span class="token operator">=</span> <span class="token function">useCallback</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/api/login"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      method<span class="token operator">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+      headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      body<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">/* Form data */</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Do a fast client-side transition to the already prefetched dashboard page</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>ok<span class="token punctuation">)</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"/dashboard"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Prefetch the dashboard page</span>
+    router<span class="token punctuation">.</span><span class="token function">prefetch</span><span class="token punctuation">(</span><span class="token string">"/dashboard"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>form onSubmit<span class="token operator">=</span><span class="token punctuation">{</span>handleSubmit<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span><span class="token comment">/* Form fields */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"submit"</span><span class="token operator">&gt;</span>Login<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>介绍：Next.js 一个非常实用的功能就是你在浏览当前页面的时候，Next.js 会自动 prefetch 页面上所有的站内链接页面。这样一来，当你真正点击某个链接时，就可以迅速加载该页面，快得简直就像是在读取本地文件。可能这就是为什么同样是 client-side navigation (客户端导航)，Next.js 要比常规的 React SPA 的页面跳转快这么多吧！</li>
+<li>这个功能在  <code>&lt;Link /&gt;</code>  中是默认开启的。除非像下面这样把  <code>&lt;Link&gt;</code>  的 prefetch 置为 false，Next.js 就不会在当前页面，再去 prefetch 该路由：</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>Link href<span class="token operator">=</span><span class="token string">"/home"</span> prefetch<span class="token operator">=</span><span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>主页<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>prefetch 属性会在后台预读取目标路由页面，默认值为 true。它具有以下特性：</p>
+<ol>
+<li>处于视口（viewport）中（初始或滚动后）的任何  <code>&lt;Link /&gt;</code>  都将被预加载。通过设置 prefetch={false} 可以禁止页面预取。</li>
+<li>当 prefetch 被设置为 false 时，鼠标悬停在  <code>&lt;Link /&gt;</code>  上时仍然会触发预取。</li>
+<li>使用 静态生成 的页面（pages）将预加载存有数据的 JSON 文件，以实现更快的页面切换。</li>
+<li>预取功能只在生产环境中开启。</li>
+</ol>
+</li>
+<li>
+<p>prefetch 的内容是如何存储的？<br>
+通过  <code>&lt;link rel="prefetch"&gt;</code>  的方式，浏览器会请求相应的 .js 和 .css 文件，但不会执行它们，而是作为缓存把它们储存在浏览器中。等到用户真正跳转到该 route，需要加载这些文件时，就可以直接从本地加载，不需要请求服务器了，其实也是一种前端提高性能的常见方法。</p>
+</li>
+</ul>
+<h3 id="routerbeforepopstate"><a class="markdownIt-Anchor" href="#routerbeforepopstate">#</a> router.beforePopState</h3>
+<p>在路由器处理事件之前拦截</p>
+<h3 id="routerback"><a class="markdownIt-Anchor" href="#routerback">#</a> router.back</h3>
+<p>返回上一个路由；</p>
+<h3 id="routerreload"><a class="markdownIt-Anchor" href="#routerreload">#</a> router.reload</h3>
+<p>重载当前路由；</p>
 
                 
             </div>
@@ -1288,7 +1403,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">189.4k</span>
+                        class="white-color">190.3k</span>
             
             
             
