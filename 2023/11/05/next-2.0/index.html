@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    20 分
                 </div>
                 
 
@@ -888,6 +888,103 @@ router.prefetch(’/dashboard’)</p>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="nextimage"><a class="markdownIt-Anchor" href="#nextimage">#</a> next/image</h2>
+<h3 id="图片优化方案"><a class="markdownIt-Anchor" href="#图片优化方案">#</a> 图片优化方案</h3>
+<ul>
+<li>使用 nextjs 内置的 Image 组件，该组件可以自动优化图片以提升网站性能。</li>
+<li>使用 nextjs 内置的图片处理功能，自动调整大小、压缩和优化图片。</li>
+</ul>
+<h3 id="image-组件优势"><a class="markdownIt-Anchor" href="#image-组件优势">#</a> Image 组件优势</h3>
+<ul>
+<li>
+<p>性能提升：使用现代图片格式，为每台设备提供合适尺寸的图片<br>
+ webp 是一种现代图像格式，可为 web 上的图像提供卓越的无损和有损压缩。使用 webp，网站管理员和 web 开发人员可以创建更小、更丰富的图像，从而使 web 更快，性能更好。</p>
+</li>
+<li>
+<p>视觉稳定性：自动阻止非预期内容偏移，简称  <code>CLS</code> 。</p>
+<ul>
+<li>网站中的资源是异步下载的，页面内容也是动态添加到页面上，所以内容发生非预期偏移场景比较常见。比如：未设置宽高的 <code>&lt;image&gt;</code> 、 <code>&lt;video&gt;</code>  元素、实际使用的字体与备用大小不一致、可以动态变更大小的第三方广告或者组件都有可能是导致页面发生非预期偏移。</li>
+<li>可以给  <code>image</code> 、 <code>video</code>  元素设置  <code>size</code>  属性，或者预留  <code>image</code>  需要的布局空间。这个做法确保让浏览器在图片正在加载时就分配好正确的布局空间，避免非预期内容偏移。</li>
+</ul>
+</li>
+<li>
+<p>更快的页面加载速度：图像只有在进入网页视口时才会被加载，并带有可选的模糊占位符，用于图片未加载完成时的临时占位图片，类似于图片懒加载技术。</p>
+</li>
+</ul>
+<h3 id="用法"><a class="markdownIt-Anchor" href="#用法">#</a> 用法</h3>
+<ul>
+<li>Image 组件属性介绍
+<ul>
+<li><code>width</code>  和  <code>height</code>  属性：设置图片宽度和高度，可以只设置其中一个属性，另一个属性自适应调整大小。</li>
+<li><code>src</code>  属性：设置图片资源地址，可以是远程图片、本地图片。</li>
+<li><code>alt</code>  属性：图片加载失败时的文本提示。</li>
+<li><code>layout</code>  属性：设置图片在容器中如何展示。</li>
+</ul>
+</li>
+</ul>
+<h4 id="layout-属性"><a class="markdownIt-Anchor" href="#layout-属性">#</a> layout 属性</h4>
+<p>在不知道图像的宽度和高度的前提下，仍希望图片在保持纵横比的同时填满整个父盒子空间。在这种情况下，您可以省略  <code>Image</code>  组件上的  <code>width</code>  和  <code>height</code>  属性。相反，添加一个 <code> layout="fill"</code>  的  <code>prop</code>  属性。这会将图像拉伸到父盒子的宽度和高度。使用  <code>layout="fill"</code>  属性时，最好将其与  <code>objectFit="cover"</code>  配对。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Image <span class="token keyword">from</span> <span class="token string">"next/legacy/image"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> test <span class="token keyword">from</span> <span class="token string">"@/assets/imgs/test.jpg"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">ImageCom</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token comment">// 给父元素设置容器大小，并设定position: "relative"。</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"ImageCom"</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div
+        className<span class="token operator">=</span><span class="token string">"img"</span>
+        style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> position<span class="token operator">:</span> <span class="token string">"relative"</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token string">"300px"</span><span class="token punctuation">,</span> width<span class="token operator">:</span> <span class="token string">"500px"</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Image src<span class="token operator">=</span><span class="token punctuation">{</span>test<span class="token punctuation">}</span> layout<span class="token operator">=</span><span class="token string">"fill"</span> alt<span class="token operator">=</span><span class="token string">"加载失败"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Image<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>h5<span class="token operator">&gt;</span>图片优化<span class="token operator">&lt;</span><span class="token operator">/</span>h5<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在保证图片纵横比不失真，不变形的同时，不适合父元素的图像部分将被剪裁。</p>
+<ul>
+<li>
+<p><code>layout</code>  属性取值</p>
+<ul>
+<li><code>fill</code> ：在  <code>x</code>  轴和  <code>y</code>  轴同比缩放，以保证图片能够充满整个父容器空间。</li>
+<li><code>responsive</code> ：在  <code>x</code>  轴缩放，以保证图片的宽度充满父容器空间，高度则不保证，高度会自适应。</li>
+<li><code>fixed</code> ：按图片自身宽度和高度精确尺寸。图像尺寸不会随着视口的变化而变化（无响应），类似于本地 img 元素了。</li>
+</ul>
+</li>
+<li>
+<p><code>quality</code>  属性<br>
+优化图像的质量，是 1 和 100 之间的整数，其中 100 是最好的质量，默认为 75。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>Image src<span class="token operator">=</span><span class="token punctuation">{</span>test<span class="token punctuation">}</span> layout<span class="token operator">=</span><span class="token string">"responsive"</span> quality<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">60</span><span class="token punctuation">}</span> alt<span class="token operator">=</span><span class="token string">"加载失败"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Image<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p><code>blurDataURL</code>  属性<br>
+ <code>blurDataURL</code>  属性是占位符图片，在  <code>src</code>  图片成功加载之前加载，必须是  <code>base64</code>  编码的图片，只有与  <code>placeholder="blur"</code>  结合使用时才有效。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>Image
+  src<span class="token operator">=</span><span class="token punctuation">{</span>test<span class="token punctuation">}</span>
+  layout<span class="token operator">=</span><span class="token string">"responsive"</span>
+  quality<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">60</span><span class="token punctuation">}</span>
+  alt<span class="token operator">=</span><span class="token string">"加载失败"</span>
+  placeholder<span class="token operator">=</span><span class="token string">"blur"</span>
+  blurDataURL<span class="token operator">=</span><span class="token string">"data:image/png;base64,..."</span>
+<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Image<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h4 id="远程图片"><a class="markdownIt-Anchor" href="#远程图片">#</a> 远程图片</h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>Image
+  src<span class="token operator">=</span><span class="token string">"https://img0.baidu.com/it/u=726620871,4203188840&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=1280&amp;h=800"</span>
+  width<span class="token operator">=</span><span class="token string">"300"</span>
+  height<span class="token operator">=</span><span class="token string">"200"</span>
+<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Image<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>需要配置 next.config.js 文件，配置远程图片域名</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> nextConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+  experimental<span class="token operator">:</span> <span class="token punctuation">{</span>
+    appDir<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  images<span class="token operator">:</span> <span class="token punctuation">{</span>
+    domains<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"img0.baidu.com"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> nextConfig<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1432,7 +1529,7 @@ router.prefetch(’/dashboard’)</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">190.4k</span>
+                        class="white-color">191.4k</span>
             
             
             
