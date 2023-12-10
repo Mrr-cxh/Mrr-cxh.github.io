@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -455,14 +455,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.6k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    24 分
                 </div>
                 
 
@@ -1054,6 +1054,73 @@ Next.js 提供了四种策略：</p>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> IndexPage<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="getinitialprops"><a class="markdownIt-Anchor" href="#getinitialprops">#</a> getInitialProps</h2>
+<p><code>getInitialProps</code>  能够在页面中进行服务器端渲染，并允许你进行初始数据填充，这意味着在发送页面时已经在服务端中填充了数据。这对于 SEO 特别有用。<br>
+在页面组件中使用了  <code>getInitialProps</code>  ，也就说明当前的页面是开启的 SSR 的渲染方式。<br>
+从  <code>getInitialProps</code>  返回的数据在服务端渲染时会被序列化，类似于  <code>JSON.stringify</code>  的做法。确保从  <code>getInitialProps</code>  返回的对象是一个纯粹的 Object，而不是使用  <code>Date</code> 、 <code>Map</code>  或  <code>Set</code> 。</p>
+<p>执行时机：<br>
+ <code>getInitialProps</code>  的执行时机分为两种情况，都是在运行时执行的：</p>
+<ul>
+<li>直接访问页面时： <code>getInitialProps</code>  会在服务端执行</li>
+<li>通过 <code>next/link</code>  或 <code>next/router</code>  跳转到某个页面时，会在客户端执行</li>
+</ul>
+<p><code>getInitialProps</code>  只能在 <code>页面组件</code> 中使用，在其他子组件中是 <code>不能使用</code> 的。<br>
+ <code>getInitialProps</code>  会根据情况在服务端或者客户端执行，如果我在  <code>getInitialProps</code>  进行了一些 node.js 或者操作了数据库这种纯服务端的操作，当  <code>getInitialProps</code>  在客户端执行时就会报错，除非自己去做兼容处理。由于执行环境不统一， 使用成本较高，因此在  <code>getServerSideProps</code>  引入后，  <code>getInitialProps</code>  就不再被推荐使用了。</p>
+<h1 id="nextconfigjs"><a class="markdownIt-Anchor" href="#nextconfigjs">#</a> next.config.js</h1>
+<h2 id="base-path"><a class="markdownIt-Anchor" href="#base-path">#</a> Base Path</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  basePath<span class="token operator">:</span> <span class="token string">"/docs"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 设置了basePath，这里会自动去到/docs/about</span>
+<span class="token operator">&lt;</span>Link href<span class="token operator">=</span><span class="token string">"/about"</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>About Page<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="案例"><a class="markdownIt-Anchor" href="#案例">#</a> 案例</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> configs <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 编译文件的输出目录</span>
+  distDir<span class="token operator">:</span> <span class="token string">"dest"</span><span class="token punctuation">,</span>
+  <span class="token comment">// 是否给每个路由生成Etag</span>
+  generateEtags<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token comment">// 页面内容缓存配置</span>
+  onDemandEntries<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 内容在内存中缓存的时长（ms）</span>
+    maxInactiveAge<span class="token operator">:</span> <span class="token number">25</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+    <span class="token comment">// 同时缓存多少个页面</span>
+    pagesBufferLength<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 在pages目录下那种后缀的文件会被认为是页面</span>
+  pageExtensions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"jsx"</span><span class="token punctuation">,</span> <span class="token string">"js"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">// 配置buildId</span>
+  <span class="token function-variable function">generateBuildId</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">YOUR_BUILD_ID</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">YOUR_BUILD_ID</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 返回null使用默认的unique id</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 手动修改webpack config</span>
+  <span class="token function">webpack</span><span class="token punctuation">(</span><span class="token parameter">config<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 修改webpackDevMiddleware配置</span>
+  <span class="token function-variable function">webpackDevMiddleware</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 可以在页面上通过 procsess.env.customKey 获取 value</span>
+  env<span class="token operator">:</span> <span class="token punctuation">{</span>
+    customKey<span class="token operator">:</span> <span class="token string">"value"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 下面两个要通过 'next/config' 来读取</span>
+  <span class="token comment">// 只有在服务端渲染时才会获取的配置</span>
+  serverRuntimeConfig<span class="token operator">:</span> <span class="token punctuation">{</span>
+    mySecret<span class="token operator">:</span> <span class="token string">"secret"</span><span class="token punctuation">,</span>
+    secondSecret<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">SECOND_SECRET</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 在服务端渲染和客户端渲染都可获取的配置</span>
+  publicRuntimeConfig<span class="token operator">:</span> <span class="token punctuation">{</span>
+    staticFolder<span class="token operator">:</span> <span class="token string">"/static"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1598,7 +1665,7 @@ Next.js 提供了四种策略：</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">192.2k</span>
+                        class="white-color">192.8k</span>
             
             
             
