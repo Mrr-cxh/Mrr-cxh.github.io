@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-12-09
+                    2023-12-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5k
+                    5.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    22 分
                 </div>
                 
 
@@ -985,6 +985,75 @@ router.prefetch(’/dashboard’)</p>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> nextConfig<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="nextscript"><a class="markdownIt-Anchor" href="#nextscript">#</a> next/script</h2>
+<p>Next.js 提供了  <code>next/script</code>  组件来更加方便的管理和加载外部脚本。</p>
+<p>它包含了；</p>
+<ul>
+<li>异步加载外部脚本的能力，从而避免阻塞页面渲染。</li>
+<li>脚本的优化，包括 preloading 和 prebrowsing。</li>
+<li>支持内联脚本和外联脚本。</li>
+<li>支持多种异步加载方式，例如 async, defer 等。</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Script <span class="token keyword">from</span> <span class="token string">"next/script"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello World<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Script
+        src<span class="token operator">=</span><span class="token string">"https://www.google-analytics.com/analytics.js"</span>
+        strategy<span class="token operator">=</span><span class="token string">"afterInteractive"</span>
+      <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> MyComponent<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到， <code>src</code>  属性指定了要加载的脚本的 URL，并且我们使用  <code>strategy</code>  属性指定了在何时加载脚本。<br>
+Next.js 提供了四种策略：</p>
+<ol>
+<li>beforeInteractive：在页面的 DOMContentLoaded 事件之前加载。</li>
+<li>afterInteractive：在页面的 DOMContentLoaded 事件之后，和其他 async 或 defer 的脚本之前加载。</li>
+<li>lazyOnload：在页面的 onload 事件之前加载。</li>
+<li>lazy：在页面的 onload 事件之后加载。</li>
+</ol>
+<h2 id="nexthead"><a class="markdownIt-Anchor" href="#nexthead">#</a> next/head</h2>
+<p>Next.js 暴露了一个内置组件，用于将 HTML 标签添加到页面的  <code>head</code>  中：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Head <span class="token keyword">from</span> <span class="token string">"next/head"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">IndexPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Head<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>My page title<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"initial-scale=1.0, width=device-width"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Head<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Hello world<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 为了避免在 head 中出现重复的 HTML 标签，你可以设置 key 属性，该属性将确保添加的标签仅渲染一次，如以下示例所示：</span>
+<span class="token keyword">function</span> <span class="token function">IndexPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Head<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>My page title<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>meta property<span class="token operator">=</span><span class="token string">"og:title"</span> content<span class="token operator">=</span><span class="token string">"My page title"</span> key<span class="token operator">=</span><span class="token string">"title"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Head<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Head<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>meta property<span class="token operator">=</span><span class="token string">"og:title"</span> content<span class="token operator">=</span><span class="token string">"My new title"</span> key<span class="token operator">=</span><span class="token string">"title"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Head<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Hello world<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 在这种情况下，仅渲染第二个 &lt;meta property="og:title" /&gt;。具有相同 key 属性的 meta 标签将会被自动处理。</span>
+
+<span class="token comment">// 在 unmount 组件时，head 中的内容将会被清理，因此请确保每个页面都定义了其所需的所有内容，不要假设其它页面帮你添加任何内容。</span>
+<span class="token comment">// title、meta 或任何其它 HTML 标签（例如 script）必须作为 Head 元素的 直接 子元素存在， 或者被包裹在最多一层 &lt;React.Fragment&gt; 或数组中，否则在客户端导航时这些标签无法被正确识别并使用。</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> IndexPage<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="getinitialprops"><a class="markdownIt-Anchor" href="#getinitialprops">#</a> getInitialProps</h2>
 
                 
             </div>
@@ -1529,7 +1598,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">191.4k</span>
+                        class="white-color">192.2k</span>
             
             
             

@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Mrr-cxh" type="application/atom+xml">
 </head>
 
 
@@ -448,14 +448,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-26
+                    2023-12-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.8k
+                    7k
                 </div>
                 
 
@@ -627,6 +627,12 @@ Next.js 允许你创建具有 动态路由 的页面。例如，你可以创建�
 <ul>
 <li><code>静态生成（推荐）</code> ： HTML 是在  <code>构建时（build time）</code>  生成的，并重用于每个页面请求。要使页面使用 “静态生成”，只需导出（export）页面组件或导出（export）  <code>getStaticProps</code>  函数（如果需要还可以导出  <code>getStaticPaths</code>  函数）。对于可以在用户请求之前预先渲染的页面来说，这非常有用。你也可以将其与客户端渲染一起使用以便引入其他数据。</li>
 <li><code>服务器端渲染</code> ： HTML 是在  <code>每个页面请求</code>  时生成的。要设置某个页面使用服务器端渲染，请导出（export）  <code>getServerSideProps</code>  函数。由于 <code>服务器端渲染会导致性能比“静态生成”慢</code> ，因此仅在绝对必要时才使用此功能。</li>
+<li>执行时机： <code>getServerSideProps</code>  在每个请求时执行，而  <code>getStaticProps</code>  在构建时执行。</li>
+<li>执行环境： <code>getServerSideProps</code> ， <code>getStaticProps</code>  都只能在服务器端执行。</li>
+<li>数据更新： <code>getServerSideProps</code>  可以获取实时数据，因为它在每个请求时都会执行。而  <code>getStaticProps</code>  获取的数据在构建时就确定了，因此在构建后数据的更新需要重新构建。</li>
+<li>部署方式： <code>getServerSideProps</code>  的页面需要部署到服务器上，而  <code>getStaticProps</code>  的页面可以部署到静态文件托管服务上，例如 Vercel。</li>
+<li>性能： <code>getServerSideProps</code>  的页面每次请求都会执行获取数据的逻辑，可能会影响性能。而  <code>getStaticProps</code>  的页面在构建时就获取了数据，所以访问速度更快。</li>
+<li><code>getServerSideProps</code>  适用于需要实时数据的场景，而  <code>getStaticProps</code>  适用于数据不经常变化的场景。合理选择这两个函数可以提高页面性能和用户体验。</li>
 </ul>
 <h2 id="支持-sass"><a class="markdownIt-Anchor" href="#支持-sass">#</a> 支持 Sass</h2>
 <p>Next.js 允许你导入（import）具有  <code>.scss</code>  和  <code>.sass</code>  扩展名的 Sass 文件。你可以通过 CSS 模块以及  <code>.module.scss</code>  或  <code>.module.sass</code>  扩展名来使用组件及的 Sass。</p>
@@ -1675,7 +1681,7 @@ LCP 元素通常是页面视口中可见的最大图像或文本块。当您运�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">191.4k</span>
+                        class="white-color">192.2k</span>
             
             
             
