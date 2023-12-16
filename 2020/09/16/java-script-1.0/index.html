@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-03
+                    2023-12-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    18 分
                 </div>
                 
 
@@ -579,7 +579,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1,11</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="nan"><a class="markdownIt-Anchor" href="#nan">#</a> NaN</h3>
 <p>not a number 当进行了错误的数学运算结果就会是 NaN，NaN 依然是属于数字类型<br>
-用 Number.isNaN () 方法判断一个值是否是 NaN</p>
+用 Number.isNaN () 方法判断一个值是否是 NaN<br>
+isNaN () 方法 <code>会尝试将传入的参数转换为数字，然后再判断是否为 NaN</code> 。如果参数无法转换为数字，isNaN () 方法会返回 true。这意味着，对于非数字类型的值，isNaN () 方法会先尝试将其转换为数字 to，然后再进行判断。<br>
+Number.isNaN () 方法 <code>不会将传入的参数强制转换为数字</code> ，它只会对参数进行严格的 NaN 判断。 <code>只有当参数的值真正为 NaN 时，Number.isNaN()方法才会返回 true</code> 。对于非数字类型的值，Number.isNaN () 方法会直接返回 false。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true，"Hello"无法转换为数字</span>
+<span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false，"123"可以转换为数字123</span>
+
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false，"Hello"不是NaN</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false，"123"不是NaN</span>
+<span class="token comment">// 因此，如果你只想判断一个值是否为NaN，推荐使用Number.isNaN()方法，因为它更加严格和准确</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="检测数据类型方法"><a class="markdownIt-Anchor" href="#检测数据类型方法">#</a> 检测数据类型方法</h3>
 <h4 id="typeof"><a class="markdownIt-Anchor" href="#typeof">#</a> typeof</h4>
 <p>数据类型的基础检测方法 (typeof 数据) 会得到该数据的数据类型 ( <code>使用英文字符串表示的</code> )</p>
@@ -591,6 +599,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h4 id="objectprototypetostringcall"><a class="markdownIt-Anchor" href="#objectprototypetostringcall">#</a> Object.prototype.toString.call()</h4>
 <p>还有一个不错的判断类型的方法，就是 Object.prototype.toString.call ()<br>
  我们可以利用这个方法来对一个变量的类型来进行比较准确的判断</p>
+<p>js 中所有的数据类型，本质上都是对象，而这些数据类型不过是对象的一种类型而已。<br>
+Object.prototype.toString 这个方法是 <code>用于返回当前调用者的对象类型的</code> <br>
+ <code>call 是为了让 Object.prototype.toString 方法指向我们指定的数据</code> 。否则返回永远都是 <code>[object Object]</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "[object Number]"</span>
 
 <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "[object String]"</span>
@@ -972,7 +983,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// 3-5 随机整数</span>
 Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">3</span>      上进     <span class="token operator">+</span><span class="token number">2</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//3-5</span>
-Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment">//1-100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment">//1-100</span>
+
+<span class="token comment">// Math.random() 返回一个介于 0 和 1 之间的随机小数。</span>
+<span class="token comment">// Math.random() * 100 将随机小数乘以 100，得到一个介于 0 和 100 之间的随机数。</span>
+<span class="token comment">// Math.ceil() 函数将这个随机数向上取整，得到一个大于或等于该随机数的最小整数。</span>
+<span class="token comment">// Math.ceil(Matn.random() * 100) 就是 1-100</span>
+<span class="token comment">// Matn.random() * 3  就是 0-3 不包括</span>
+<span class="token comment">// Math.ceil(Matn.random() * 3) 就是 1-3</span>
+<span class="token comment">// Math.ceil(Matn.random() * 3) + 2 就是 3-5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1515,7 +1534,7 @@ Math<span class="token punctuation">.</span><span class="token function">ceil</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">192.8k</span>
+                        class="white-color">194.4k</span>
             
             
             

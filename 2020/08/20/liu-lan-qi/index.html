@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-11
+                    2023-12-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    4.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    15 分
                 </div>
                 
 
@@ -674,6 +674,20 @@ history<span class="token punctuation">.</span><span class="token function">go</
 <p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Charissa2017/article/details/104779412">https://blog.csdn.net/Charissa2017/article/details/104779412</a> CSDN 博主「蒲公英芽」</p>
 <!-- ## DOM 树 -->
 <h2 id="dom-树"><a class="markdownIt-Anchor" href="#dom-树">#</a> <a target="_blank" rel="noopener" href="https://blog.poetries.top/browser-working-principle/guide/part5/lesson22.html">DOM 树</a></h2>
+<p>网络进程接收到响应头之后，会根据响应头中的  <code>content-type</code>  字段来判断文件的类型，比如  <code>content-type</code>  的值是 <code>“text/html”</code> ，那么浏览器就会判断这是一个  <code>HTML</code>  类型的文件，然后为该请求选择或者创建一个渲染进程。渲染进程准备好之后，网络进程和渲染进程之间会建立一个共享数据的管道，网络进程接收到数据后就往这个管道里面放，而渲染进程则从管道的另外一端不断地读取数据，并同时将读取的数据 “喂” 给 HTML 解析器。你可以把这个管道想象成一个 “水管”，网络进程接收到的字节流像水一样倒进这个 “水管”，而 “水管” 的另外一端是渲染进程的 HTML 解析器，它会动态接收字节流，并将其解析为 DOM。 <code>字节流-&gt;分词器(Tokens)-&gt;生成节点(Node)-&gt;DOM</code> 。<br>
+HTML 解析器开始工作时，会默认创建了一个根为  <code>document</code>  的空 DOM 结构，同时会将一个  <code>StartTag document</code>  的  <code>Token</code>  压入栈底。然后经过分词器解析出来的第一个  <code>StartTag html Token</code>  会被压入到栈中，并创建一个  <code>html</code>  的  <code>DOM</code>  节点，添加到  <code>document</code>  上<br>
+但是解析到  <code>script</code>  标签时，渲染引擎判断这是一段脚本，此时 HTML 解析器就会 <code>暂停</code>  DOM 的解析， <code>因为接下来的 JavaScript 可能要修改当前已经生成的 DOM 结构</code> 。<br>
+把内嵌 JavaScript 脚本修改成了通过 JavaScript 文件加载。其整个执行流程还是一样的，执行到  <code>JavaScript 标签</code> 时， <code>暂停整个 DOM 的解析</code> ， <code>执行 JavaScript 代码</code> ，不过这里执行 JavaScript 时， <code>需要先下载这段 JavaScript 代码</code> 。这里需要重点关注下载环境，因为  <code>JavaScript 文件的下载过程会阻塞 DOM 解析</code> ，而通常下载又是非常耗时的，会受到网络环境、JavaScript 文件大小等因素的影响。<br>
+不过 Chrome 浏览器做了很多优化，其中一个主要的优化是 <code>预解析操作</code> 。当渲染引擎收到字节流之后，会开启一个 <code>预解析线程</code> ，用来分析 HTML 文件中包含的 <code> JavaScript、CSS 等相关文件</code> ，解析到相关文件之后， <code>预解析线程会提前下载这些文件</code> 。<br>
+知道 <code>引入 JavaScript 线程会阻塞 DOM</code> ，不过也有一些相关的策略来规避，比如使用 CDN 来加速 JavaScript 文件的加载，压缩 JavaScript 文件的体积。另外，如果 JavaScript 文件中没有操作 DOM 相关代码，就可以将该 JavaScript 脚本设置为异步加载，通过  <code>async</code>  或  <code>defer</code>  来标记代码，async 和 defer 虽然都是异步的，不过还有一些差异，使用  <code>async</code>  标志的脚本文件 <code>一旦加载完成，会立即执行</code> ；而使用了  <code>defer</code>  标记的脚本文件，需要在  <code>DOMContentLoaded 事件之前执行</code> 。<br>
+在执行 JavaScript 之前，需要先解析 JavaScript 语句之上所有的 CSS 样式。所以如果代码里引用了外部的 CSS 文件，那么 <code>在执行 JavaScript 之前，还需要等待外部的 CSS 文件下载完成，并解析生成 CSSOM 对象之后，才能执行 JavaScript 脚本</code> 。而 JavaScript 引擎在解析 JavaScript 之前，是不知道 JavaScript 是否操纵了 CSSOM 的，所以渲染引擎在遇到 JavaScript 脚本时， <code>不管该脚本是否操纵了 CSSOM，都会执行 CSS 文件下载，解析操作</code> ，再执行 JavaScript 脚本。所以说  <code>JavaScript 脚本是依赖样式表的</code> ，这又多了一个阻塞过程。如何优化：</p>
+<ul>
+<li>将样式表放在文档的头部：将样式表放在  <code>&lt;head&gt;</code>  标签中，这样可以确保在加载 JavaScript 之前就开始加载样式表，减少阻塞时间。</li>
+<li>使用异步加载：将 JavaScript 脚本标记为 async 或使用动态创建  <code>&lt;script&gt;</code>  标签的方式进行异步加载，这样脚本的加载和执行过程将与样式表的加载过程并行进行，不会相互阻塞。</li>
+<li>延迟加载：使用 defer 属性标记 JavaScript 脚本，使其在 <code>文档解析完毕后再执行</code> ，这样可以确保样式表的加载不会被脚本阻塞。</li>
+<li>内联样式：将一些关键的样式直接内联到 HTML 标签中，避免样式表的加载和解析过程。</li>
+<li>使用样式表预加载：使用 link 标签的  <code>rel="preload"</code>  属性，将样式表进行预加载，这样可以在 JavaScript 执行之前提前加载样式表。</li>
+</ul>
 <h2 id="事件模型"><a class="markdownIt-Anchor" href="#事件模型">#</a> <a target="_blank" rel="noopener" href="https://javascript.ruanyifeng.com/dom/event.html">事件模型</a></h2>
 <h2 id="缓存机制"><a class="markdownIt-Anchor" href="#缓存机制">#</a> <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903593275817998">缓存机制</a></h2>
 <h2 id="内存泄漏"><a class="markdownIt-Anchor" href="#内存泄漏">#</a> <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000020231307">内存泄漏</a></h2>
@@ -1219,7 +1233,7 @@ history<span class="token punctuation">.</span><span class="token function">go</
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">192.8k</span>
+                        class="white-color">194.4k</span>
             
             
             
